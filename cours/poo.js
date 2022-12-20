@@ -22,7 +22,7 @@ class User{
     }
 
 }
-const user= new User
+const user = new User
 ({
     name: 'John',
     email: 'john@doe',
