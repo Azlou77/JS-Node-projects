@@ -65,24 +65,24 @@
 // }
 // checkAge();
 //Array objects
-users = [
-    {   
-        name: "Nguyen Louis",
-        age: 20,
-        address: "Paris",
-        email: "nguyenlouis@gmaiLcom",
-        school: "ipssi",
-        phone : "0606060606",
-        hobbies: ["football", "basketball", "tennis"],
-        isStudent: true,
-        isWorking: true,
-        get fullName() {
-            return this.name;
-        },
-        set fullName(value) {       
-            this.name = value;
+// users = [
+//     {   
+//         name: "Nguyen Louis",
+//         age: 20,
+//         address: "Paris",
+//         email: "nguyenlouis@gmaiLcom",
+//         school: "ipssi",
+//         phone : "0606060606",
+//         hobbies: ["football", "basketball", "tennis"],
+//         isStudent: true,
+//         isWorking: true,
+//         get fullName() {
+//             return this.name;
+//         },
+//         set fullName(value) {       
+//             this.name = value;
 
-    }
-}
-]
+//     }
+// }
+// ]
 

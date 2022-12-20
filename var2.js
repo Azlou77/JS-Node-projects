@@ -1,6 +1,11 @@
-//Destructuration data
-const {name, age, country} = data;
-console.log(name, age, country);
+// //Destructuration data
+// const {name, age, country ...restFruits}  = data;
+// console.log(name, age, country);
+// console.log(firstElement);
+// console.log(restFruits);
+// const { lenght: fruits } = fruits
+// const lenght = fruits.lenght
+// console.log(lenght);
 
 // //Spread operator
 // const arr1 = [1, 2, 3];
@@ -26,4 +31,20 @@ console.log(name, age, country);
 // }
 // const person1 = new Person('John', 30);
 // person1.greeting();
+
+// //Modules
+// function sum(... array){
+//     let total = 0;
+//     for (let value of array) {
+//         total += value;
+//     }
+//     return total;
+// }
+
+// // Promise
+// for(let i of Object.entries(users)){
+//     const key= i[0];
+//     const value= i[1];
+//     console.log(key, value);
+// }
 
