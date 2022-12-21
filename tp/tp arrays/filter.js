@@ -36,7 +36,7 @@ const userData = [
    */
   export const filterByFullName = (users, searchString) => {
     return users.filter(function(element){
-    return element.name.includes(searchString);
+      return `${element.name} ${element.firstName} `.includes(searchString);
     })
   };
   

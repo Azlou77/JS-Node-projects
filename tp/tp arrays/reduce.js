@@ -70,3 +70,11 @@ const userData = [
     }
    */
   
+
+// for (let value of userData) {
+//     console.log(value);
+// }
+
+// userData.forEach(function(element) {
+//     console.log(element);
+// });
