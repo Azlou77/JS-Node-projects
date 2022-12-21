@@ -1,3 +1,4 @@
+//Voir exerccie https://js-fundamentals.vercel.app/course/data-structure/exercice
 const userData = [
     {
       name: 'Considine',
@@ -22,7 +23,11 @@ const userData = [
   ];
   
   export function generateUserSlug(users) {
-    return null;
+    return users.map(function (element) {
+      element.slug = `${element.name.toLowerCase()} - ${element.firstName.toLowerCase()}`;
+      return element;
+      // return `${element.name.toLowerCase()} ${element.firstName.toLowerCase()}`;
+    });
   }
   
   // console.log(generateUserSlug(userData));

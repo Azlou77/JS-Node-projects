@@ -1,6 +1,8 @@
-// useful links:
-// - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Object_initializer#computed_property_names
 
+/* useful links:
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Object_initializer#computed_property_names
+- https://js-fundamentals.vercel.app/course/data-structure/exercice
+*/
 const userData = [
     {
       slug: 'alice-zuck',
