@@ -7,3 +7,6 @@ arrayOfElement.forEach(e => {
 });
 
 return element
+
+
+//history.pushState({page: 'list'}, 'List', '/list') change url
