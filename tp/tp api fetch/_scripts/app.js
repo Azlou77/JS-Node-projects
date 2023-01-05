@@ -22,8 +22,8 @@ const smartyUpdateUISuccess = function(data) {
   zipField.value = zip + '-' + plus4;
 };
 
-const parkUpdateUISuccess = function(data) {
-  console.log(data);
+const parkUpdateUISuccess = function(parsedData) {
+  console.log(parsedData);
   parkThumb.src = 'https://www.nps.gov/common/commonspot/templates/assets/images/branding/logo.png';
   parkSection.classList.remove('hidden');
 
@@ -35,23 +35,35 @@ const smartyUpdateUIError = function(error) {
 const parkUpdateUIError = function(error) {
   console.log(error);
 };
+// XHR method request
+// const responseMethod = function(httpRequest, succeed, fail) {
+//   if (httpRequest.readyState === 4) {
+//     if (httpRequest.status === 200) {
+//      succeed(httpRequest.responseText);
+//     } else {
+//       fail(httpRequest.status + ': ' + httpRequest.responseText);
+//     }
+//   }
+// }
 
-const responseMethod = function(httpRequest, succeed, fail) {
-  if (httpRequest.readyState === 4) {
-    if (httpRequest.status === 200) {
-     succeed(httpRequest.responseText);
-    } else {
-      fail(httpRequest.status + ': ' + httpRequest.responseText);
-    }
-  }
-}
+// const createRequest = function(url, succeed, fail) {
+//   const httpRequest = new XMLHttpRequest(url);
+//   httpRequest.addEventListener('readystatechange', (url) => responseMethod(httpRequest, succeed, fail));
+//   httpRequest.open('GET', url);
+//   httpRequest.send();
+// };
 
+//Fecth method request
 const createRequest = function(url, succeed, fail) {
-  const httpRequest = new XMLHttpRequest(url);
-  httpRequest.addEventListener('readystatechange', (url) => responseMethod(httpRequest, succeed, fail));
-  httpRequest.open('GET', url);
-  httpRequest.send();
+  fecth (url)
+  .then((response) => 
+    response.json())
+  .then((data) => succeed(data));
 };
+
+};
+
+    
 
 //Function to check if all fields are filled
 const checkCompletion= function() {
