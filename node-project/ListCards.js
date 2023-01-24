@@ -1,5 +1,5 @@
 const template = document.querySelector('#listOfElement')
-const element = template.content.cloneNode(true)
+const element = template.content.cloneNode(true)  
 
 
 arrayOfElement.forEach(e => {
