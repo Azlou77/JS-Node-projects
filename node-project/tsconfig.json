@@ -5,6 +5,8 @@
       "rootDir": "src",
       "strict": true,
       "lib": ["esnext"],
-      "esModuleInterop": true
+      "esModuleInterop": true,
+      "typeRoots": ["./src/types/"]
+      
     }
   }
