@@ -16,18 +16,18 @@
 // process.argv.slice(2).forEach(e =>{
 //     console.log(`Hello ${e}`);
 // })
-const app = require('express')();
-const PORT = 1234;
+// const app = require('express')();
+// const PORT = 1234;
 
-app.use(express.json())
-app.get('/', (req, res) => {
-    res.status(200).json([])
-})
-app.post('/', (req, res) => {
-    console.log(req.body)
-    res.status(200).json({ message: 'hello' })
-})
-app.listen(PORT, () => {
-    console.log(`Listening on port ${PORT}`)
-})
+// app.use(express.json())
+// app.get('/', (req, res) => {
+//     res.status(200).json([])
+// })
+// app.post('/', (req, res) => {
+//     console.log(req.body)
+//     res.status(200).json({ message: 'hello' })
+// })
+// app.listen(PORT, () => {
+//     console.log(`Listening on port ${PORT}`)
+// })
 
