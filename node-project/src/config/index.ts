@@ -4,7 +4,7 @@ process.env.NODE_ENV = process.env.NODE_ENV || 'development';
 const stage = process.env.STAGE || 'local';
 let enconfig;
 if( stage === 'production' ) {
-    enconfig = require('./prodcution').default;
+    enconfig = require('./production').default;
 
 }else if ( stage === 'local' ) {
     enconfig = require('./local').default;
@@ -21,7 +21,7 @@ export default merge({
     port : 3001,
     secrets: {
         jwt: process.env.JWT_SECRET,
-        dbUrl: process.env.DB_URL,
+        dbUrl: process.env.DATABASE_URL,
     }
 }, enconfig);
 
