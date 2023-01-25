@@ -10,6 +10,7 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 model TodoList{
+  
   id       String      @id @unique @default(uuid())
   name     String
   todoItems TodoItem[]
