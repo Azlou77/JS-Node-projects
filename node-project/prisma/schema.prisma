@@ -9,24 +9,45 @@ datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
 }
-model TodoList{
-  
-  id       String      @id @unique @default(uuid())
-  name     String
-  todoItems TodoItem[]
-  user    User     @relation(fields: [userId], references: [id])
-  userId   String
 
-}
-model TodoItem{
-  id       String      @id  @default(uuid())
-  description String
-  todoList    TodoList @relation(fields: [todoListId], references: [id])
-  todoListId String
-}
-model User{
-  id       String      @id @unique @default(uuid())
-  username String   @unique @db.VarChar(64)
+model User {
+  id       String    @id @unique @default(uuid())
+  username String    @unique @db.VarChar(64)
   password String
-  todos TodoList[]
+  //Relation one to many with post/comment, one user can have many posts/comments
+  posts     Post[]
+  comment  Comment[]
+  createdAt DateTime @default(now())
+
+  //Role default give to user
+  role      Role     @default(USER)
+}
+
+model Post {
+  id      String    @id @unique @default(uuid())
+  //Relation one to one with comment, one post can have one comment
+  Comment Comment?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  published Boolean  @default(false)
+  title     String   @db.VarChar(255)
+  content   String?
+  //Relation with user, the author of the post is a user
+  author    User     @relation(fields: [authorId], references: [id])
+  authorId  String
+}
+
+model Comment {
+  id     String @id @unique @default(uuid())
+  //Relation with post, the comment is linked to a post
+  posts   Post   @relation(fields: [postId], references: [id])
+  postId String @unique
+  //Relation with user, the author of the comment is a user
+  author   User   @relation(fields: [authorId], references: [id])
+  authorId String
+  
+}
+enum Role {
+  USER
+  ADMIN
 }

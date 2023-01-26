@@ -31,6 +31,7 @@ export const protect: RequestHandler = (req, res, next) => {
     }
     const payload = jwt.verify(token, process.env.JWT_SECRET) as User
     req.user = payload
+    return next()
   } catch(e) {
     return res.status(401).json({ message: 'Not authorized' })
   }
