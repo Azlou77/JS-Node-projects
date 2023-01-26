@@ -9,14 +9,17 @@ interface TypedRequestParam extends Request {
   }
 }
 
+//Request to create new user
 export const createNewUser: RequestHandler = async (req: TypedRequestParam, res) => {
   try {
+    //Check if username and password are provided
     if (!(req.body?.username && req.body?.password)) {
       throw new Error('Invalid body provided')
     }
 
     const hash = await hashPassword(req.body.password)
 
+    //When the user is creating, the password is hashed, and token is created
     const user = await db.user.create({
       data: {
         username: req.body.username,
@@ -31,6 +34,7 @@ export const createNewUser: RequestHandler = async (req: TypedRequestParam, res)
     res.status(400).json({ error: e?.toString() })
   }
 }
+
 
 export const signIn: RequestHandler = async (req: TypedRequestParam, res) => {
   try {
