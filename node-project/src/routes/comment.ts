@@ -4,18 +4,19 @@ import db from "../db";
 
 const app = Router()
 
-//Request to display all comments
-// app.get('/post', async (req, res) => {
-//   const post = await db.post.findMany({
-//     where: {
-//       authorId: req.user.id
-//     },
-//     include: {
-//       Comment: true
-//     }
-//   })
-//   return res.status(200).json(post)
-// })
+//Request to display all post with title and content
+app.get('/post/read', async (req, res) => {
+  const post = await db.post.findMany({
+    where: {
+      title : req.body.title,
+      content : req.body.content,
+    },
+    // include: {
+    //   Comment: true
+    // }
+  })
+  return res.status(200).json(post)
+})
 
 
 //Request to display a specific comment by id
@@ -42,7 +43,7 @@ const app = Router()
 
   //Request to create a new post
   app.post(
-    '/post',
+    '/post/create',
   body('title').exists().isString().notEmpty(),
   async (req: Request, res: Response) => {
     try {
@@ -50,6 +51,7 @@ const app = Router()
       const createPost = await db.post.create({
         data: {
           title: req.body.title,
+          content : req.body.content,
           authorId: req.user.id,
         }
       })
