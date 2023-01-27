@@ -3,6 +3,8 @@ import { RequestHandler, Router } from 'express'
 import db from '../db'
 import { body, validationResult } from 'express-validator'
 const router = Router()
+
+
 // const isUsersItem: RequestHandler = async (req, res, next) => {
 //   try {
 //     const isOwner = await db.todoItem.findFirstOrThrow({
@@ -20,27 +22,30 @@ const router = Router()
 //     return res.status(400).json({ message: 'You are not the owner' })
 //   }
 // } 
+
+
 //Request to create a new comment
 // router.post(
-//   '/todoItem',
-//   body('todoListId').isUUID(),
-//   body('description').isString(),
-//   isUsersItem,
+//   '/comment',
+//   body('postId').isUUID(),
+//   body('content').isString(),
 //   async (req, res) => {
 //     try {
 //       validationResult(req).throw()
-//       const createdTodoItem  = await db.todoItem.create({
+//       const createComment  = await db.comment.create({
 //         data: {
-//           todoListId: req.body.todoListId,
-//           description: req.body.description
+//           postId: req.body.postId,
+//           content: req.body.content,
 //         },
 //       })
-//       return res.status(201).json(createdTodoItem)
+
+//       return res.status(201).json(createComment)
 //     } catch (e) {
 //       return res.status(400).json({ message: e || 'Error during creation'})
 //     }
 //   }
 // )
+
 // router.put(
 //   '/todoItem/:uuid',
 //   isUsersItem,

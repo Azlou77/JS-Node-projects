@@ -30,7 +30,8 @@ app.post('/signUp', createNewUser)
 //Request to connect a user
 app.post('/signIn', signIn)
 
-
+//Request to delete a user
+app.delete('/user/delete', deleteUser)
 
 app.listen(PORT, () => {
   console.log(`Server is listening on port ${PORT}`)

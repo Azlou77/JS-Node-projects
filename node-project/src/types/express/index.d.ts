@@ -6,9 +6,8 @@ declare global {
             user: User;
       
         }
-        export interface Request {
-            from: Post;
+      
     }
 }
-}
+
 

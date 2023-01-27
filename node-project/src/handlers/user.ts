@@ -8,11 +8,7 @@ interface TypedRequestParam extends Request {
     password?: string;
   }
 }
-interface TypedRequestParam extends Request {
-  query: {
-    from?: string ; 
-  }
-}
+
 
 //Request to create new user
 export const createNewUser: RequestHandler = async (req: TypedRequestParam, res) => {
@@ -39,7 +35,7 @@ export const createNewUser: RequestHandler = async (req: TypedRequestParam, res)
     res.status(400).json({ error: e?.toString() })
   }
 }
-//Request to delete  user
+// //Request to delete  user
 export const deleteUser: RequestHandler = async (req: TypedRequestParam, res) => {
   try {
     //Check if username are provided
