@@ -27,8 +27,8 @@ model Post {
   id      String    @id @unique @default(uuid())
   //Relation one to one with comment, one post can have one comment
   Comment Comment?
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  createdAt DateTime @default(now()) @db.Timestamptz(3)
+  updatedAt DateTime @updatedAt @db.Timestamptz(3)
   published Boolean  @default(false)
   title     String   @db.VarChar(255)
   content   String?
@@ -39,6 +39,8 @@ model Post {
 
 model Comment {
   id     String @id @unique @default(uuid())
+  createdAt DateTime @default(now()) @db.Timestamptz(3)
+  updatedAt DateTime @updatedAt @db.Timestamptz(3)
   //Relation with post, the comment is linked to a post
   posts   Post   @relation(fields: [postId], references: [id])
   postId String @unique
@@ -47,7 +49,6 @@ model Comment {
   authorId String
   content  String
 
-  
 }
 enum Role {
   USER
