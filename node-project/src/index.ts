@@ -5,7 +5,7 @@ import userRoutes from './routes/user'
 import postRoutes from './routes/post'
 import commentRoutes from './routes/comment'
 import { protect } from './modules/auth'
-import { createNewUser, signIn } from './handlers/user'
+import { createNewUser, deleteUser,  signIn } from './handlers/user'
 
 dotenv.config()
 

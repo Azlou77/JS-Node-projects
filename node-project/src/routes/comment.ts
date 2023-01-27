@@ -4,42 +4,40 @@ import db from "../db";
 
 const app = Router()
 
-//Request to display all post with title and content
-app.get('/post/read', async (req, res) => {
-  const post = await db.post.findMany({
+//Request to read all post
+app.get('/post', async (req, res) => {
+  const readPost = await db.post.findMany({
     where: {
       title : req.body.title,
-      content : req.body.content,
     },
     // include: {
     //   Comment: true
     // }
   })
-  return res.status(200).json(post)
+  return res.status(200).json(readPost)
 })
 
 
-//Request to display a specific comment by id
-// app.get(
-//   '/todo/:uuid',
-//   async (req, res) => {
-//     try {
-//       const todo = await db.post.findFirstOrThrow({
-//         where: {
-//           id: req.params.uuid,
-//           authorId: req.user.id
-//         },
-//         include: {
-//           Comment: true
-//         }
-//       })
+  // //Request to display a specific post by from (query parameter)
+  // app.get(
+  //   '/post',
+  //   async (req, res) => {
+  //     try {
+  //       const post = await db.post.findUnique({
+  //         where: {
+  //           createdAt : req.query.from,
+  //         },
+      
+  //       })
 
-//       return res.status(200).json(todo)
-//     } catch(e) {
-//       return res.status(400).json({ message: 'Not found' })
-//     }
-//   }
-// )
+
+
+  //       return res.status(200).json(post)
+  //     } catch(e) {
+  //       return res.status(400).json({ message: 'Not found' })
+  //     }
+  //   }
+  // )
 
   //Request to create a new post
   app.post(
@@ -82,18 +80,18 @@ app.get('/post/read', async (req, res) => {
 //   }
 // })
 
-// app.delete('/todo/:uuid', async (req, res) => {
-//   try {
-//     await db.todoList.delete({
-//       where: {
-//         id: req.params.uuid
-//       }
-//     })
+app.delete('/post/:uuid', async (req, res) => {
+  try {
+    await db.post.delete({
+      where: {
+        id: req.params.uuid
+      }
+    })
 
-//     return res.status(200).json({message: `Succesfully deleted ${req.params.uuid}`})
-//   } catch(e) {
-//     return res.status(400).json({message: e || 'Error while deleting'})
-//   }
-// })
+    return res.status(200).json({message: `Succesfully deleted ${req.params.uuid}`})
+  } catch(e) {
+    return res.status(400).json({message: e || 'Error while deleting'})
+  }
+})
 
 export default app
