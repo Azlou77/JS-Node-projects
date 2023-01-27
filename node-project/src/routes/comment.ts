@@ -1,97 +1,82 @@
-import { Request, RequestHandler, Response, Router } from "express";
-import { body, check, validationResult } from "express-validator";
-import db from "../db";
 
-const app = Router()
-
-//Request to read all post
-app.get('/post', async (req, res) => {
-  const readPost = await db.post.findMany({
-    where: {
-      title : req.body.title,
-    },
-    // include: {
-    //   Comment: true
-    // }
-  })
-  return res.status(200).json(readPost)
-})
-
-
-  // //Request to display a specific post by from (query parameter)
-  // app.get(
-  //   '/post',
-  //   async (req, res) => {
-  //     try {
-  //       const post = await db.post.findUnique({
-  //         where: {
-  //           createdAt : req.query.from,
-  //         },
-      
-  //       })
-
-
-
-  //       return res.status(200).json(post)
-  //     } catch(e) {
-  //       return res.status(400).json({ message: 'Not found' })
-  //     }
-  //   }
-  // )
-
-  //Request to create a new post
-  app.post(
-    '/post/create',
-  body('title').exists().isString().notEmpty(),
-  async (req: Request, res: Response) => {
-    try {
-      validationResult(req).throw()
-      const createPost = await db.post.create({
-        data: {
-          title: req.body.title,
-          content : req.body.content,
-          authorId: req.user.id,
-        }
-      })
-
-      return res.status(200).json(createPost)
-    } catch(e) {
-      console.log(e)
-      return res.status(400).json({error: e || 'Cannot create Post'})
-    }
-})
-
-
-// app.put('/todo/:uuid', body('name').exists().isString().notEmpty(), async (req, res) => {
+import { RequestHandler, Router } from 'express'
+import db from '../db'
+import { body, validationResult } from 'express-validator'
+const router = Router()
+// const isUsersItem: RequestHandler = async (req, res, next) => {
 //   try {
-//     validationResult(req).throw()
-//     const updatedTodoList = await db.todoList.update({
+//     const isOwner = await db.todoItem.findFirstOrThrow({
 //       where: {
-//         id: req.params?.uuid,
-//       },
-//       data: {
-//         name: req.body.name
+//         todoList: {
+//           userId: req.user.id
+//         },
 //       }
 //     })
-
-//     return res.status(200).json(updatedTodoList)
+//     if (isOwner) {
+//       return next()
+//     }
+//     throw new Error('You should not be here')
 //   } catch(e) {
-//     return res.status(400).json({message: e || 'Error while updating'})
+//     return res.status(400).json({ message: 'You are not the owner' })
 //   }
-// })
-
-app.delete('/post/:uuid', async (req, res) => {
-  try {
-    await db.post.delete({
-      where: {
-        id: req.params.uuid
-      }
-    })
-
-    return res.status(200).json({message: `Succesfully deleted ${req.params.uuid}`})
-  } catch(e) {
-    return res.status(400).json({message: e || 'Error while deleting'})
-  }
-})
-
-export default app
+// } 
+//Request to create a new comment
+// router.post(
+//   '/todoItem',
+//   body('todoListId').isUUID(),
+//   body('description').isString(),
+//   isUsersItem,
+//   async (req, res) => {
+//     try {
+//       validationResult(req).throw()
+//       const createdTodoItem  = await db.todoItem.create({
+//         data: {
+//           todoListId: req.body.todoListId,
+//           description: req.body.description
+//         },
+//       })
+//       return res.status(201).json(createdTodoItem)
+//     } catch (e) {
+//       return res.status(400).json({ message: e || 'Error during creation'})
+//     }
+//   }
+// )
+// router.put(
+//   '/todoItem/:uuid',
+//   isUsersItem,
+//   body('description').isLength({ min: 1 }),
+//   async (req, res) => {
+//     try {
+//       validationResult(req).throw()
+//       const updatedItem = await db.todoItem.update({
+//         where: {
+//           id: req.params?.uuid
+//         },
+//         data: {
+//           description: req.body.description
+//         }
+//       })
+//       res.status(200).json(updatedItem)
+//     } catch(e) {
+//       return res.status(400).json({ message: e || 'Error during update'})
+//     }
+//   }
+// )
+// router.delete(
+//   '/todoItem/:uuid',
+//   isUsersItem,
+//   async (req, res) => {
+//     try {
+//       const deletedId = req.params.uuid
+//       await db.todoItem.delete({
+//         where: {
+//           id: deletedId
+//         }
+//       })
+//       res.status(200).json({ message: `Successfully deleted ${deletedId}`})
+//     } catch(e) {
+//       return res.status(400).json({ e: e || 'Error during deletion'})
+//     }
+//   }
+// )
+export default router
