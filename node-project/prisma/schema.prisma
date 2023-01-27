@@ -45,6 +45,8 @@ model Comment {
   //Relation with user, the author of the comment is a user
   author   User   @relation(fields: [authorId], references: [id])
   authorId String
+  content  String
+
   
 }
 enum Role {

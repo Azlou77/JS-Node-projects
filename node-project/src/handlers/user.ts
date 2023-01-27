@@ -8,6 +8,11 @@ interface TypedRequestParam extends Request {
     password?: string;
   }
 }
+interface TypedRequestParam extends Request {
+  query: {
+    from?: string ; 
+  }
+}
 
 //Request to create new user
 export const createNewUser: RequestHandler = async (req: TypedRequestParam, res) => {
@@ -34,6 +39,24 @@ export const createNewUser: RequestHandler = async (req: TypedRequestParam, res)
     res.status(400).json({ error: e?.toString() })
   }
 }
+//Request to delete  user
+export const deleteUser: RequestHandler = async (req: TypedRequestParam, res) => {
+  try {
+    //Check if username are provided
+    if (!(req.body?.username)) {
+      throw new Error('Invalid body provided')
+    }
+    const user = await db.user.delete({
+      where: { username: req.body.username },
+    })
+    return res.status(200).json(user)
+  } catch(e) {
+    res.status(400).json({ error: e ||  'Cannot delete user' })
+  }
+}
+
+
+
 
 
 export const signIn: RequestHandler = async (req: TypedRequestParam, res) => {
