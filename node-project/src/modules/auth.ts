@@ -64,15 +64,10 @@ export const protectAdmin: RequestHandler = (req, res, next) => {
       return res.status(401).json({ message: 'Not authorized' })
     }
     const payload = jwt.verify(token, process.env.JWT_SECRET) as User
-    if(payload.role !== 'ADMIN'){
-      console.log(payload)
-      return res.status(401).json({message: 'Unauthorized'})
-  }
-    console.log(payload)
     req.user = payload
-  next()
-
+    return next()
   } catch(e) {
     return res.status(401).json({ message: 'Not authorized' })
   }
 }
+

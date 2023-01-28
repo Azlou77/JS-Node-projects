@@ -35,11 +35,10 @@ app.use('/api/admin', protectAdmin, [
 //Request to create new user and register
 app.post('/signUp', createNewUser)
 
+
 //Request to connect a user
 app.post('/signIn', signIn)
 
-//Request to connect a user as admin
-app.post('/signIn', signIn)
 
 //Request to delete a user
 app.delete('/user/delete', deleteUser)

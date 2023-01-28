@@ -3,7 +3,24 @@ import { body, check, validationResult } from "express-validator";
 import db from "../db";
 
 const app = Router()
-
+const isUsersPost: RequestHandler = async (req, res, next) => {
+  try {
+      if (req.user.role == "ADMIN") {
+          return next()
+      }
+      const isOwner = await db.post.findFirstOrThrow({
+          where: {
+              authorId: req.user.id
+          }
+      })
+      if (isOwner) {
+          return next()
+      }
+      throw new Error('You should not be here')
+  } catch (e) {
+      return res.status(400).json({ message: 'You are not the owner' })
+  }
+}
 //Request to create a new post
 app.post(
   '/post/create',
