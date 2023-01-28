@@ -6,6 +6,7 @@ interface TypedRequestParam extends Request {
   body: {
     username?: string;
     password?: string;
+    role?: any;
   }
 }
 
@@ -25,6 +26,8 @@ export const createNewUser: RequestHandler = async (req: TypedRequestParam, res)
       data: {
         username: req.body.username,
         password: hash,
+        role: req.body.role
+
       }
     })
 
