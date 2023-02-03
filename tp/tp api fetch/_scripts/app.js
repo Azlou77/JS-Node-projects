@@ -61,7 +61,7 @@ const createRequest = function(url, succeed, fail) {
   .then((data) => succeed(data));
 };
 
-};
+
 
     
 
