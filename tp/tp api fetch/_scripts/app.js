@@ -63,7 +63,7 @@ const createRequest = function(url, succeed, fail) {
 
 
 
-    
+
 
 //Function to check if all fields are filled
 const checkCompletion= function() {
