@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+
+    <!-- Leaflet CSS -->
+    <title>Quick Start - Leaflet</title>
+	  <link rel="shortcut icon" type="image/x-icon" href="docs/images/favicon.ico" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js" integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
+
+    <style>
+      html, body {
+        height: 100%;
+        margin: 0;
+      }
+      .leaflet-container {
+        height: 400px;
+        width: 600px;
+        max-width: 100%;
+        max-height: 100%;
+      }
+      #map { height: 180px; }
+    </style>
+  </head>
+<body>
+  
+<!-- <p>Click the button to get your coordinates.</p>-->
+<!-- <button id="find-me">Show my location</button><br /> -->
+<p id="status"></p> -->
+ <a id="map-link" target="_blank"></a> 
+<div id="map"></div>
+<script>
+// /*function geoFindMe() {
+//     let status = document.querySelector('#status');
+//     let mapLink = document.querySelector('#map-link');
+
+//     mapLink.href = '';
+//     mapLink.textContent = '';
+
+//   function success(position) {
+//     let latitude  = position.coords.latitude;
+//     console.table(position.coords);
+//     let longitude = position.coords.longitude;
+//     console.log(latitude, longitude);
+
+//     status.textContent = '';
+//     mapLink.href = `https://www.openstreetmap.org/#map=18/${latitude}/${longitude}`;
+//     mapLink.textContent = `Latitude: ${latitude} °, Longitude: ${longitude} °`;
+//   }
+
+//   function error() {
+//     status.textContent = 'Unable to retrieve your location';
+//   }
+
+// if (!navigator.geolocation) {
+//   status.textContent = 'Geolocation is not supported by your browser';
+// } else {
+//   status.textContent = 'Locating…';
+//   navigator.geolocation.getCurrentPosition(success, error);
+// }}
+// document.querySelector('#find-me').addEventListener('click', geoFindMe);
+// */
+
+//Add location map
+const  userIcon = L.Icon({
+        shadowUrl: 'user.png',
+        iconSize:     [50, 32],
+        shadowSize:   [25, 16],
+});
+
+var marker = L.marker([40.7142700,-74.0059700], {icon: userIcon}).addTo(map);
+
+//Add title map
+L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+}).addTo(map);
+
+//Add popup for content
+// L.marker([51.5, -0.09]).addTo(map)
+//     .bindPopup('A pretty CSS3 popup.<br> Easily customizable.')
+//     .openPopup();
+
+//Instantiation of the map
+
+// const { latitude, longitude } = data; 
+// L.marker([40.7142700,  -74.0059700], {icon: userIcon}).addTo(map);
+
+
+  // //Add circle map
+  // var circle = L.circle([51.508, -0.11], {
+  //     color: 'red',
+  //     fillColor: '#f03',
+  //     fillOpacity: 0.5,
+  //     radius: 500
+  // }).addTo(map);
+
+  // //Add polygon map
+  // var polygon = L.polygon([
+  //     [51.509, -0.08]
+  //     [51.503, -0.06],
+  //     [51.51, -0.047]
+  // ]).addTo(map);
+
+
+
+//New icon instances 
+// var greenIcon = new LeafIcon({iconUrl: 'building.png'}),
+//     redIcon = new LeafIcon({iconUrl: 'user.png'}),
+//     orangeIcon = new LeafIcon({iconUrl: 'school.png'});
+
+// //Return the icon
+//     var L.icon = function (options) {
+//     return new L.Icon(options);
+// };
+
+
+// //Add markers to the map icons
+// L.marker([48.8122153, -0.09], {icon: building}).addTo(map).bindPopup("I am a green leaf.");
+// L.marker([48.8122153, -0.083], {icon: user}).addTo(map).bindPopup("I am a red leaf.");
+// L.marker([48.8122153, -0.1], {icon: school}).addTo(map).bindPopup("I am an orange leaf.");
+    
+</script>
+</body>
+</html>
