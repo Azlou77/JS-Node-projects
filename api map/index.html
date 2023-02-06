@@ -27,49 +27,51 @@
   </head>
 <body>
   
-    <!-- <p>Click the button to get your coordinates.</p>
-
-<button id="find-me">Show my location</button><br />
-<p id="status"></p>
-<a id="map-link" target="_blank"></a> -->
+<!-- <p>Click the button to get your coordinates.</p>-->
+<!-- <button id="find-me">Show my location</button><br /> -->
+<p id="status"></p> -->
+ <a id="map-link" target="_blank"></a> 
 <div id="map"></div>
 <script>
-//    function geoFindMe() {
+// /*function geoFindMe() {
+//     let status = document.querySelector('#status');
+//     let mapLink = document.querySelector('#map-link');
 
-// let status = document.querySelector('#status');
-// let mapLink = document.querySelector('#map-link');
+//     mapLink.href = '';
+//     mapLink.textContent = '';
 
-// mapLink.href = '';
-// mapLink.textContent = '';
+//   function success(position) {
+//     let latitude  = position.coords.latitude;
+//     console.table(position.coords);
+//     let longitude = position.coords.longitude;
+//     console.log(latitude, longitude);
 
-// function success(position) {
-//   let latitude  = position.coords.latitude;
-//   console.table(position.coords);
-//   let longitude = position.coords.longitude;
-//   console.log(latitude, longitude);
+//     status.textContent = '';
+//     mapLink.href = `https://www.openstreetmap.org/#map=18/${latitude}/${longitude}`;
+//     mapLink.textContent = `Latitude: ${latitude} °, Longitude: ${longitude} °`;
+//   }
 
-//   status.textContent = '';
-//   mapLink.href = `https://www.openstreetmap.org/#map=18/${latitude}/${longitude}`;
-//   mapLink.textContent = `Latitude: ${latitude} °, Longitude: ${longitude} °`;
-// }
-
-// function error() {
-//   status.textContent = 'Unable to retrieve your location';
-// }
+//   function error() {
+//     status.textContent = 'Unable to retrieve your location';
+//   }
 
 // if (!navigator.geolocation) {
 //   status.textContent = 'Geolocation is not supported by your browser';
 // } else {
 //   status.textContent = 'Locating…';
 //   navigator.geolocation.getCurrentPosition(success, error);
-// }
-
-// }
-
+// }}
 // document.querySelector('#find-me').addEventListener('click', geoFindMe);
+// */
 
 //Add location map
-var map = L.map('map').setView([48.8122153, 2.3578295], 13);
+const  userIcon = L.Icon({
+        shadowUrl: 'user.png',
+        iconSize:     [50, 32],
+        shadowSize:   [25, 16],
+});
+
+var marker = L.marker([40.7142700,-74.0059700], {icon: userIcon}).addTo(map);
 
 //Add title map
 L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -77,9 +79,15 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
 }).addTo(map);
 
 //Add popup for content
-L.marker([51.5, -0.09]).addTo(map)
-    .bindPopup('A pretty CSS3 popup.<br> Easily customizable.')
-    .openPopup();
+// L.marker([51.5, -0.09]).addTo(map)
+//     .bindPopup('A pretty CSS3 popup.<br> Easily customizable.')
+//     .openPopup();
+
+//Instantiation of the map
+
+// const { latitude, longitude } = data; 
+// L.marker([40.7142700,  -74.0059700], {icon: userIcon}).addTo(map);
+
 
   // //Add circle map
   // var circle = L.circle([51.508, -0.11], {
@@ -91,39 +99,28 @@ L.marker([51.5, -0.09]).addTo(map)
 
   // //Add polygon map
   // var polygon = L.polygon([
-  //     [51.509, -0.08],
+  //     [51.509, -0.08]
   //     [51.503, -0.06],
   //     [51.51, -0.047]
   // ]).addTo(map);
 
 
-//Instantiation of the map
-var LeafIcon = L.Icon.extend({
-    options: {
-        shadowUrl: 'leaf-shadow.png',
-        iconSize:     [38, 95],
-        shadowSize:   [50, 64],
-        iconAnchor:   [22, 94],
-        shadowAnchor: [4, 62],
-        popupAnchor:  [-3, -76]
-    }
-});
 
 //New icon instances 
-var greenIcon = new LeafIcon({iconUrl: '/img/building.png'}),
-    redIcon = new LeafIcon({iconUrl: '/img/user.png'}),
-    orangeIcon = new LeafIcon({iconUrl: '/img/school.png'});
+// var greenIcon = new LeafIcon({iconUrl: 'building.png'}),
+//     redIcon = new LeafIcon({iconUrl: 'user.png'}),
+//     orangeIcon = new LeafIcon({iconUrl: 'school.png'});
 
-//Return the icon
-    L.icon = function (options) {
-    return new L.Icon(options);
-};
+// //Return the icon
+//     var L.icon = function (options) {
+//     return new L.Icon(options);
+// };
 
 
-//Add markers to the map icons
-L.marker([48.8122153, -0.09], {icon: building}).addTo(map).bindPopup("I am a green leaf.");
-L.marker([48.8122153, -0.083], {icon: user}).addTo(map).bindPopup("I am a red leaf.");
-L.marker([48.8122153, -0.1], {icon: school}).addTo(map).bindPopup("I am an orange leaf.");
+// //Add markers to the map icons
+// L.marker([48.8122153, -0.09], {icon: building}).addTo(map).bindPopup("I am a green leaf.");
+// L.marker([48.8122153, -0.083], {icon: user}).addTo(map).bindPopup("I am a red leaf.");
+// L.marker([48.8122153, -0.1], {icon: school}).addTo(map).bindPopup("I am an orange leaf.");
     
 </script>
 </body>
