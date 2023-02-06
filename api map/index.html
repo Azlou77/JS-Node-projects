@@ -2,14 +2,20 @@
 <html>
 <head>
     <meta charset='utf-8'>
-    <title>Page Title</title>
+    <title>API map</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
 
     <!-- Leaflet CSS -->
     <title>Quick Start - Leaflet</title>
 	  <link rel="shortcut icon" type="image/x-icon" href="docs/images/favicon.ico" />
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin=""/>
-    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js" integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+    integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
+    crossorigin=""/>
+
+     <!-- Make sure you put this AFTER Leaflet's CSS -->
+ <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+ integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
+ crossorigin=""></script>
 
     <style>
       html, body {
@@ -32,35 +38,69 @@
  <a id="map-link" target="_blank"></a> 
 <div id="map"></div>
 <script>
-//Function to change the view of the map
+
+//Exemples with Leaflet docs
+//Multiple views of the map
 var map = L.map('map').setView([38.690003, -100.809859], 5);
 var osm = L.tileLayer ('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 }).addTo(map);
+// var satellite = L.tileLayer(mapboxUrl, {id: 'MapID', tileSize: 512, zoomOffset: -1, attribution: mapboxAttribution});
+//Function to change the view of the map
 
-//Exemples with Stamen
-var StamenWaterColor = L.tileLayer('http://stamen-tiles-{s}.a.ssl.fastly.net/watercolor/{z}/{x}/{y}.{ext}', {
-    attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, under <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a>. Data by <a href="http://openstreetmap.org">OpenStreetMap</a>, under <a href="http://creativecommons.org/licenses/by-sa/3.0">CC BY SA</a>.',
-    subdomains: 'abcd',
-    minZoom: 1,
-    maxZoom: 16,
-    ext: 'png'
-});
-var StamenToner = L.tileLayer('http://stamen-tiles-{s}.a.ssl.fastly.net/toner/{z}/{x}/{y}.{ext}', {
-    attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, under <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a>. Data by <a href="http://openstreetmap.org">OpenStreetMap</a>, under <a href="http://creativecommons.org/licenses/by-sa/3.0">CC BY SA</a>.',
-    subdomains: 'abcd',
-    minZoom: 0,
-    maxZoom: 20,
-    ext: 'png'
-});
 
-//Leaflet layer control
+
+//Exemples positions of the map
+var littleton = L.marker([39.61, -105.02]).bindPopup('This is Littleton, CO.'),
+    denver    = L.marker([39.74, -104.99]).bindPopup('This is Denver, CO.'),
+    aurora    = L.marker([39.73, -104.8]).bindPopup('This is Aurora, CO.'),
+    golden    = L.marker([39.77, -105.23]).bindPopup('This is Golden, CO.');
+
+
+
+  
+//Function to regroup positions
+var cities = L.layerGroup([littleton, denver, aurora, golden]);
+
+// Custome icon
+var userIcon = L.icon({
+    iconUrl: 'img/park.png',
+    iconSize:     [38,38],
+    iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
+    shadowAnchor: [4, 62],  // the same for the shadow
+    popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+});
+// L.marker([51.5, -0.09], {icon: userIcon}).addTo(map);
+
+var crownHill = L.marker([39.75, -105.09], {icon: userIcon}).bindPopup('This is Crown Hill Park.'),
+    rubyHill = L.marker([39.68, -105.00], {icon: userIcon}).bindPopup('This is Ruby Hill Park.');
+
+var parks = L.layerGroup([crownHill, rubyHill]);
+
+
+//Leaflet objects variables
 var baseMaps = {
     "OpenStreetMap": osm,
-    "WaterColor": StamenWaterColor,
-    "Toner": StamenToner 
-};
-L.control.layers(baseMaps).addTo(map);
+
+
+}
+var overlayMaps = {
+    "Cities": cities,
+    "Parks": parks
+}
+
+
+
+//Layer control
+var layerControl = L.control.layers(baseMaps, overlayMaps).addTo(map);
+
+
+
+
+// layerControl.addBaseLayer(satellite, "Satellite");
+// layerControl.addOverlay(parks, "Parks");
+
+
 
 
                                                                                                                                                                                                                                                                                                                                                                                                                                                             
