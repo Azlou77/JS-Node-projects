@@ -4,6 +4,8 @@
     <meta charset='utf-8'>
     <title>Page Title</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
+
+    <!-- Leaflet CSS -->
     <title>Quick Start - Leaflet</title>
 	  <link rel="shortcut icon" type="image/x-icon" href="docs/images/favicon.ico" />
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin=""/>
@@ -79,20 +81,50 @@ L.marker([51.5, -0.09]).addTo(map)
     .bindPopup('A pretty CSS3 popup.<br> Easily customizable.')
     .openPopup();
 
-//Add circle map
-var circle = L.circle([51.508, -0.11], {
-    color: 'red',
-    fillColor: '#f03',
-    fillOpacity: 0.5,
-    radius: 500
-}).addTo(map);
+  // //Add circle map
+  // var circle = L.circle([51.508, -0.11], {
+  //     color: 'red',
+  //     fillColor: '#f03',
+  //     fillOpacity: 0.5,
+  //     radius: 500
+  // }).addTo(map);
 
-//Add polygon map
-var polygon = L.polygon([
-    [51.509, -0.08],
-    [51.503, -0.06],
-    [51.51, -0.047]
-]).addTo(map);
+  // //Add polygon map
+  // var polygon = L.polygon([
+  //     [51.509, -0.08],
+  //     [51.503, -0.06],
+  //     [51.51, -0.047]
+  // ]).addTo(map);
+
+
+//Instantiation of the map
+var LeafIcon = L.Icon.extend({
+    options: {
+        shadowUrl: 'leaf-shadow.png',
+        iconSize:     [38, 95],
+        shadowSize:   [50, 64],
+        iconAnchor:   [22, 94],
+        shadowAnchor: [4, 62],
+        popupAnchor:  [-3, -76]
+    }
+});
+
+//New icon instances 
+var greenIcon = new LeafIcon({iconUrl: '/img/building.png'}),
+    redIcon = new LeafIcon({iconUrl: '/img/user.png'}),
+    orangeIcon = new LeafIcon({iconUrl: '/img/school.png'});
+
+//Return the icon
+    L.icon = function (options) {
+    return new L.Icon(options);
+};
+
+
+//Add markers to the map icons
+L.marker([48.8122153, -0.09], {icon: building}).addTo(map).bindPopup("I am a green leaf.");
+L.marker([48.8122153, -0.083], {icon: user}).addTo(map).bindPopup("I am a red leaf.");
+L.marker([48.8122153, -0.1], {icon: school}).addTo(map).bindPopup("I am an orange leaf.");
+    
 </script>
 </body>
 </html>
