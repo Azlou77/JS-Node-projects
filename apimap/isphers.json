@@ -1,0 +1,12 @@
+[
+{"type":"header","version":"5.1.1","comment":"Export to JSON plugin for PHPMyAdmin"},
+{"type":"database","name":"isphers"},
+{"type":"table","name":"companies","database":"isphers","data":
+[
+{"id":"1","nom":"Isphers","lat":"48.81230000","lon":"2.35780000"},
+{"id":"2","nom":"Oderis","lat":"48.87120000","lon":"2.33710000"},
+{"id":"3","nom":"Alto  séquanais","lat":"48.83880000","lon":"2.23390000"},
+{"id":"4","nom":"Initiales ","lat":"48.85530000","lon":"2.36180000"}
+]
+}
+]

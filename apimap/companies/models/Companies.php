@@ -1,8 +1,8 @@
 <?php
-class Agences{
+class Companies{
     // Connexion
     private $connexion;
-    private $table = "agences";
+    private $table = "companies ";
 
     // object properties
     public $id;
