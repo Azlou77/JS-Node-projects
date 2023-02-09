@@ -3,21 +3,114 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
-
-        <!-- Fichiers CSS -->
-        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin=""/>
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>OpenStreetMap</title>
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin=""/>
         <link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css" />
-        <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.css" />
-        <link rel="stylesheet" href="css/styles.css">
+        
+        <!-- CSS -->
+        <style>
+            body{
+                margin:0
+            }
+            #map{
+                height: 100vh;
+            }
+        </style>
     </head>
     <body>
-        <div id="carte"></div>
-
-        <!-- Fichiers JS -->
-        <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js" integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew==" crossorigin=""></script>
-        <script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>
-        <script src="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.js"></script>
-        <script src="js/scripts.js"></script>
+        <div id="map"></div>
     </body>
 </html>
+
+ <!-- Fichiers Javascript -->
+<script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js" integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og==" crossorigin=""></script>
+<script src="./data/map.js"></script>
+<script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>
+<script>
+
+
+
+
+
+
+
+// Créer la carte
+var map  = L.map('map').setView([48.852969, 2.349903], 13);
+
+//Single marker
+var singleMarker = L.marker([28.25255,83.97669]);
+singleMarker.addTo(map);
+var popup = singleMarker.bindPopup('This is a popup')
+popup.addTo(map);
+
+
+
+var osm = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+});
+osm.addTo(map);
+
+//GEOJSON
+var mapJSON = L.geoJSON(mapJSON,{
+    onEachFeature: function(feature,layer){
+        layer.bindPopup('<b>This is a </b>' + feature.properties.name)
+    },
+    style:{
+        fillColor: 'red',
+        fillOpacity:1,
+        color: 'green'
+    }
+}).addTo(map);
+
+
+
+
+
+// // Google Map Layer
+
+// googleStreets = L.tileLayer('http://{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}',{
+//     maxZoom: 20,
+//     subdomains:['mt0','mt1','mt2','mt3']
+//  });
+//  googleStreets.addTo(map);
+
+//  // Satelite Layer
+// googleSat = L.tileLayer('http://{s}.google.com/vt/lyrs=s&x={x}&y={y}&z={z}',{
+//    maxZoom: 20,
+//    subdomains:['mt0','mt1','mt2','mt3']
+//  });
+// googleSat.addTo(map);
+
+// var Stamen_Watercolor = L.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/watercolor/{z}/{x}/{y}.{ext}', {
+//  attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+// subdomains: 'abcd',
+// minZoom: 1,
+// maxZoom: 16,
+// ext: 'jpg'
+// });
+// Stamen_Watercolor.addTo(map);
+
+
+/*===================================================
+                      LAYER CONTROL               
+===================================================*/
+
+var baseLayers = {
+    // "Satellite":googleSat,
+    // "Google Map":googleStreets,
+    // "Water Color":Stamen_Watercolor,
+    "OpenStreetMap": osm
+};
+
+var overlays = {
+    "Single marker": singleMarker,
+    "MapData":mapJSON,
+};
+
+L.control.layers(baseLayers, overlays).addTo(map);
+
+
+
+
+</script>

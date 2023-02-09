@@ -1,10 +1,10 @@
 //Charge les données de la carte 
 window.onload = function(){
-  let macarte = L.map('carte').setView([48.852969, 2.349903], 13)
+  let macarte = L.map('carte').setView([48.81238540538, 2.3576986328], 10)
   L.tileLayer('https://{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png', {
       attribution: 'données © <a href="//osm.org/copyright">OpenStreetMap</a>/ODbL - rendu <a href="//openstreetmap.fr">OSM France</a>',
       minZoom: 1,
-      maxZoom: 20
+      maxZoom: 20   
   }).addTo(macarte)
   L.Routing.control({
       lineOptions: {
