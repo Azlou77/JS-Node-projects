@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>OpenStreetMap</title>
+        <!--Styles links -->
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin=""/>
+        <link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css" />
+        
+        <!-- CSS -->
+        <style>
+            body{
+                margin:0
+            }
+            #map{
+                height: 100vh;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="map"></div>
+    </body>
+</html>
+
+ <!--Script links -->
+<script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js" integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og==" crossorigin=""></script>
+<script>
+    var mapJSON =
+
+    {
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Isphers",
+        "marker-color": "#ff0000",
+        "marker-size": "medium",
+        "amenity": "Baseball Stadium",
+        "popupContent": "This is where the Rockies play!"
+      },
+      "geometry": {
+        "coordinates": [
+          2.3578,
+          48.8123
+        ],
+        "type": "Point"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Network Systems",
+        "amenity": "companie client",
+        "marker-color": "#ff0000",
+        "marker-size": "medium",
+        "popupContent": "Network Systems"
+      },
+      "geometry": {
+        "coordinates": [
+          2.3371,
+          48.8712
+        ],
+        "type": "Point"
+      }
+    }
+  ]
+}
+      
+</script>
+
+<script>
+    var clientsJSON =
+{
+"type": "FeatureCollection",
+"features": [
+
+{
+    "type": "Feature",
+    "properties": {
+      "name": "ART IMAGES FS",
+      "marker-color": "#0080ff",
+      "marker-size": "medium",
+      "amenity": "companie",
+      "popupContent": "ART IMAGES FS 41 bis Rue du Général Leclerc, 94270 Le Kremlin-Bicêtre, France  "
+    },
+    "geometry": {
+      "coordinates": [
+        2.35850072,
+        48.81274796
+      ],
+      "type": "Point"
+    }
+  },
+  {
+    "type": "Feature",
+    "properties": {
+      "name": "Motoscoot",
+      "marker-color": "#0080ff",
+      "marker-size": "medium",
+      "amenity": "amenity",
+      "popupContent": "amenity"
+    },
+    "geometry": {
+      "coordinates": [
+        2.359499,
+        48.809599
+      ],
+      "type": "Point"
+    }
+  },
+  {
+    "type": "Feature",
+    "properties": {
+      "name ": "ETAPICA",
+      "marker-color": "#0080ff",
+      "marker-size": "medium",
+      "amenity": "companie client",
+      "popupContent": "ETAPICA"
+    },
+    "geometry": {
+      "coordinates": [
+        2.3642893479307645,
+        48.83746238532518
+      ],
+      "type": "Point"
+    }
+  },
+  {
+    "type": "Feature",
+    "properties": {
+      "name": "TIMKL - LE KREMLIN BICETRE",
+      "marker-color": "#0080ff",
+      "marker-size": "medium",
+      "amenity": "companie client",
+      "popupContent": "TIMKL - LE KREMLIN BICETRE"
+    },
+    "geometry": {
+      "coordinates": [
+        2.3569541,
+        48.81275177
+      ],
+      "type": "Point"
+    }
+  },
+  {
+    "type": "Feature",
+    "properties": {
+      "name": "StaffMe",
+      "marker-color": "#0080ff",
+      "marker-size": "medium",
+      "amenity": "companie client",
+      "popupContent": "popupContent"
+    },
+    "geometry": {
+      "coordinates": [
+        2.36073,
+        48.81471
+      ],
+      "type": "Point"
+    }
+  },
+  {
+    "type": "Feature",
+    "properties": {
+      "name": "Residence Roland Garros",
+      "marker-color": "#0080ff",
+      "marker-size": "medium",
+      "amenity": "companie client",
+      "popupContent": "Residence Roland Garros"
+    },
+    "geometry": {
+      "coordinates": [
+        2.358187,
+        48.812435
+      ],
+      "type": "Point"
+    }
+  },
+  {
+    "type": "Feature",
+    "properties": {
+      "name": "AMBULANCE DELATOUR",
+      "marker-color": "#0080ff",
+      "marker-size": "medium",
+      "amenity": "companie client",
+      "popupContent": "AMBULANCE DELATOUR"
+    },
+    "geometry": {
+      "coordinates": [
+        2.3607,
+        48.8147
+      ],
+      "type": "Point"
+    }
+  },
+  {
+    "type": "Feature",
+    "properties": {
+      "name": "Carol Coiffure",
+      "marker-color": "#0080ff",
+      "marker-size": "medium",
+      "amenity": "companie client",
+      "popupContent": "Carol Coiffure"
+    },
+    "geometry": {
+      "coordinates": [
+        2.359371,
+        48.813977
+      ],
+      "type": "Point"
+    }
+  },
+  {
+    "type": "Feature",
+    "properties": {
+      "name": "AEF COMPTABLE",
+      "marker-color": "#0080ff",
+      "marker-size": "medium",
+      "amenity": "companie client",
+      "popupContent": "AEF COMPTABLE"
+    },
+    "geometry": {
+      "coordinates": [
+        2.35626507,
+        48.8121376
+      ],
+      "type": "Point"
+    }
+  },
+  {
+    "type": "Feature",
+    "properties": {
+      "name": "Campanile Paris Sud - Porte d'Italie",
+      "marker-color": "#0080ff",
+      "marker-size": "medium",
+      "amenity": "companie client",
+      "popupContent": "Campanile Paris Sud - Porte d'Italie"
+    },
+    "geometry": {
+      "coordinates": [
+        2.35906839,
+        48.81588745
+      ],
+      "type": "Point"
+    }
+  },
+  {
+    "type": "Feature",
+    "properties": {
+      "name": "CABINET MEDICAL ROLAND GARROS",
+      "marker-color": "#0080ff",
+      "marker-size": "medium",
+      "amenity": "companie client",
+      "popupContent": "CABINET MEDICAL ROLAND GARROS"
+    },
+    "geometry": {
+      "coordinates": [
+        2.357323,
+        48.812425
+      ],
+      "type": "Point"
+    }
+  },
+  {
+    "type": "Feature",
+    "properties": {
+      "name": "Credit Mutuel",
+      "marker-color": "#0080ff",
+      "marker-size": "medium",
+      "amenity": "companie client",
+      "popupContent": "Credit Mutuel"
+    },
+    "geometry": {
+      "coordinates": [
+        2.36230612,
+        48.80958939
+      ],
+      "type": "Point"
+    }
+  }
+]
+}
+</script>
+<script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>
+<script>
+
+
+
+
+
+
+
+// Create map
+var map  = L.map('map').setView([48.852969, 2.349903], 13);
+
+// Single marker
+// var singleMarker = L.marker([28.25255,83.97669]);
+// singleMarker.addTo(map);
+// var popup = singleMarker.bindPopup('This is a popup')
+// popup.addTo(map);
+
+
+
+
+
+var osm = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+});
+osm.addTo(map);
+
+
+
+//GEOJSON
+// Custom icon
+// var markerIcon = L.icon({
+//     iconUrl: 'https://nguyenlouis.fr/wp-content/uploads/2023/02/icons8-location-50.png',
+//     iconSize:     [38,38],
+//     iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
+//     shadowAnchor: [4, 62],  // the same for the shadow
+//     popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+// });
+
+// var mapJSON = L.geoJson(mapJSON, {
+
+// // pointToLayer: function (feature, latlng) {
+// //     return L.marker(latlng, {icon: markerIcon});
+// // },
+
+// // onEachFeature: onEachFeature
+// // }).addTo(map);
+
+
+var mapJSON = L.geoJSON(mapJSON,
+{
+onEachFeature: function(feature,layer){
+        layer.bindPopup('<b>This is a </b>' + feature.properties.name)
+    },
+    style:{
+        fillColor: 'red',
+        fillOpacity:1,
+        color: 'green'
+    }
+}).addTo(map);
+
+var geojsonMarkerOptions = {
+    radius: 8,
+    fillColor: "#ff7800",
+    color: "#000",
+    weight: 1,
+    opacity: 1,
+    fillOpacity: 0.8
+};
+
+var clientsJSON = L.geoJSON(clientsJSON, {
+    pointToLayer: function (feature, latlng) {
+        return L.circleMarker(latlng, geojsonMarkerOptions);
+    }
+}).addTo(map);
+
+
+// var clientsJSON = L.geoJSON(clientsJSON,
+//   {
+// onEachFeature: function(feature,layer){
+//         layer.bindPopup('<b>This is a </b>' + feature.properties.name)
+//     },
+//     style:{
+//         fillColor: 'red',
+//         fillOpacity:1,
+//         color: 'green'
+//     }
+// }).addTo(map);
+
+
+
+
+
+
+
+//Layer control
+var baseLayers = {
+    "OpenStreetMap": osm
+};
+
+var overlays = {
+    "MainData":mapJSON,
+    "ClientsData": clientsJSON,
+};
+
+//Add layer control to the map
+L.control.layers(baseLayers, overlays).addTo(map);
+</script>

@@ -1,12 +1,246 @@
+// [
+// {"type":"header","version":"5.1.1","comment":"Export to JSON plugin for PHPMyAdmin"},
+// {"type":"database","name":"isphers"},
+// {"type":"table","name":"companies","database":"isphers","data":
+// [
+// {"id":"1","nom":"Isphers","lat":"48.81230000","lon":"2.35780000"},
+// {"id":"2","nom":"Oderis","lat":"48.87120000","lon":"2.33710000"},
+// {"id":"3","nom":"Alto  séquanais","lat":"48.83880000","lon":"2.23390000"},
+// {"id":"4","nom":"Initiales ","lat":"2.36180000","lon":"2.36180000"}
+// ]
+// }
+// ]
+/**
+ Export to JSON plugin for PHPMyAdmin
+ @version 4.6.6deb4+deb9u2
+ */
+
+// Database 'isphers174'
+
+// isphers174.carto
 [
-{"type":"header","version":"5.1.1","comment":"Export to JSON plugin for PHPMyAdmin"},
-{"type":"database","name":"isphers"},
-{"type":"table","name":"companies","database":"isphers","data":
-[
-{"id":"1","nom":"Isphers","lat":"48.81230000","lon":"2.35780000"},
-{"id":"2","nom":"Oderis","lat":"48.87120000","lon":"2.33710000"},
-{"id":"3","nom":"Alto  séquanais","lat":"48.83880000","lon":"2.23390000"},
-{"id":"4","nom":"Initiales ","lat":"2.36180000","lon":"2.36180000"}
-]
-}
+    {
+        "id": "1",
+        "ville": null,
+        "categorie": null,
+        "iduserlastmodif": null,
+        "idusersaisie": null,
+        "idsystemstatus": null,
+        "timesaisielastmodif": null,
+        "timesaisie": null,
+        "lat": "99.99999999",
+        "lon": "99.99999999",
+        "title": "test",
+        "adresse": "test"
+    },
+    {
+        "id": "2",
+        "ville": null,
+        "categorie": null,
+        "iduserlastmodif": null,
+        "idusersaisie": "353",
+        "idsystemstatus": "3",
+        "timesaisielastmodif": null,
+        "timesaisie": "2023-02-08 15:26:53",
+        "lat": "0.00000000",
+        "lon": "0.00000000",
+        "title": "",
+        "adresse": ""
+    },
+    {
+        "id": "3",
+        "ville": null,
+        "categorie": null,
+        "iduserlastmodif": null,
+        "idusersaisie": "386",
+        "idsystemstatus": "3",
+        "timesaisielastmodif": null,
+        "timesaisie": "2023-02-08 15:44:23",
+        "lat": "0.00000000",
+        "lon": "0.00000000",
+        "title": "",
+        "adresse": ""
+    },
+    {
+        "id": "4",
+        "ville": "94270",
+        "categorie": null,
+        "iduserlastmodif": null,
+        "idusersaisie": null,
+        "idsystemstatus": null,
+        "timesaisielastmodif": null,
+        "timesaisie": null,
+        "lat": "48.81274796",
+        "lon": "2.35850072",
+        "title": "ART IMAGES FS",
+        "adresse": ""
+    },
+    {
+        "id": "5",
+        "ville": "94270",
+        "categorie": null,
+        "iduserlastmodif": null,
+        "idusersaisie": null,
+        "idsystemstatus": null,
+        "timesaisielastmodif": null,
+        "timesaisie": null,
+        "lat": "48.80959900",
+        "lon": "2.35949900",
+        "title": "Motoscoot",
+        "adresse": ""
+    },
+    {
+        "id": "6",
+        "ville": "94270",
+        "categorie": null,
+        "iduserlastmodif": null,
+        "idusersaisie": null,
+        "idsystemstatus": null,
+        "timesaisielastmodif": null,
+        "timesaisie": null,
+        "lat": "48.81286000",
+        "lon": "2.35411600",
+        "title": "ETAPICA",
+        "adresse": ""
+    },
+    {
+        "id": "7",
+        "ville": "94270",
+        "categorie": null,
+        "iduserlastmodif": null,
+        "idusersaisie": null,
+        "idsystemstatus": null,
+        "timesaisielastmodif": null,
+        "timesaisie": null,
+        "lat": "48.81275177",
+        "lon": "2.35695410",
+        "title": "TIMKL - LE KREMLIN BICETRE",
+        "adresse": ""
+    },
+    {
+        "id": "8",
+        "ville": "94270",
+        "categorie": null,
+        "iduserlastmodif": null,
+        "idusersaisie": null,
+        "idsystemstatus": null,
+        "timesaisielastmodif": null,
+        "timesaisie": null,
+        "lat": "48.81471000",
+        "lon": "2.36073000",
+        "title": "StaffMe",
+        "adresse": ""
+    },
+    {
+        "id": "9",
+        "ville": "94270",
+        "categorie": null,
+        "iduserlastmodif": null,
+        "idusersaisie": null,
+        "idsystemstatus": null,
+        "timesaisielastmodif": null,
+        "timesaisie": null,
+        "lat": "48.81243500",
+        "lon": "2.35818700",
+        "title": "R\u00e9sidence Roland Garros \t",
+        "adresse": ""
+    },
+    {
+        "id": "10",
+        "ville": null,
+        "categorie": null,
+        "iduserlastmodif": null,
+        "idusersaisie": "386",
+        "idsystemstatus": "3",
+        "timesaisielastmodif": null,
+        "timesaisie": "2023-02-08 16:19:03",
+        "lat": "0.00000000",
+        "lon": "0.00000000",
+        "title": "",
+        "adresse": ""
+    },
+    {
+        "id": "11",
+        "ville": "94270",
+        "categorie": null,
+        "iduserlastmodif": null,
+        "idusersaisie": null,
+        "idsystemstatus": null,
+        "timesaisielastmodif": null,
+        "timesaisie": null,
+        "lat": "48.81470000",
+        "lon": "2.36070000",
+        "title": "AMBULANCE DELATOUR",
+        "adresse": ""
+    },
+    {
+        "id": "12",
+        "ville": "94270",
+        "categorie": null,
+        "iduserlastmodif": null,
+        "idusersaisie": null,
+        "idsystemstatus": null,
+        "timesaisielastmodif": null,
+        "timesaisie": null,
+        "lat": "48.81397700",
+        "lon": "2.35937100",
+        "title": "Carol Coiffure \t",
+        "adresse": ""
+    },
+    {
+        "id": "13",
+        "ville": "94270",
+        "categorie": null,
+        "iduserlastmodif": null,
+        "idusersaisie": null,
+        "idsystemstatus": null,
+        "timesaisielastmodif": null,
+        "timesaisie": null,
+        "lat": "48.81213760",
+        "lon": "2.35626507",
+        "title": "AEF COMPTABLE",
+        "adresse": ""
+    },
+    {
+        "id": "14",
+        "ville": "94270",
+        "categorie": null,
+        "iduserlastmodif": null,
+        "idusersaisie": null,
+        "idsystemstatus": null,
+        "timesaisielastmodif": null,
+        "timesaisie": null,
+        "lat": "48.81588745",
+        "lon": "2.35906839",
+        "title": "Campanile Paris Sud - Porte d'Italie",
+        "adresse": ""
+    },
+    {
+        "id": "15",
+        "ville": "94270",
+        "categorie": null,
+        "iduserlastmodif": null,
+        "idusersaisie": null,
+        "idsystemstatus": null,
+        "timesaisielastmodif": null,
+        "timesaisie": null,
+        "lat": "48.81242500",
+        "lon": "2.35732300",
+        "title": "CABINET MEDICAL ROLAND GARROS",
+        "adresse": ""
+    },
+    {
+        "id": "16",
+        "ville": "94270",
+        "categorie": null,
+        "iduserlastmodif": null,
+        "idusersaisie": null,
+        "idsystemstatus": null,
+        "timesaisielastmodif": null,
+        "timesaisie": null,
+        "lat": "48.80958939",
+        "lon": "2.36230612",
+        "title": "Credit Mutuel \t",
+        "adresse": ""
+    }
 ]
