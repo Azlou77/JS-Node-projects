@@ -1,14 +1,46 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Parcel Sandbox</title>
-    <meta charset="UTF-8" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>OpenStreetMap</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin=""/>
+    <link rel="stylesheet" href="src/styles.css" />
+   
   </head>
 
   <body>
-    
-    <div id="map" style="height: 100vh;"></div>
+  <!--Forms location-->
+  <form action="#" method="post">
+    <div>
+      <label for="addresse">Addresse:</label>
+      <input type="text" id="addresse" name="addresse" />
+    </div>
+    <div>
+      <label for="cp">Code postal:</label>
+      <input type="text" id="cp" name="cp" />
+    </div>
+    <div>
+      <label for="ville">Ville:</label>
+      <input type="text" id="ville" name="ville" />
+    </div>
 
-    <script src="src/index.js"></script>
-  </body>
+    <div id="detailsMap"></div>
+      <div>
+        <label for="lat">Latitude:</label>
+        <input type="text" id="lat" name="lat" readonly />
+      </div>
+      <div>
+        <label for="lon">Longitude:</label>
+        <input type="text" id="lon" name="lon"  readonly  />
+      </div>
+  </form>
+ <!-- Fichiers Javascript -->
+ <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js" integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og==" crossorigin=""></script>
+ <script src="src/scripts.js"></script>
+
+</body>
 </html>
+
+
