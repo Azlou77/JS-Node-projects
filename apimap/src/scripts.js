@@ -1,5 +1,5 @@
 //Carte variable
-let map, marker
+let map, marker 
 window.onload = () => {
     //Function to load the map
     map = L.map("detailsMap").setView([48.8566, 2.3522], 13)
@@ -10,6 +10,7 @@ window.onload = () => {
     }).addTo(map)
     //Event  on fucntion click
     map.on("click", mapClick)
+    document.querySelector("#ville").addEventListener("blur", getCity)
 }
 
 //Function onclick
@@ -42,3 +43,30 @@ function addMarker(pos) {
     })
     marker.addTo(map)
 }
+//Function to get the city
+function getCity() {
+   
+    //Get the position of the city
+    let ville = document.querySelector("#ville").value
+    let cp = document.querySelector("#cp").value
+    let adresse = document.querySelector("#adresse").value
+    let villecp = ville + " " + cp + " " + adresse
+    let url = "https://nominatim.openstreetmap.org/search?q=" + villecp + "&format=json&polygon=1&addressdetails=1"
+    fetch(url)
+        .then(response => response.json())
+        .then(data => {
+            if (data.length > 0) {
+                let pos = {
+                    lat: data[0].lat,
+                    lng: data[0].lon
+                    
+                }
+                map.setView(pos, 13)
+                addMarker(pos)
+                document.querySelector("#lat").value = pos.lat
+                document.querySelector("#lon").value = pos.lng
+            }
+        }
+        )
+}
+
