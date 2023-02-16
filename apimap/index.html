@@ -9,9 +9,11 @@
     <link rel="stylesheet" href="src/styles.css" />
    
   </head>
-
   <body>
-  <!--Forms location-->
+    
+  </body>
+
+  
   <form action="#" method="post">
     <div>
       <label for="adresse">Addresse:</label>
@@ -39,7 +41,26 @@
   </form>
  <!-- Fichiers Javascript -->
  <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js" integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og==" crossorigin=""></script>
- <script src="src/scripts.js"></script>
+ <script src="src/scripts.js">
+    fetch("https://gbfs.urbansharing.com/oslobysykkel.no/station_information.json")
+    .then((response) => response.json())
+    .then((responseData) => {
+      console.log(responseData.data);
+      const stations = responseData.data.stations;
+  
+      const layerGroup = L.featureGroup().addTo(map);
+  
+      stations.forEach(({ lat, lon, name, address }) => {
+        layerGroup.addLayer(
+          L.marker([lat, lon], { icon }).bindPopup(
+            `Name: ${name}, Address: ${address}`
+          )
+        );
+      });
+  
+      map.fitBounds(layerGroup.getBounds());
+    });
+ </script>
 
 </body>
 </html>
