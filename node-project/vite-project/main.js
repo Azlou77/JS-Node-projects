@@ -1,23 +1,25 @@
-import './style.css'
-import javascriptLogo from './javascript.svg'
-import { setupCounter } from './counter.js'
+  import ListOfPost from './src/pages/ListOfPost'
+  import ListOfUser from './src/pages/ListOfUser'
+  import TabManager from './src/utils/TabManager'
 
-document.querySelector('#app').innerHTML = `
-  <div>
-    <a href="https://vitejs.dev" target="_blank">
-      <img src="/vite.svg" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank">
-      <img src="${javascriptLogo}" class="logo vanilla" alt="JavaScript logo" />
-    </a>
-    <h1>Hello Vite!</h1>
-    <div class="card">
-      <button id="counter" type="button"></button>
-    </div>
-    <p class="read-the-docs">
-      Click on the Vite logo to learn more
-    </p>
-  </div>
-`
+  const rootElement = document.querySelector('#app')
 
-setupCounter(document.querySelector('#counter'))
+  const tabManager = new TabManager(rootElement, {
+    page1: {
+      component: ListOfUser,
+      params: [1, 'hello']
+    },
+    page2: {
+      component: ListOfUser,
+      params: [1, 'hello']
+    }
+  })
+
+
+  document.querySelectorAll('[data-tabId]').forEach(element => {
+    element.addEventListener('click', () => {
+      tabManager.openTabById(element.getAttribute('data-tabId'))
+    })
+  })
+
+  tabManager.openTabById('page1')
