@@ -1,4 +1,5 @@
-var mapJSON = {
+var mapJSON =
+ {
   "type": "FeatureCollection",
   "features": [
     {
@@ -200,7 +201,7 @@ var mapJSON = {
     {
       "type": "Feature",
       "properties": {
-       "name": "Credit mutuel",
+        "name": "Credit mutuel",
         "addresse": "93, avenue de Fontainebleu",
         "marker-color": "#7e7e7e",
         "marker-size": "medium"
