@@ -608,10 +608,624 @@ var parisJSON =
               ],
               "type": "Point"
             }
+          },
+          {
+            "type": "Feature",
+            "properties": {
+              "name": "MENAGER&HUG",
+              "addresse": "31 Rue de Tournon, 75006 Paris",
+              "marker-color": "#7e7e7e",
+              "marker-size": "medium"
+            },
+            "geometry": {
+              "coordinates": [
+                2.3372063636779785,
+                48.85038757324219
+              ],
+              "type": "Point"
+            }
+          },
+          {
+            "type": "Feature",
+            "properties": {
+              "name": "NIDO",
+              "addresse": "40 Rue Louis Blanc 75010",
+              "marker-color": "#7e7e7e",
+              "marker-size": "medium"
+            },
+            "geometry": {
+              "coordinates": [
+                2.3643406,
+                48.8817129
+              ],
+              "type": "Point"
+            }
+          },
+          {
+            "type": "Feature",
+            "properties": {
+              "name": "COURCELLES CONSEIL",
+              "addresse": "11 bis Rue de Milan, 75009 Paris",
+              "marker-color": "#7e7e7e",
+              "marker-size": "medium"
+            },
+            "geometry": {
+              "coordinates": [
+                2.3270543,
+                48.8787307
+              ],
+              "type": "Point"
+            }
+          },
+          {
+            "type": "Feature",
+            "properties": {
+              "name": "Intego",
+              "addresse": "41 Rue Condorcet, 75009 Paris, France",
+              "marker-color": "#7e7e7e",
+              "marker-size": "medium"
+            },
+            "geometry": {
+              "coordinates": [
+                2.3445122241973877,
+                48.8800163269043
+              ],
+              "type": "Point"
+            }
+          },
+          {
+            "type": "Feature",
+            "properties": {
+              "name": "PRO COMM",
+              "addresse": "125 Ave Parmentier, 75011 Paris",
+              "marker-color": "#7e7e7e",
+              "marker-size": "medium"
+            },
+            "geometry": {
+              "coordinates": [
+                2.3795,
+                48.8574
+              ],
+              "type": "Point"
+            }
+          },
+          {
+            "type": "Feature",
+            "properties": {
+              "name": "POLYFOR",
+              "addresse": "27 RUE DES BELLES FEUILLES  75016 PARIS",
+              "marker-color": "#7e7e7e",
+              "marker-size": "medium"
+            },
+            "geometry": {
+              "coordinates": [
+                2.2819536,
+                48.8668407
+              ],
+              "type": "Point"
+            }
+          },
+          {
+            "type": "Feature",
+            "properties": {
+              "name": "EOLE-RES",
+              "addresse": "29 avenue des Champs Elysées 75008 Paris",
+              "marker-color": "#7e7e7e",
+              "marker-size": "medium"
+            },
+            "geometry": {
+              "coordinates": [
+                2.3073151,
+                48.8695235
+              ],
+              "type": "Point"
+            }
+          },
+          {
+            "type": "Feature",
+            "properties": {
+              "name": " PGI",
+              "addresse": "28 RUE DE LONDRES 75009 PARIS",
+              "marker-color": "#7e7e7e",
+              "marker-size": "medium"
+            },
+            "geometry": {
+              "coordinates": [
+                2.3281175,
+                48.877565
+              ],
+              "type": "Point"
+            }
+          },
+          {
+            "type": "Feature",
+            "properties": {
+              "name": "888 System's",
+              "addresse": "180 rue de Charenton 75012 Paris",
+              "marker-color": "#7e7e7e",
+              "marker-size": "medium"
+            },
+            "geometry": {
+              "coordinates": [
+                2.3844682,
+                48.8438504
+              ],
+              "type": "Point"
+            }
+          },
+          {
+            "type": "Feature",
+            "properties": {
+              "name": "LUNE BLEUE",
+              "addresse": "10 RUE DES PETITES ECURIES  75010 PARIS",
+              "marker-color": "#7e7e7e",
+              "marker-size": "medium"
+            },
+            "geometry": {
+              "coordinates": [
+                2.3533229,
+                48.8732122
+              ],
+              "type": "Point"
+            }
+          },
+          {
+            "type": "Feature",
+            "properties": {
+              "name": "Oberkampf TRANSOPERA",
+              "addresse": "93 Boulevard Voltaire 75011 Paris",
+              "marker-color": "#7e7e7e",
+              "marker-size": "medium"
+            },
+            "geometry": {
+              "coordinates": [
+                2.3775612,
+                48.8595078
+              ],
+              "type": "Point"
+            }
+          },
+          {
+            "type": "Feature",
+            "properties": {
+              "name": "GESTEAM",
+              "addresse": "2 Rue de Paradis 75010 Paris",
+              "marker-color": "#7e7e7e",
+              "marker-size": "medium"
+            },
+            "geometry": {
+              "coordinates": [
+                2.3550822,
+                48.874513
+              ],
+              "type": "Point"
+            }
+          },
+          {
+            "type": "Feature",
+            "properties": {
+              "name": "O2I",
+              "addresse": "49 RUE FALGUIERE 75015 PARIS",
+              "marker-color": "#7e7e7e",
+              "marker-size": "medium"
+            },
+            "geometry": {
+              "coordinates": [
+                2.3145211,
+                48.8417506
+              ],
+              "type": "Point"
+            }
+          },
+          {
+            "type": "Feature",
+            "properties": {
+              "name": "AUTRE CHOSE",
+              "addresse": "43 RUE D'ABOUKIR 75002 PARIS",
+              "marker-color": "#7e7e7e",
+              "marker-size": "medium"
+            },
+            "geometry": {
+              "coordinates": [
+                2.3451007,
+                48.8672258
+              ],
+              "type": "Point"
+            }
+          },
+          {
+            "type": "Feature",
+            "properties": {
+              "name": "AUTRE CHOSE",
+              "addresse": "43 RUE D'ABOUKIR 75002 PARIS",
+              "marker-color": "#7e7e7e",
+              "marker-size": "medium"
+            },
+            "geometry": {
+              "coordinates": [
+                2.3451007,
+                48.8672258
+              ],
+              "type": "Point"
+            }
+          },  {
+            "type": "Feature",
+            "properties": {
+              "name": "AUTRE CHOSE",
+              "addresse": "43 RUE D'ABOUKIR 75002 PARIS",
+              "marker-color": "#7e7e7e",
+              "marker-size": "medium"
+            },
+            "geometry": {
+              "coordinates": [
+                2.3451007,
+                48.8672258
+              ],
+              "type": "Point"
+            }
+          },  {
+            "type": "Feature",
+            "properties": {
+              "name": "AUTRE CHOSE",
+              "addresse": "43 RUE D'ABOUKIR 75002 PARIS",
+              "marker-color": "#7e7e7e",
+              "marker-size": "medium"
+            },
+            "geometry": {
+              "coordinates": [
+                2.3451007,
+                48.8672258
+              ],
+              "type": "Point"
+            }
+          },  {
+            "type": "Feature",
+            "properties": {
+              "name": "DISTRICT 8ème Trémoille - George V",
+              "addresse": "9 rue de la Trémoille 75008 Paris",
+              "marker-color": "#7e7e7e",
+              "marker-size": "medium"
+            },
+            "geometry": {
+              "coordinates": [
+                2.302885,
+                48.8670745
+              ],
+              "type": "Point"
+            }
+          },
+          {
+            "type": "Feature",
+            "properties": {
+              "name": "ESMODPARIS ",
+              "addresse": "12 Rue Catherine de La Rochefoucauld, 75009 Paris",
+              "marker-color": "#7e7e7e",
+              "marker-size": "medium"
+            },
+            "geometry": {
+              "coordinates": [
+                2.3343706,
+                48.8777777
+              ],
+              "type": "Point"
+            }
+          },  {
+            "type": "Feature",
+            "properties": {
+              "name": "ALLIES ASSOCIATION",
+              "addresse": "",
+              "marker-color": "#7e7e7e",
+              "marker-size": "medium"
+            },
+            "geometry": {
+              "coordinates": [
+                2.334429,
+                48.8773676
+              ],
+              "type": "Point"
+            }
+          },  {
+            "type": "Feature",
+            "properties": {
+              "name": "MC DEVELOPPEMENT",
+              "addresse": "25 Rue Bosquet, 75007 Paris",
+              "marker-color": "#7e7e7e",
+              "marker-size": "medium"
+            },
+            "geometry": {
+              "coordinates": [
+                2.3057189,
+                48.8558559
+              ],
+              "type": "Point"
+            }
+          },  {
+            "type": "Feature",
+            "properties": {
+              "name": "EDITIONS ENOCH",
+              "addresse": "193, boulevard Pereire 75017 Paris",
+              "marker-color": "#7e7e7e",
+              "marker-size": "medium"
+            },
+            "geometry": {
+              "coordinates": [
+                2.2916219,
+                48.8816762
+              ],
+              "type": "Point"
+            }
+          },  {
+            "type": "Feature",
+            "properties": {
+              "name": "Fuxia Yodes",
+              "addresse": "42, place du Marché Saint Honoré 75001 Paris",
+              "marker-color": "#7e7e7e",
+              "marker-size": "medium"
+            },
+            "geometry": {
+              "coordinates": [
+                2.332319,
+                48.8674945
+              ],
+              "type": "Point"
+            }
+          },  {
+            "type": "Feature",
+            "properties": {
+              "name": "SATELLITE PARIS",
+              "addresse": "29 passage Dubail 75010 PARIS",
+              "marker-color": "#7e7e7e",
+              "marker-size": "medium"
+            },
+            "geometry": {
+              "coordinates": [
+                2.3603791,
+                48.8735408
+              ],
+              "type": "Point"
+            }
+          },  {
+            "type": "Feature",
+            "properties": {
+              "name": "ALTEA CAPITAL",
+              "addresse": "4 Rue du General Lanrezac  75017 Paris",
+              "marker-color": "#7e7e7e",
+              "marker-size": "medium"
+            },
+            "geometry": {
+              "coordinates": [
+                2.2937563,
+                48.8758997
+              ],
+              "type": "Point"
+            }
+          },  {
+            "type": "Feature",
+            "properties": {
+              "name": " GROUPE CARLIN INTERNATIONAL",
+              "addresse": "79 rue Miromesnil 75008 Paris",
+              "marker-color": "#7e7e7e",
+              "marker-size": "medium"
+            },
+            "geometry": {
+              "coordinates": [
+                2.31551,
+                48.8778997
+              ],
+              "type": "Point"
+            }
+          },  {
+            "type": "Feature",
+            "properties": {
+              "name": " Société Malesherbe Gestion SGM",
+              "addresse": "33 Av. de l'Opéra, 75002 Paris",
+              "marker-color": "#7e7e7e",
+              "marker-size": "medium"
+            },
+            "geometry": {
+              "coordinates": [
+                2.3332479,
+                48.8678431
+              ],
+              "type": "Point"
+            }
+          },  {
+            "type": "Feature",
+            "properties": {
+              "name": "Groupe ELLI",
+              "addresse": "52 passage Choiseul 75002 Paris",
+              "marker-color": "#7e7e7e",
+              "marker-size": "medium"
+            },
+            "geometry": {
+              "coordinates": [
+                2.3355751,
+                48.8680491
+              ],
+              "type": "Point"
+            }
+          },  {
+            "type": "Feature",
+            "properties": {
+              "name": "Boisnard Opéra",
+              "addresse": "82 passage Choiseul 75002 Paris",
+              "marker-color": "#7e7e7e",
+              "marker-size": "medium"
+            },
+            "geometry": {
+              "coordinates": [
+                2.3358638,
+                48.8686101
+              ],
+              "type": "Point"
+            }
+          },  {
+            "type": "Feature",
+            "properties": {
+              "name": "HOME RENTAL",
+              "addresse": "120 Av. des Champs-Élysées, 75008 Paris",
+              "marker-color": "#7e7e7e",
+              "marker-size": "medium"
+            },
+            "geometry": {
+              "coordinates": [
+                2.3003727,
+                48.8724351
+              ],
+              "type": "Point"
+            }
+          },  {
+            "type": "Feature",
+            "properties": {
+              "name": " Financière Cambon",
+              "addresse": "28 Bd Malesherbes 75008 Paris",
+              "marker-color": "#7e7e7e",
+              "marker-size": "medium"
+            },
+            "geometry": {
+              "coordinates": [
+                2.3212516,
+                48.8732479
+              ],
+              "type": "Point"
+            }
+          },  {
+            "type": "Feature",
+            "properties": {
+              "name": "AMBRILLE PARIS BRIALFA",
+              "addresse": "47 Rue de Domrémy, 75013 Paris",
+              "marker-color": "#7e7e7e",
+              "marker-size": "medium"
+            },
+            "geometry": {
+              "coordinates": [
+                2.3704409,
+                48.8288729
+              ],
+              "type": "Point"
+            }
+          },  {
+            "type": "Feature",
+            "properties": {
+              "name": "TELEC",
+              "addresse": "88 avenue des Ternes 75017 Paris",
+              "marker-color": "#7e7e7e",
+              "marker-size": "medium"
+            },
+            "geometry": {
+              "coordinates": [
+                2.2874476,
+                48.880376
+              ],
+              "type": "Point"
+            }
+          },  {
+            "type": "Feature",
+            "properties": {
+              "name": "DJG CONSULTING",
+              "addresse": "22 rue Alphonse de Neuville 75017 Paris",
+              "marker-color": "#7e7e7e",
+              "marker-size": "medium"
+            },
+            "geometry": {
+              "coordinates": [
+                2.3018948,
+                48.8864599
+              ],
+              "type": "Point"
+            }
+          },  {
+            "type": "Feature",
+            "properties": {
+              "name": "FUXIA YANIS",
+              "addresse": "25, rue des Martyrs 75009 Paris",
+              "marker-color": "#7e7e7e",
+              "marker-size": "medium"
+            },
+            "geometry": {
+              "coordinates": [
+                2.3399425,
+                48.8813264
+              ],
+              "type": "Point"
+            }
+          },  {
+            "type": "Feature",
+            "properties": {
+              "name": "AZHAR (TRANSOPERA)",
+              "addresse": "93 boulevard Voltaire 75011 Paris",
+              "marker-color": "#7e7e7e",
+              "marker-size": "medium"
+            },
+            "geometry": {
+              "coordinates": [
+                2.3775612,
+                48.8595078
+              ],
+              "type": "Point"
+            }
+          },  {
+            "type": "Feature",
+            "properties": {
+              "name": "CABINET SABBAH MARTIN BUSSON",
+              "addresse": "14 rue Vivienne 75002 Paris",
+              "marker-color": "#7e7e7e",
+              "marker-size": "medium"
+            },
+            "geometry": {
+              "coordinates": [
+                2.3395095,
+                48.8677421
+              ],
+              "type": "Point"
+            }
+          },  {
+            "type": "Feature",
+            "properties": {
+              "name": "M2C",
+              "addresse": "18 rue André Suarès 75018 Paris",
+              "marker-color": "#7e7e7e",
+              "marker-size": "medium"
+            },
+            "geometry": {
+              "coordinates": [
+                2.3118187,
+                48.8948102
+              ],
+              "type": "Point"
+            }
+          },  {
+            "type": "Feature",
+            "properties": {
+              "name": "Exclusives demeures",
+              "addresse": "42 rue de BELLECHASS 75007 PARIS",
+              "marker-color": "#7e7e7e",
+              "marker-size": "medium"
+            },
+            "geometry": {
+              "coordinates": [
+                2.3221744,
+                48.8576098
+              ],
+              "type": "Point"
+            }
+          },
+          {
+            "type": "Feature",
+            "properties": {
+              "name": "Atmosphère Architecture",
+              "addresse": "15 rue Pernety 75014 Paris",
+              "marker-color": "#7e7e7e",
+              "marker-size": "medium"
+            },
+            "geometry": {
+              "coordinates": [
+                2.3198849,
+                48.8328036
+              ],
+              "type": "Point"
+            }
           }
         ]
-        }
-        
-      
-      
-          
+      }
+    
