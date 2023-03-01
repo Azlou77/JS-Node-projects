@@ -86,22 +86,7 @@ var nearJSON =
         "type": "Point"
       }
     },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Résidence Roland Garros",
-        "marker-color": "#7e7e7e",
-        "marker-size": "medium",
-        "addresse": "\t52 rue du Général Leclerc"
-      },
-      "geometry": {
-        "coordinates": [
-          2.358187,
-          48.812435
-        ],
-        "type": "Point"
-      }
-    },
+   
     {
       "type": "Feature",
       "properties": {

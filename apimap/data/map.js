@@ -8,10 +8,8 @@ var mapJSON =
         "properties": {
           "name": "Isphers",
           "addresse ": "52 Rue du Général Leclerc, 94270 Le Kremlin-Bicêtre",
-          "color": "",
+          "marker-color": "#7e7e7e",
           "marker-size": "medium",
-          "amenity": "Baseball Stadium",
-          "popupContent": "This is where the Rockies play!"
         },
         "geometry": {
           "coordinates": [
@@ -36,7 +34,7 @@ var mapJSON =
           ],
           "type": "Point"
         }
-        },
+      }
     ]
 }
     
