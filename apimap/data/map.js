@@ -7,7 +7,7 @@ var mapJSON =
         "type": "Feature",
         "properties": {
           "name": "Isphers",
-          "addresse ": "52 Rue du Général Leclerc, 94270 Le Kremlin-Bicêtre",
+          "addresse": "52 Rue du Général Leclerc, 94270 Le Kremlin-Bicêtre",
           "marker-color": "#7e7e7e",
           "marker-size": "medium",
         },

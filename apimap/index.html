@@ -31,7 +31,7 @@
         <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js" integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew==" crossorigin=""></script>
         <script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>
         <script src="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.js"></script>
-        <script src="./data/map.js"></script>
+        <!-- <script src="./data/map.js"></script> -->
         <script src="./data/near.js"></script>
         <script src="./data/paris.js"></script>
         <script src="./data/city92.js"></script>
@@ -41,7 +41,6 @@
 
         
 <script>
-
     // Create the map
     var map  = L.map('map').setView([48.852969, 2.349903], 13);
     
@@ -49,29 +48,12 @@
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     });
     osm.addTo(map);
+
+    var companie1 = L.marker([48.81471,2.357485]).bindPopup('<b>Nom: </b> Isphers<br><b>Addresse: </b> 52 Rue du Général Leclerc, 94270 Le Kremlin-Bicêtre').addTo(map),
+        companie2 = L.marker([48.812435,2.358187]).bindPopup('<b>Nom: </b>Network Systems<br><b>Addresse: </b> 38 Rue de la Convention, 94270 Le Kremlin-Bicêtre').addTo(map);
     
-    
-    
-    
-    
-    var geojsonMarkerOptions0 = {
-        radius: 8,
-        fillColor: "blue",
-        color: "#000",
-        weight: 1,
-        opacity: 1,
-        fillOpacity: 0.8
-    };
-    
-    var mapdata= L.geoJSON(mapJSON, {
-        pointToLayer: function (feature, latlng) {
-            return L.circleMarker(latlng, geojsonMarkerOptions0);
-        },
-        onEachFeature: function(feature,layer){
-        layer.bindPopup('<b>This is a </b>' + feature.properties.name)
-        }
-    
-    }).addTo(map);
+
+    var mapdata = L.layerGroup([companie1, companie2]).addTo(map);
     
     
     var geojsonMarkerOptions1 = {
@@ -88,7 +70,7 @@
             return L.circleMarker(latlng, geojsonMarkerOptions1);
         },
         onEachFeature: function(feature,layer){
-        layer.bindPopup('<b>This is a </b>' + feature.properties.name)
+       layer.bindPopup( '<b>Nom: </b>' + feature.properties.name + '<br><b>Adresse: </b>' + feature.properties.addresse)
         }
     
     }).addTo(map);
@@ -108,7 +90,7 @@
             return L.circleMarker(latlng, geojsonMarkerOptions);
         },
         onEachFeature: function(feature,layer){
-        layer.bindPopup('<b>This is a </b>' + feature.properties.name)
+       layer.bindPopup( '<b>Nom: </b>' + feature.properties.name + '<br><b>Adresse: </b>' + feature.properties.addresse)
         }
     
     }).addTo(map);
@@ -127,7 +109,7 @@
             return L.circleMarker(latlng, geojsonMarkerOptions2);
         },
         onEachFeature: function(feature,layer){
-        layer.bindPopup('<b>This is a </b>' + feature.properties.name)
+       layer.bindPopup( '<b>Nom: </b>' + feature.properties.name + '<br><b>Adresse: </b>' + feature.properties.addresse)
         }
     }).addTo(map); 
     
@@ -145,13 +127,13 @@
             return L.circleMarker(latlng, geojsonMarkerOptions3);
         },
         onEachFeature: function(feature,layer){
-        layer.bindPopup('<b>This is a </b>' + feature.properties.name)
+       layer.bindPopup( '<b>Nom: </b>' + feature.properties.name + '<br><b>Adresse: </b>' + feature.properties.addresse)
         }
     }).addTo(map); 
     
     var geojsonMarkerOptions4 = {
         radius: 8,
-        fillColor: "yellow",
+        fillColor: "yellow",    
         color: "#000",
         weight: 1,
         opacity: 1,
@@ -163,7 +145,7 @@
             return L.circleMarker(latlng, geojsonMarkerOptions4);
         },
         onEachFeature: function(feature,layer){
-        layer.bindPopup('<b>This is a </b>' + feature.properties.name)
+       layer.bindPopup( '<b>Nom: </b>' + feature.properties.name + '<br><b>Adresse: </b>' + feature.properties.addresse)
         }
     }).addTo(map);
     
