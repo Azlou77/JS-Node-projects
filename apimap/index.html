@@ -50,7 +50,7 @@
     osm.addTo(map);
 
     var companie1 = L.marker([48.81471,2.357485]).bindPopup('<b>Nom: </b> Isphers<br><b>Addresse: </b> 52 Rue du Général Leclerc, 94270 Le Kremlin-Bicêtre').addTo(map),
-        companie2 = L.marker([48.812435,2.358187]).bindPopup('<b>Nom: </b>Network Systems<br><b>Addresse: </b> 38 Rue de la Convention, 94270 Le Kremlin-Bicêtre').addTo(map);
+        companie2 = L.marker([48.812435,2.358187]).bindPopup('<b>Nom: </b> Isphers<br><b>Addresse: </b> 38 Rue de la Convention, 94270 Le Kremlin-Bicêtre').addTo(map);
     
 
     var mapdata = L.layerGroup([companie1, companie2]).addTo(map);
@@ -157,12 +157,12 @@
     
     //Layer Group
     var overlays = {
-        "Entreprise":mapdata,
-        "Proche de l'entreprise":neardata,
-        "Paris(75)":parisdata,
-        "Hauts-de-Seine(92)": city92data,
-        "Seine-Saint-Denis(93)": city93data,
-        "Val-de-Marne(94)": city94data
+        "Entreprise ":mapdata,
+        "Proche de l'entreprise 🟣":neardata,
+        "Paris(75) 🟠":parisdata,
+        "Hauts-de-Seine(92)  🔴": city92data,
+        "Seine-Saint-Denis(93) 🟢": city93data,
+        "Val-de-Marne(94) 🟡": city94data
     };
     L.control.layers(baseLayers, overlays).addTo(map);
     
