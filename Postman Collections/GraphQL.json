@@ -76,11 +76,6 @@
 			"name": "GRAPH mehtod",
 			"item": [
 				{
-					"name": "New Folder",
-					"item": [],
-					"id": "3e6d92d5-ac0a-4731-8395-c133b6bc64af"
-				},
-				{
 					"name": "Hello world",
 					"id": "2e5777e0-8e1c-49f5-ad77-7099dabf5f2f",
 					"protocolProfileBehavior": {
@@ -267,12 +262,12 @@
 	],
 	"variable": [
 		{
-			"id": "2fd4e23f-5c30-400f-903f-fda9a8716024",
+			"id": "3e324195-2229-4670-ab09-2c9dff07e335",
 			"key": "owner",
 			"value": "Azlou77"
 		},
 		{
-			"id": "23b770f8-c272-4650-81a8-24c18e3a585b",
+			"id": "72005bd8-1f37-4a17-b767-0f1d944908a1",
 			"key": "repo",
 			"value": "graphql",
 			"type": "string"
