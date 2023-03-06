@@ -83,13 +83,9 @@
 					},
 					"request": {
 						"auth": {
-							"type": "oauth1",
-							"oauth1": {
-								"tokenSecret": "7342a795-d69b-4785-a87c-79c4fe23ae76",
-								"signatureMethod": "HMAC-SHA1",
-								"version": "1.0",
-								"addParamsToHeader": false,
-								"addEmptyParamsToSign": false
+							"type": "bearer",
+							"bearer": {
+								"token": "7342a795-d69b-4785-a87c-79c4fe23ae76"
 							}
 						},
 						"method": "GET",
@@ -266,12 +262,12 @@
 	],
 	"variable": [
 		{
-			"id": "092348a0-60c3-4fa1-a162-658910740b6d",
+			"id": "d5025bf4-08f1-4270-a5dc-b89f1dc7abee",
 			"key": "owner",
 			"value": "Azlou77"
 		},
 		{
-			"id": "0c3bbb1d-364e-44de-b587-8261c677184f",
+			"id": "b893fdf3-a250-4274-945b-6379feeb7458",
 			"key": "repo",
 			"value": "graphql",
 			"type": "string"
