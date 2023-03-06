@@ -256,12 +256,12 @@
 	],
 	"variable": [
 		{
-			"id": "47bb8b2a-3ad8-42d9-9aa8-dd333d358c56",
+			"id": "1232c0a8-f55e-4c28-8d18-25be79947d21",
 			"key": "owner",
 			"value": "Azlou77"
 		},
 		{
-			"id": "99c6815a-fefd-4d41-a61e-9de01f8a205b",
+			"id": "9123bd88-3d69-4e1b-a086-d3949f95f3ed",
 			"key": "repo",
 			"value": "graphql",
 			"type": "string"
