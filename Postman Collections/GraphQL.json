@@ -83,7 +83,14 @@
 					},
 					"request": {
 						"auth": {
-							"type": "noauth"
+							"type": "oauth1",
+							"oauth1": {
+								"tokenSecret": "7342a795-d69b-4785-a87c-79c4fe23ae76",
+								"signatureMethod": "HMAC-SHA1",
+								"version": "1.0",
+								"addParamsToHeader": false,
+								"addEmptyParamsToSign": false
+							}
 						},
 						"method": "GET",
 						"header": [
@@ -94,8 +101,8 @@
 							}
 						],
 						"body": {
-							"mode": "formdata",
-							"formdata": []
+							"mode": "raw",
+							"raw": ""
 						},
 						"url": "https://graph.microsoft.com/v1.0/me/"
 					},
@@ -259,12 +266,12 @@
 	],
 	"variable": [
 		{
-			"id": "c74565b0-0dee-428e-ae6a-dcfaa842f623",
+			"id": "092348a0-60c3-4fa1-a162-658910740b6d",
 			"key": "owner",
 			"value": "Azlou77"
 		},
 		{
-			"id": "063af219-a500-406d-b9c7-50bd00b789f3",
+			"id": "0c3bbb1d-364e-44de-b587-8261c677184f",
 			"key": "repo",
 			"value": "graphql",
 			"type": "string"
