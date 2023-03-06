@@ -109,9 +109,12 @@
 					},
 					"request": {
 						"auth": {
-							"type": "bearer",
-							"bearer": {
-								"token": "9e2929c4-6bd9-4079-ac7b-66306567abcb"
+							"type": "oauth1",
+							"oauth1": {
+								"signatureMethod": "HMAC-SHA1",
+								"version": "1.0",
+								"addParamsToHeader": false,
+								"addEmptyParamsToSign": false
 							}
 						},
 						"method": "POST",
@@ -125,7 +128,7 @@
 								}
 							}
 						},
-						"url": "https://graph.microsoft.com/v1.0/me"
+						"url": "https://graph.microsoft.com/v1.0/users/83ea6f3f-8583-4902-9e86-9dc8579b09c5"
 					},
 					"response": []
 				}
@@ -256,12 +259,12 @@
 	],
 	"variable": [
 		{
-			"id": "1232c0a8-f55e-4c28-8d18-25be79947d21",
+			"id": "c74565b0-0dee-428e-ae6a-dcfaa842f623",
 			"key": "owner",
 			"value": "Azlou77"
 		},
 		{
-			"id": "9123bd88-3d69-4e1b-a086-d3949f95f3ed",
+			"id": "063af219-a500-406d-b9c7-50bd00b789f3",
 			"key": "repo",
 			"value": "graphql",
 			"type": "string"
