@@ -83,9 +83,14 @@
 					},
 					"request": {
 						"auth": {
-							"type": "bearer",
-							"bearer": {
-								"token": "7342a795-d69b-4785-a87c-79c4fe23ae76"
+							"type": "oauth1",
+							"oauth1": {
+								"tokenSecret": "",
+								"token": "7342a795-d69b-4785-a87c-79c4fe23ae76",
+								"signatureMethod": "HMAC-SHA1",
+								"version": "1.0",
+								"addParamsToHeader": false,
+								"addEmptyParamsToSign": false
 							}
 						},
 						"method": "GET",
@@ -100,7 +105,7 @@
 							"mode": "raw",
 							"raw": ""
 						},
-						"url": "https://graph.microsoft.com/v1.0/me/83ea6f3f-8583-4902-9e86-9dc8579b09c5"
+						"url": "https://graph.microsoft.com/v1.0/me/"
 					},
 					"response": []
 				},
@@ -262,12 +267,12 @@
 	],
 	"variable": [
 		{
-			"id": "3e324195-2229-4670-ab09-2c9dff07e335",
+			"id": "4c058265-de90-46d1-b754-7c8499536a50",
 			"key": "owner",
 			"value": "Azlou77"
 		},
 		{
-			"id": "72005bd8-1f37-4a17-b767-0f1d944908a1",
+			"id": "40961d02-bbb5-41c1-b6b9-43360cd2d138",
 			"key": "repo",
 			"value": "graphql",
 			"type": "string"
