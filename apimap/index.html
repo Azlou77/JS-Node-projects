@@ -10,6 +10,7 @@
         <link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css" />
         <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.css" />
         <link rel="stylesheet" href="css/styles.css">
+        <script src="https://kit.fontawesome.com/43ce894e6d.js" crossorigin="anonymous"></script>
 
         <!--Leaflet routing machine css-->
         <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.css" />
@@ -56,38 +57,40 @@
     var mapdata = L.layerGroup([companie1, companie2]).addTo(map);
     
     
-    var geojsonMarkerOptions1 = {
-        radius: 8,
-        fillColor: "purple",
-        color: "#000",
-        weight: 1,
-        opacity: 1,
-        fillOpacity: 0.8
-    };
+    var purplemarker = L.icon({
+    iconUrl: 'https://nguyenlouis.fr/wp-content/uploads/2023/03/map-mark.png',
+    iconSize:     [38, 38], // size of the icon
+    shadowSize:   [50, 64], // size of the shadow
+    iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
+    shadowAnchor: [4, 62],  // the same for the shadow
+    popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+});
     
     var neardata= L.geoJSON(nearJSON, {
         pointToLayer: function (feature, latlng) {
-            return L.circleMarker(latlng, geojsonMarkerOptions1);
+            return L.marker(latlng, {icon: purplemarker});
         },
         onEachFeature: function(feature,layer){
        layer.bindPopup( '<b>Nom: </b>' + feature.properties.name + '<br><b>Adresse: </b>' + feature.properties.addresse)
+      
+    .addTo(map)
         }
+    });
     
-    }).addTo(map);
     
     
-    var geojsonMarkerOptions = {
-        radius: 8,
-        fillColor: "#ff7800",
-        color: "#000",
-        weight: 1,
-        opacity: 1,
-        fillOpacity: 0.8
-    };
+    var orangemarker = L.icon({
+    iconUrl: 'https://nguyenlouis.fr/wp-content/uploads/2023/03/map-mark-1-1.png',
+    iconSize:     [38, 38], // size of the icon
+    shadowSize:   [50, 64], // size of the shadow
+    iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
+    shadowAnchor: [4, 62],  // the same for the shadow
+    popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+});
     
     var parisdata= L.geoJSON(parisJSON, {
         pointToLayer: function (feature, latlng) {
-            return L.circleMarker(latlng, geojsonMarkerOptions);
+            return L.marker(latlng, {icon: orangemarker});
         },
         onEachFeature: function(feature,layer){
        layer.bindPopup( '<b>Nom: </b>' + feature.properties.name + '<br><b>Adresse: </b>' + feature.properties.addresse)
@@ -95,54 +98,55 @@
     
     }).addTo(map);
     
-    var geojsonMarkerOptions2 = {
-        radius: 8,
-        fillColor: "#FF0000",
-        color: "#000",
-        weight: 1,
-        opacity: 1,
-        fillOpacity: 0.8
-    };
+     
+    var redmarker = L.icon({
+    iconUrl: 'https://nguyenlouis.fr/wp-content/uploads/2023/03/map-mark-4.png',
+    iconSize:     [38, 38], // size of the icon
+    shadowSize:   [50, 64], // size of the shadow
+    iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
+    shadowAnchor: [4, 62],  // the same for the shadow
+    popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+    });
     
      var city92data = L.geoJSON(city92JSON, {
         pointToLayer: function (feature, latlng) {
-            return L.circleMarker(latlng, geojsonMarkerOptions2);
+            return L.marker(latlng, {icon: redmarker});
         },
         onEachFeature: function(feature,layer){
        layer.bindPopup( '<b>Nom: </b>' + feature.properties.name + '<br><b>Adresse: </b>' + feature.properties.addresse)
         }
     }).addTo(map); 
     
-    var geojsonMarkerOptions3 = {
-        radius: 8,
-        fillColor: "green",
-        color: "#000",
-        weight: 1,
-        opacity: 1,
-        fillOpacity: 0.8
-    };
+    var greenmarker = L.icon({
+    iconUrl: 'https://nguyenlouis.fr/wp-content/uploads/2023/03/map-mark-3.png',
+    iconSize:     [38, 38], // size of the icon
+    shadowSize:   [50, 64], // size of the shadow
+    iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
+    shadowAnchor: [4, 62],  // the same for the shadow
+    popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+    });
     
     var city93data = L.geoJSON(city93JSON, {
         pointToLayer: function (feature, latlng) {
-            return L.circleMarker(latlng, geojsonMarkerOptions3);
+            return L.marker(latlng, {icon: greenmarker});
         },
         onEachFeature: function(feature,layer){
        layer.bindPopup( '<b>Nom: </b>' + feature.properties.name + '<br><b>Adresse: </b>' + feature.properties.addresse)
         }
     }).addTo(map); 
     
-    var geojsonMarkerOptions4 = {
-        radius: 8,
-        fillColor: "yellow",    
-        color: "#000",
-        weight: 1,
-        opacity: 1,
-        fillOpacity: 0.8
-    };
+    var yellowmarker = L.icon({
+    iconUrl: 'https://nguyenlouis.fr/wp-content/uploads/2023/03/map-mark-2.png',
+    iconSize:     [38, 38], // size of the icon
+    shadowSize:   [50, 64], // size of the shadow
+    iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
+    shadowAnchor: [4, 62],  // the same for the shadow
+    popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+    });
     
     var city94data = L.geoJSON(city94JSON, {
         pointToLayer: function (feature, latlng) {
-            return L.circleMarker(latlng, geojsonMarkerOptions4);
+            return L.marker(latlng, {icon: yellowmarker});
         },
         onEachFeature: function(feature,layer){
        layer.bindPopup( '<b>Nom: </b>' + feature.properties.name + '<br><b>Adresse: </b>' + feature.properties.addresse)
@@ -158,7 +162,7 @@
     //Layer Group
     var overlays = {
         "Entreprise ":mapdata,
-        "Proche de l'entreprise 🟣":neardata,
+        "Proche de l'entreprise ": neardata,
         "Paris(75) 🟠":parisdata,
         "Hauts-de-Seine(92)  🔴": city92data,
         "Seine-Saint-Denis(93) 🟢": city93data,
