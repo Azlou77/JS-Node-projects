@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Document</title>
 
-        <!-- Fichiers CSS -->
+        <!-- Files CSS -->
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin=""/>
         <link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css" />
         <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.css" />
@@ -15,7 +15,7 @@
         <!--Leaflet routing machine css-->
         <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.css" />
 
-         <!-- CSS -->
+         <!-- Styles CSS -->
          <style>
             body{
                 margin:0
@@ -28,7 +28,7 @@
     <body>
         <div id="map"></div>
 
-        <!-- Fichiers JS -->
+        <!-- Files JS -->
         <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js" integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew==" crossorigin=""></script>
         <script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>
         <script src="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.js"></script>
@@ -38,118 +38,93 @@
         <script src="./data/city92.js"></script>
         <script src="./data/city93.js"></script>
         <script src="./data/city94.js"></script>
-
-
-        
-<script>
+    
+    <!-- Main script -->
+    <script>
     // Create the map
     var map  = L.map('map').setView([48.852969, 2.349903], 13);
-    
     var osm = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     });
     osm.addTo(map);
 
+    //Companie owns
     var companie1 = L.marker([48.81471,2.357485]).bindPopup('<b>Nom: </b> Isphers<br><b>Addresse: </b> 52 Rue du Général Leclerc, 94270 Le Kremlin-Bicêtre').addTo(map),
         companie2 = L.marker([48.812435,2.358187]).bindPopup('<b>Nom: </b> Isphers<br><b>Addresse: </b> 38 Rue de la Convention, 94270 Le Kremlin-Bicêtre').addTo(map);
-    
-
     var mapdata = L.layerGroup([companie1, companie2]).addTo(map);
     
-    
-    var purplemarker = L.icon({
-    iconUrl: 'https://nguyenlouis.fr/wp-content/uploads/2023/03/map-mark.png',
-    iconSize:     [38, 38], // size of the icon
-    shadowSize:   [50, 64], // size of the shadow
-    iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
-    shadowAnchor: [4, 62],  // the same for the shadow
-    popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+    //Define icon class
+    var LeafIcon = L.Icon.extend({
+    options: {
+        iconSize:     [38, 38],
+        shadowSize:   [50, 64],
+        iconAnchor:   [22, 94],
+        shadowAnchor: [4, 62],
+        popupAnchor:  [-3, -76]
+    }
 });
-    
+    var purplemarker = new LeafIcon({iconUrl: 'https://nguyenlouis.fr/wp-content/uploads/2023/03/map-mark.png'}),
+        orangemarker = new LeafIcon({iconUrl: 'https://nguyenlouis.fr/wp-content/uploads/2023/03/map-mark-1-1.png'}),
+        redmarker = new LeafIcon({iconUrl: 'https://nguyenlouis.fr/wp-content/uploads/2023/03/map-mark-4.png'});
+        yellowmarker = new LeafIcon({iconUrl: 'https://nguyenlouis.fr/wp-content/uploads/2023/03/map-mark-3.png'});
+        greenmarker = new LeafIcon({iconUrl: 'https://nguyenlouis.fr/wp-content/uploads/2023/03/map-mark-2.png'});
+
+    L.icon = function (options) {
+    return new L.Icon(options);
+};
+
+    //Companies around
     var neardata= L.geoJSON(nearJSON, {
         pointToLayer: function (feature, latlng) {
             return L.marker(latlng, {icon: purplemarker});
         },
         onEachFeature: function(feature,layer){
-       layer.bindPopup( '<b>Nom: </b>' + feature.properties.name + '<br><b>Adresse: </b>' + feature.properties.addresse)
+       layer.bindPopup( '<b>Nom: </b>' + feature.properties.name + '<br><b>Adresse: </b>' + feature.properties.addresse + '<br><b>Catégorie: </b>' + feature.properties.categorie)
       
     .addTo(map)
         }
     });
     
-    
-    
-    var orangemarker = L.icon({
-    iconUrl: 'https://nguyenlouis.fr/wp-content/uploads/2023/03/map-mark-1-1.png',
-    iconSize:     [38, 38], // size of the icon
-    shadowSize:   [50, 64], // size of the shadow
-    iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
-    shadowAnchor: [4, 62],  // the same for the shadow
-    popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
-});
-    
+    //Companies in Paris
     var parisdata= L.geoJSON(parisJSON, {
         pointToLayer: function (feature, latlng) {
             return L.marker(latlng, {icon: orangemarker});
         },
         onEachFeature: function(feature,layer){
-       layer.bindPopup( '<b>Nom: </b>' + feature.properties.name + '<br><b>Adresse: </b>' + feature.properties.addresse)
+            layer.bindPopup( '<b>Nom: </b>' + feature.properties.name + '<br><b>Adresse: </b>' + feature.properties.addresse + '<br><b>Catégorie: </b>' + feature.properties.categorie)
         }
     
     }).addTo(map);
     
-     
-    var redmarker = L.icon({
-    iconUrl: 'https://nguyenlouis.fr/wp-content/uploads/2023/03/map-mark-4.png',
-    iconSize:     [38, 38], // size of the icon
-    shadowSize:   [50, 64], // size of the shadow
-    iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
-    shadowAnchor: [4, 62],  // the same for the shadow
-    popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
-    });
-    
+    //Companies in 92
      var city92data = L.geoJSON(city92JSON, {
         pointToLayer: function (feature, latlng) {
             return L.marker(latlng, {icon: redmarker});
         },
         onEachFeature: function(feature,layer){
-       layer.bindPopup( '<b>Nom: </b>' + feature.properties.name + '<br><b>Adresse: </b>' + feature.properties.addresse)
+            layer.bindPopup( '<b>Nom: </b>' + feature.properties.name + '<br><b>Adresse: </b>' + feature.properties.addresse + '<br><b>Catégorie: </b>' + feature.properties.categorie)
         }
     }).addTo(map); 
     
-    var greenmarker = L.icon({
-    iconUrl: 'https://nguyenlouis.fr/wp-content/uploads/2023/03/map-mark-3.png',
-    iconSize:     [38, 38], // size of the icon
-    shadowSize:   [50, 64], // size of the shadow
-    iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
-    shadowAnchor: [4, 62],  // the same for the shadow
-    popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
-    });
-    
+   
+    //Companies in 93
     var city93data = L.geoJSON(city93JSON, {
         pointToLayer: function (feature, latlng) {
             return L.marker(latlng, {icon: greenmarker});
         },
         onEachFeature: function(feature,layer){
-       layer.bindPopup( '<b>Nom: </b>' + feature.properties.name + '<br><b>Adresse: </b>' + feature.properties.addresse)
+            layer.bindPopup( '<b>Nom: </b>' + feature.properties.name + '<br><b>Adresse: </b>' + feature.properties.addresse + '<br><b>Catégorie: </b>' + feature.properties.categorie)
         }
     }).addTo(map); 
     
-    var yellowmarker = L.icon({
-    iconUrl: 'https://nguyenlouis.fr/wp-content/uploads/2023/03/map-mark-2.png',
-    iconSize:     [38, 38], // size of the icon
-    shadowSize:   [50, 64], // size of the shadow
-    iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
-    shadowAnchor: [4, 62],  // the same for the shadow
-    popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
-    });
-    
+  
+    //Companies in 94
     var city94data = L.geoJSON(city94JSON, {
         pointToLayer: function (feature, latlng) {
             return L.marker(latlng, {icon: yellowmarker});
         },
         onEachFeature: function(feature,layer){
-       layer.bindPopup( '<b>Nom: </b>' + feature.properties.name + '<br><b>Adresse: </b>' + feature.properties.addresse)
+            layer.bindPopup( '<b>Nom: </b>' + feature.properties.name + '<br><b>Adresse: </b>' + feature.properties.addresse + '<br><b>Catégorie: </b>' + feature.properties.categorie)
         }
     }).addTo(map);
     
@@ -159,14 +134,17 @@
         "OpenStreetMap": osm,
     };
     
-    //Layer Group
+    //Layer Group with legend
     var overlays = {
         "Entreprise ":mapdata,
         "Proche de l'entreprise ":neardata,
         "Paris(75) 🟠":parisdata,
         "Hauts-de-Seine(92)  🔴": city92data,
         "Seine-Saint-Denis(93) 🟢": city93data,
-        "Val-de-Marne(94) 🟡": city94data
+        "Val-de-Marne(94) 🟡": city94data,
+        "Médical": medicaldata,
+        "IT": itdata,
+        "Marketing": marketingdata,
     };
     L.control.layers(baseLayers, overlays).addTo(map);
     
@@ -184,8 +162,6 @@
         }),
         geocoder: L.Control.Geocoder.nominatim()
     }).addTo(map)
-    
-    
     
     </script>
     

@@ -6,11 +6,10 @@ var parisJSON =
           {
             "type": "Feature",
             "properties": {
-              "name": "Initiale",
+              "name": "Initiale agence de immobilière",
+              "category": "Hotel, real estate",
               "addresse": "3 rue de Sévigné",
-              "color": "",
-              "marker-size": "medium",
-              "amenity": "",
+
               "popupContent": ""
             },
             "geometry": {
@@ -24,11 +23,9 @@ var parisJSON =
           {
             "type": "Feature",
             "properties": {
-              "name": "Covent garden",
+              "name": "Covent garden réservation",
+              "category": "Hotel, real estate",
               "addresse": "12 Cité Falguière",
-              "color": "",
-              "marker-size": "medium",
-              "amenity": "",
               "popupContent": ""
             },
             "geometry": {
@@ -43,10 +40,8 @@ var parisJSON =
             "type": "Feature",
             "properties": {
               "name": "Innoven Partenaires",
+              "category": "Management",
               "addresse": "1 Rue de la Paix",
-              "color": "",
-              "marker-size": "medium",
-              "amenity": "",
               "popupContent": ""
             },
             "geometry": {
@@ -60,9 +55,8 @@ var parisJSON =
           {
             "type": "Feature",
             "properties": {
-              "name": "Architecture Catb Batiment",
-              "marker-color": "#7e7e7e",
-              "marker-size": "medium",
+              "name": "Architecture Cat Batiment",
+              "category": "Building",
               "addresse": "11 rue Clapeyron"
             },
             "geometry": {
@@ -77,8 +71,7 @@ var parisJSON =
             "type": "Feature",
             "properties": {
               "name": "AstoriaFinance",
-              "marker-color": "#7e7e7e",
-              "marker-size": "medium",
+              "category": "Finance",
               "addresse": "5/7 rue de Monttessuy"
             },
             "geometry": {
@@ -92,10 +85,9 @@ var parisJSON =
           {
             "type": "Feature",
             "properties": {
-              "name": "Alliance Immobiliere \t",
+              "name": "Alliance Immobiliere ",
+              "category": "Hotel, real estate",
               "addresse": "14, rue des Deux Ponts",
-              "marker-color": "#7e7e7e",
-              "marker-size": "medium"
             },
             "geometry": {
               "coordinates": [
@@ -109,6 +101,7 @@ var parisJSON =
             "type": "Feature",
             "properties": {
               "name ": "Fleming France",
+              "category": "Management",
               "addrese": "39/41 rue Cambron"
             },
             "geometry": {
@@ -123,9 +116,9 @@ var parisJSON =
             "type": "Feature",
             "properties": {
               "name": "Grafikmente",
+              "category": "Management",
               "addresse": "118, rue Réaumur",
-              "marker-color": "#7e7e7e",
-              "marker-size": "medium"
+   
             },
             "geometry": {
               "coordinates": [
@@ -139,9 +132,9 @@ var parisJSON =
             "type": "Feature",
             "properties": {
               "name": "Idylis",
+              "category": "Finance",
               "addresse": "10, rue Vandrezann",
-              "marker-color": "#7e7e7e",
-              "marker-size": "medium"
+        
             },
             "geometry": {
               "coordinates": [
@@ -155,9 +148,9 @@ var parisJSON =
             "type": "Feature",
             "properties": {
               "name": "Cap Express",
+              "category": "Transport",
               "addresses": "11bis, rue Clapeyron",
-              "marker-color": "#7e7e7e",
-              "marker-size": "medium"
+         
             },
             "geometry": {
               "coordinates": [
@@ -170,10 +163,9 @@ var parisJSON =
           {
             "type": "Feature",
             "properties": {
-              "name": "Mkimmo13 Saint Marcel \t",
+              "name": "Mkimmo13 Saint Marcel ",
               "addresse": "15, Boulevard Saint Marcel",
-              "marker-color": "#7e7e7e",
-              "marker-size": "medium"
+              "category": "Hotel, real estate",
             },
             "geometry": {
               "coordinates": [
@@ -187,9 +179,9 @@ var parisJSON =
             "type": "Feature",
             "properties": {
               "name": "Matière",
+              "category": "Management",
               "addresse": "1, place d'Iéna",
-              "marker-color": "#7e7e7e",
-              "marker-size": "medium"
+    
             },
             "geometry": {
               "coordinates": [
@@ -203,9 +195,9 @@ var parisJSON =
             "type": "Feature",
             "properties": {
               "name": "CHL",
+              "category": "Management",
               "addresse": "71, avenue Marceau",
-              "marker-color": "#7e7e7e",
-              "marker-size": "medium"
+    
             },
             "geometry": {
               "coordinates": [
@@ -219,6 +211,7 @@ var parisJSON =
             "type": "Feature",
             "properties": {
               "name": "Un appartement à Paris",
+              "category": "Hotel, real estate",
               "addresse": "44-46, rue de la Bienfaisance "
             },
             "geometry": {
@@ -233,9 +226,9 @@ var parisJSON =
             "type": "Feature",
             "properties": {
               "name": "Arts Immobilier",
+              "category": "Hotel, real estate",
               "addresse": "39, rue de Vinaigriers",
-              "marker-color": "#7e7e7e",
-              "marker-size": "medium"
+
             },
             "geometry": {
               "coordinates": [
@@ -249,7 +242,8 @@ var parisJSON =
             "type": "Feature",
             "properties": {
               "name": "ACE INFORMATIQUE",
-              "addresse": ""
+              "addresse": "",
+              "category": "IT",
             },
             "geometry": {
               "coordinates": [
@@ -264,8 +258,7 @@ var parisJSON =
             "properties": {
               "name": "Foncia EOL Etude Opéra Lafayette ",
               "addresse": "96 rue Faubourg Poissonière",
-              "marker-color": "#7e7e7e",
-              "marker-size": "medium"
+              "category": "Finance",
             },
             "geometry": {
               "coordinates": [
@@ -279,7 +272,8 @@ var parisJSON =
             "type": "Feature",
             "properties": {
               "name": "Michèle Lasserre",
-              "addresse": "\t127, rue de Rome "
+              "addresse": "127, rue de Rome ",
+              "category": "Hotel, real estate",
             },
             "geometry": {
               "coordinates": [
@@ -292,10 +286,9 @@ var parisJSON =
           {
             "type": "Feature",
             "properties": {
-              "name": " \tAllure reception",
+              "name": "Allure reception",
               "addresse": "55 rue de Lhomond",
-              "marker-color": "#7e7e7e",
-              "marker-size": "medium"
+              "category": "Restaurant",
             },
             "geometry": {
               "coordinates": [
@@ -310,8 +303,7 @@ var parisJSON =
             "properties": {
               "name": "Joar Transaction",
               "addresse": "23 avenue Leopold II",
-              "marker-color": "#7e7e7e",
-              "marker-size": "medium"
+              "category": "Hotel, real estate",
             },
             "geometry": {
               "coordinates": [
@@ -326,8 +318,8 @@ var parisJSON =
             "properties": {
               "name": "Les Papeteries Réaumur",
               "addresse": "116 rue Réaumur",
-              "marker-color": "#7e7e7e",
-              "marker-size": "medium"
+              "category": "Commerce",
+
             },
             "geometry": {
               "coordinates": [
@@ -342,8 +334,7 @@ var parisJSON =
             "properties": {
               "name": "Pierre et Vacances ",
               "addresse": "11 Rue de Cambrai, 75947 Paris",
-              "marker-color": "#7e7e7e",
-              "marker-size": "medium"
+              "category": "Hotel, real estate",
             },
             "geometry": {
               "coordinates": [
@@ -358,8 +349,7 @@ var parisJSON =
             "properties": {
               "name": "GAT RIMON ",
               "addresse": "15 Rue de la Grange Batelière, 75009 Paris",
-              "marker-color": "#7e7e7e",
-              "marker-size": "medium"
+              "category": "Commerce",
             },
             "geometry": {
               "coordinates": [
@@ -374,8 +364,7 @@ var parisJSON =
             "properties": {
               "name": "District Ile Saint Louis",
               "addresse": "31 Rue des Deux Ponts, 75004 Paris",
-              "marker-color": "#7e7e7e",
-              "marker-size": "medium"
+              "category": "Commerce",
             },
             "geometry": {
               "coordinates": [
@@ -390,8 +379,7 @@ var parisJSON =
             "properties": {
               "name": "SAS Pitcho Fassina Petkova",
               "addresse": "42 Rue Ampère, 75017 Paris",
-              "marker-color": "#7e7e7e",
-              "marker-size": "medium"
+              "category": "Justice, rights",
             },
             "geometry": {
               "coordinates": [
@@ -406,8 +394,7 @@ var parisJSON =
             "properties": {
               "name": "Realis Paris",
               "addresse": "23 RUE D'ANJOU 75008 PARIS 8",
-              "marker-color": "#7e7e7e",
-              "marker-size": "medium"
+              "category": "Commerce",
             },
             "geometry": {
               "coordinates": [
@@ -422,8 +409,7 @@ var parisJSON =
             "properties": {
               "name": "HILDE IMMOBILIER ",
               "addresse": "66 Bd Saint-Germain, 75005 Paris",
-              "marker-color": "#7e7e7e",
-              "marker-size": "medium"
+              "category": "Hotel, real estate",
             },
             "geometry": {
               "coordinates": [
@@ -438,8 +424,7 @@ var parisJSON =
             "properties": {
               "name": "SCI Delisa ",
               "addresse": "59 Bd Lannes, 75116 Paris",
-              "marker-color": "#7e7e7e",
-              "marker-size": "medium"
+              "category": "Finance",
             },
             "geometry": {
               "coordinates": [
@@ -454,8 +439,7 @@ var parisJSON =
             "properties": {
               "name": " DISTRICT BOSQUET CHAMPS DE MARS ",
               "addresse": "56 Av. Bosquet, 75007 Paris",
-              "marker-color": "#7e7e7e",
-              "marker-size": "medium"
+              "category": "Restaurant",
             },
             "geometry": {
               "coordinates": [
@@ -470,8 +454,7 @@ var parisJSON =
             "properties": {
               "name": "Pierre Katz & Co",
               "addresse": "56 Av. Bosquet, 75007 Paris",
-              "marker-color": "#7e7e7e",
-              "marker-size": "medium"
+              "category": "Marketing",
             },
             "geometry": {
               "coordinates": [
@@ -486,8 +469,7 @@ var parisJSON =
             "properties": {
               "name": "MP PRODUCTIONS",
               "addresse": "5 PL VICTOR HUGO 75116 PARIS ",
-              "marker-color": "#7e7e7e",
-              "marker-size": "medium"
+              "category": "Marketing",
             },
             "geometry": {
               "coordinates": [
@@ -502,8 +484,7 @@ var parisJSON =
             "properties": {
               "name": "Restaurants programms",
               "addresse": "31 avenue des Champs Élysée",
-              "marker-color": "#7e7e7e",
-              "marker-size": "medium"
+              "category": "Restaurant",
             },
             "geometry": {
               "coordinates": [
@@ -518,8 +499,7 @@ var parisJSON =
             "properties": {
               "name": " Waooou",
               "addresse": "12, rue Vivienne 75002 ",
-              "marker-color": "#7e7e7e",
-              "marker-size": "medium"
+              "category": "Restaurant",
             },
             "geometry": {
               "coordinates": [
@@ -534,8 +514,7 @@ var parisJSON =
             "properties": {
               "name": "Marbeuf Optique ",
               "addresse": "28 rue Marbeuf 75008 Paris",
-              "marker-color": "#7e7e7e",
-              "marker-size": "medium"
+              "category": "Health",
             },
             "geometry": {
               "coordinates": [
@@ -550,8 +529,7 @@ var parisJSON =
             "properties": {
               "name": "BEAUCHANT ASSOCIES CONSEIL",
               "addresse": "9 rue de la Trémoille 75008 Paris",
-              "marker-color": "#7e7e7e",
-              "marker-size": "medium"
+              "category": "Marketing",
             },
             "geometry": {
               "coordinates": [
@@ -566,8 +544,7 @@ var parisJSON =
             "properties": {
               "name": " COTOLAINE ",
               "addresse": "131 BV SEBASTOPOL 75002 PARIS ",
-              "marker-color": "#7e7e7e",
-              "marker-size": "medium"
+              "category": "Production",
             },
             "geometry": {
               "coordinates": [
@@ -582,8 +559,7 @@ var parisJSON =
             "properties": {
               "name": " ATOMIC CITY/MAJESTIC ",
               "addresse": "48 Rue Alphonse Penaud  75020 Paris",
-              "marker-color": "#7e7e7e",
-              "marker-size": "medium"
+              "category": "Art",
             },
             "geometry": {
               "coordinates": [
@@ -598,8 +574,7 @@ var parisJSON =
             "properties": {
               "name": " Restaurant Program ",
               "addresse": "26 rue George Sand 75016 Paris",
-              "marker-color": "#7e7e7e",
-              "marker-size": "medium"
+              "category": "Restaurant",
             },
             "geometry": {
               "coordinates": [
@@ -614,8 +589,7 @@ var parisJSON =
             "properties": {
               "name": "MENAGER&HUG",
               "addresse": "31 Rue de Tournon, 75006 Paris",
-              "marker-color": "#7e7e7e",
-              "marker-size": "medium"
+              "category": "Marketing",
             },
             "geometry": {
               "coordinates": [
@@ -629,9 +603,9 @@ var parisJSON =
             "type": "Feature",
             "properties": {
               "name": "NIDO",
+              "category": "Production",
               "addresse": "40 Rue Louis Blanc 75010",
-              "marker-color": "#7e7e7e",
-              "marker-size": "medium"
+"categorie": "",
             },
             "geometry": {
               "coordinates": [
@@ -646,8 +620,7 @@ var parisJSON =
             "properties": {
               "name": "COURCELLES CONSEIL",
               "addresse": "11 bis Rue de Milan, 75009 Paris",
-              "marker-color": "#7e7e7e",
-              "marker-size": "medium"
+              "category": "Marketing",
             },
             "geometry": {
               "coordinates": [
@@ -662,8 +635,7 @@ var parisJSON =
             "properties": {
               "name": "Intego",
               "addresse": "41 Rue Condorcet, 75009 Paris, France",
-              "marker-color": "#7e7e7e",
-              "marker-size": "medium"
+              "category": "IT",
             },
             "geometry": {
               "coordinates": [
@@ -678,8 +650,7 @@ var parisJSON =
             "properties": {
               "name": "PRO COMM",
               "addresse": "125 Ave Parmentier, 75011 Paris",
-              "marker-color": "#7e7e7e",
-              "marker-size": "medium"
+              "category": "Marketing",
             },
             "geometry": {
               "coordinates": [
@@ -694,8 +665,7 @@ var parisJSON =
             "properties": {
               "name": "POLYFOR",
               "addresse": "27 RUE DES BELLES FEUILLES  75016 PARIS",
-              "marker-color": "#7e7e7e",
-              "marker-size": "medium"
+              "category": "Education",
             },
             "geometry": {
               "coordinates": [
@@ -710,8 +680,7 @@ var parisJSON =
             "properties": {
               "name": "EOLE-RES",
               "addresse": "29 avenue des Champs Elysées 75008 Paris",
-              "marker-color": "#7e7e7e",
-              "marker-size": "medium"
+              "category": "Buijdling",
             },
             "geometry": {
               "coordinates": [
@@ -726,8 +695,7 @@ var parisJSON =
             "properties": {
               "name": " PGI",
               "addresse": "28 RUE DE LONDRES 75009 PARIS",
-              "marker-color": "#7e7e7e",
-              "marker-size": "medium"
+              "category": "IT",
             },
             "geometry": {
               "coordinates": [
@@ -742,8 +710,7 @@ var parisJSON =
             "properties": {
               "name": "888 System's",
               "addresse": "180 rue de Charenton 75012 Paris",
-              "marker-color": "#7e7e7e",
-              "marker-size": "medium"
+              "category": "IT",
             },
             "geometry": {
               "coordinates": [
@@ -758,8 +725,7 @@ var parisJSON =
             "properties": {
               "name": "LUNE BLEUE",
               "addresse": "10 RUE DES PETITES ECURIES  75010 PARIS",
-              "marker-color": "#7e7e7e",
-              "marker-size": "medium"
+              "category": "Hotel, real estate",
             },
             "geometry": {
               "coordinates": [
@@ -774,8 +740,7 @@ var parisJSON =
             "properties": {
               "name": "Oberkampf TRANSOPERA",
               "addresse": "93 Boulevard Voltaire 75011 Paris",
-              "marker-color": "#7e7e7e",
-              "marker-size": "medium"
+              "category": "Transport",
             },
             "geometry": {
               "coordinates": [
@@ -790,8 +755,7 @@ var parisJSON =
             "properties": {
               "name": "GESTEAM",
               "addresse": "2 Rue de Paradis 75010 Paris",
-              "marker-color": "#7e7e7e",
-              "marker-size": "medium"
+              "category": "IT",
             },
             "geometry": {
               "coordinates": [
@@ -806,8 +770,7 @@ var parisJSON =
             "properties": {
               "name": "O2I",
               "addresse": "49 RUE FALGUIERE 75015 PARIS",
-              "marker-color": "#7e7e7e",
-              "marker-size": "medium"
+              "category": "IT",
             },
             "geometry": {
               "coordinates": [
@@ -822,8 +785,7 @@ var parisJSON =
             "properties": {
               "name": "AUTRE CHOSE",
               "addresse": "43 RUE D'ABOUKIR 75002 PARIS",
-              "marker-color": "#7e7e7e",
-              "marker-size": "medium"
+              "category": "IT",
             },
             "geometry": {
               "coordinates": [
@@ -838,8 +800,19 @@ var parisJSON =
             "properties": {
               "name": "AUTRE CHOSE",
               "addresse": "43 RUE D'ABOUKIR 75002 PARIS",
-              "marker-color": "#7e7e7e",
-              "marker-size": "medium"
+            },
+            "geometry": {
+              "coordinates": [
+                2.3451007,
+                48.8672258
+              ],
+              "type": "Point"
+            }
+          },  {
+            "type": "Feature",
+            "properties": {
+              "name": "AUTRE CHOSE",
+              "category": "IT",
             },
             "geometry": {
               "coordinates": [
@@ -853,23 +826,7 @@ var parisJSON =
             "properties": {
               "name": "AUTRE CHOSE",
               "addresse": "43 RUE D'ABOUKIR 75002 PARIS",
-              "marker-color": "#7e7e7e",
-              "marker-size": "medium"
-            },
-            "geometry": {
-              "coordinates": [
-                2.3451007,
-                48.8672258
-              ],
-              "type": "Point"
-            }
-          },  {
-            "type": "Feature",
-            "properties": {
-              "name": "AUTRE CHOSE",
-              "addresse": "43 RUE D'ABOUKIR 75002 PARIS",
-              "marker-color": "#7e7e7e",
-              "marker-size": "medium"
+"categorie": "",
             },
             "geometry": {
               "coordinates": [
@@ -883,8 +840,7 @@ var parisJSON =
             "properties": {
               "name": "DISTRICT 8ème Trémoille - George V",
               "addresse": "9 rue de la Trémoille 75008 Paris",
-              "marker-color": "#7e7e7e",
-              "marker-size": "medium"
+              "category": "Hotel, real estate",
             },
             "geometry": {
               "coordinates": [
@@ -899,8 +855,7 @@ var parisJSON =
             "properties": {
               "name": "ESMODPARIS ",
               "addresse": "12 Rue Catherine de La Rochefoucauld, 75009 Paris",
-              "marker-color": "#7e7e7e",
-              "marker-size": "medium"
+              "category": "Education",
             },
             "geometry": {
               "coordinates": [
@@ -914,8 +869,7 @@ var parisJSON =
             "properties": {
               "name": "ALLIES ASSOCIATION",
               "addresse": "",
-              "marker-color": "#7e7e7e",
-              "marker-size": "medium"
+              "category": "Association",
             },
             "geometry": {
               "coordinates": [
@@ -929,8 +883,8 @@ var parisJSON =
             "properties": {
               "name": "MC DEVELOPPEMENT",
               "addresse": "25 Rue Bosquet, 75007 Paris",
-              "marker-color": "#7e7e7e",
-              "marker-size": "medium"
+              "category": "Health",
+
             },
             "geometry": {
               "coordinates": [
@@ -944,8 +898,7 @@ var parisJSON =
             "properties": {
               "name": "EDITIONS ENOCH",
               "addresse": "193, boulevard Pereire 75017 Paris",
-              "marker-color": "#7e7e7e",
-              "marker-size": "medium"
+              "category": "Education",
             },
             "geometry": {
               "coordinates": [
@@ -959,8 +912,7 @@ var parisJSON =
             "properties": {
               "name": "Fuxia Yodes",
               "addresse": "42, place du Marché Saint Honoré 75001 Paris",
-              "marker-color": "#7e7e7e",
-              "marker-size": "medium"
+              "category": "Real estate",
             },
             "geometry": {
               "coordinates": [
@@ -974,8 +926,7 @@ var parisJSON =
             "properties": {
               "name": "SATELLITE PARIS",
               "addresse": "29 passage Dubail 75010 PARIS",
-              "marker-color": "#7e7e7e",
-              "marker-size": "medium"
+              "category": "Artisan",
             },
             "geometry": {
               "coordinates": [
@@ -989,8 +940,7 @@ var parisJSON =
             "properties": {
               "name": "ALTEA CAPITAL",
               "addresse": "4 Rue du General Lanrezac  75017 Paris",
-              "marker-color": "#7e7e7e",
-              "marker-size": "medium"
+              "category": "Finance",
             },
             "geometry": {
               "coordinates": [
@@ -1004,8 +954,7 @@ var parisJSON =
             "properties": {
               "name": " GROUPE CARLIN INTERNATIONAL",
               "addresse": "79 rue Miromesnil 75008 Paris",
-              "marker-color": "#7e7e7e",
-              "marker-size": "medium"
+              "category": "Marketing",
             },
             "geometry": {
               "coordinates": [
@@ -1019,8 +968,7 @@ var parisJSON =
             "properties": {
               "name": " Société Malesherbe Gestion SGM",
               "addresse": "33 Av. de l'Opéra, 75002 Paris",
-              "marker-color": "#7e7e7e",
-              "marker-size": "medium"
+              "category": "Hotel, real estate",
             },
             "geometry": {
               "coordinates": [
@@ -1034,8 +982,7 @@ var parisJSON =
             "properties": {
               "name": "Groupe ELLI",
               "addresse": "52 passage Choiseul 75002 Paris",
-              "marker-color": "#7e7e7e",
-              "marker-size": "medium"
+              "category": "Building",
             },
             "geometry": {
               "coordinates": [
@@ -1049,8 +996,7 @@ var parisJSON =
             "properties": {
               "name": "Boisnard Opéra",
               "addresse": "82 passage Choiseul 75002 Paris",
-              "marker-color": "#7e7e7e",
-              "marker-size": "medium"
+              "category": "Culture",
             },
             "geometry": {
               "coordinates": [
@@ -1064,8 +1010,7 @@ var parisJSON =
             "properties": {
               "name": "HOME RENTAL",
               "addresse": "120 Av. des Champs-Élysées, 75008 Paris",
-              "marker-color": "#7e7e7e",
-              "marker-size": "medium"
+              "category": "Hotel, real estate",
             },
             "geometry": {
               "coordinates": [
@@ -1079,8 +1024,7 @@ var parisJSON =
             "properties": {
               "name": " Financière Cambon",
               "addresse": "28 Bd Malesherbes 75008 Paris",
-              "marker-color": "#7e7e7e",
-              "marker-size": "medium"
+              "categorie": "Finance",
             },
             "geometry": {
               "coordinates": [
@@ -1094,8 +1038,7 @@ var parisJSON =
             "properties": {
               "name": "AMBRILLE PARIS BRIALFA",
               "addresse": "47 Rue de Domrémy, 75013 Paris",
-              "marker-color": "#7e7e7e",
-              "marker-size": "medium"
+              "categorie": "Health",
             },
             "geometry": {
               "coordinates": [
@@ -1109,8 +1052,8 @@ var parisJSON =
             "properties": {
               "name": "TELEC",
               "addresse": "88 avenue des Ternes 75017 Paris",
-              "marker-color": "#7e7e7e",
-              "marker-size": "medium"
+              "categorie": "Justice, rights",
+
             },
             "geometry": {
               "coordinates": [
@@ -1124,8 +1067,7 @@ var parisJSON =
             "properties": {
               "name": "DJG CONSULTING",
               "addresse": "22 rue Alphonse de Neuville 75017 Paris",
-              "marker-color": "#7e7e7e",
-              "marker-size": "medium"
+            "categorie": "Marketing",
             },
             "geometry": {
               "coordinates": [
@@ -1139,8 +1081,7 @@ var parisJSON =
             "properties": {
               "name": "FUXIA YANIS",
               "addresse": "25, rue des Martyrs 75009 Paris",
-              "marker-color": "#7e7e7e",
-              "marker-size": "medium"
+              "categorie": "Restaurant",
             },
             "geometry": {
               "coordinates": [
@@ -1153,9 +1094,9 @@ var parisJSON =
             "type": "Feature",
             "properties": {
               "name": "AZHAR (TRANSOPERA)",
+              "categorie": "Transport",
               "addresse": "93 boulevard Voltaire 75011 Paris",
-              "marker-color": "#7e7e7e",
-              "marker-size": "medium"
+
             },
             "geometry": {
               "coordinates": [
@@ -1168,9 +1109,8 @@ var parisJSON =
             "type": "Feature",
             "properties": {
               "name": "CABINET SABBAH MARTIN BUSSON",
+              "categorie": "Justice, rights",
               "addresse": "14 rue Vivienne 75002 Paris",
-              "marker-color": "#7e7e7e",
-              "marker-size": "medium"
             },
             "geometry": {
               "coordinates": [
@@ -1184,8 +1124,7 @@ var parisJSON =
             "properties": {
               "name": "M2C",
               "addresse": "18 rue André Suarès 75018 Paris",
-              "marker-color": "#7e7e7e",
-              "marker-size": "medium"
+              "categorie": "Marketing",
             },
             "geometry": {
               "coordinates": [
@@ -1198,9 +1137,9 @@ var parisJSON =
             "type": "Feature",
             "properties": {
               "name": "Exclusives demeures",
+              "categorie": "Hotel, real estate",
               "addresse": "42 rue de BELLECHASS 75007 PARIS",
-              "marker-color": "#7e7e7e",
-              "marker-size": "medium"
+
             },
             "geometry": {
               "coordinates": [
@@ -1215,8 +1154,8 @@ var parisJSON =
             "properties": {
               "name": "Atmosphère Architecture",
               "addresse": "15 rue Pernety 75014 Paris",
-              "marker-color": "#7e7e7e",
-              "marker-size": "medium"
+              "categorie": "Building",
+
             },
             "geometry": {
               "coordinates": [

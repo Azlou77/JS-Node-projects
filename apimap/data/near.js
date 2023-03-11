@@ -7,10 +7,7 @@ var nearJSON =
       "properties": {
         "name": "Arts et images",
         "addresse ": "19 Rue du general leclerc",
-        "color": "",
-        "marker-size": "medium",
-        "amenity": "Baseball Stadium",
-        "popupContent": "This is where the Rockies play!"
+        "category": "IT",
       },
       "geometry": {
         "coordinates": [
@@ -25,10 +22,7 @@ var nearJSON =
       "properties": {
         "name": "Motoscoot",
         "addresse ": "25 Bis Avenue Eugène Thomas",
-        "color": "",
-        "marker-size": "medium",
-        "amenity": "Baseball Stadium",
-        "popupContent": "This is where the Rockies play!"
+        "category": "Repair",
       },
       "geometry": {
         "coordinates": [
@@ -42,9 +36,8 @@ var nearJSON =
       "type": "Feature",
       "properties": {
         "name": "ETAPICA",
-        "addresse": "47 ter Rue Gabriel Péri",
-        "marker-color": "#7e7e7e",
-        "marker-size": "medium"
+        "addresse": "47 Rue Gabriel Peri",
+        "category": "Commerce",
       },
       "geometry": {
         "coordinates": [
@@ -58,8 +51,7 @@ var nearJSON =
       "type": "Feature",
       "properties": {
         "name": "TIMKL - LE KREMLIN BICETRE",
-        "marker-color": "#7e7e7e",
-        "marker-size": "medium",
+        "category": "Health",
         "addresse": "19 place Jean Jaurès"
       },
       "geometry": {
@@ -74,8 +66,7 @@ var nearJSON =
       "type": "Feature",
       "properties": {
         "name": "StaffMe",
-        "marker-color": "#7e7e7e",
-        "marker-size": "medium",
+        "category": "Management",
         "addresse": "67 avenue de Fontainebleau"
       },
       "geometry": {
@@ -91,8 +82,7 @@ var nearJSON =
       "type": "Feature",
       "properties": {
         "name": "AMBULANCE DELATOUR",
-        "marker-color": "#7e7e7e",
-        "marker-size": "medium",
+        "category": "Health",
         "addresse": "21 RUE DU GENERAL LECLERC"
       },
       "geometry": {
@@ -106,10 +96,10 @@ var nearJSON =
     {
       "type": "Feature",
       "properties": {
-        "name": "AEF COMPTABLE \t",
-        "addresse": "\t38 rue de la convention  ",
-        "marker-color": "#7e7e7e",
-        "marker-size": "medium"
+        "name": "AEF COMPTABLE",
+        "category": "Finance",
+        "addresse": "38 rue de la convention",
+        
       },
       "geometry": {
         "coordinates": [
@@ -123,9 +113,8 @@ var nearJSON =
       "type": "Feature",
       "properties": {
         "name": "Campanile Paris Sud - Porte d'Italie",
-        "marker-color": "#7e7e7e",
-        "marker-size": "medium",
-        "addresse": "\t2 boulevard du Général de Gaulle"
+        "category": "Hotel, real estate",
+        "addresse": "2 boulevard du Général de Gaulle"
       },
       "geometry": {
         "coordinates": [
@@ -139,9 +128,9 @@ var nearJSON =
       "type": "Feature",
       "properties": {
         "name": "Carol Coiffure",
+        "category": "Health",
         "addresse": "24 rue du Général Leclerc",
-        "marker-color": "#7e7e7e",
-        "marker-size": "medium"
+        
       },
       "geometry": {
         "coordinates": [
@@ -154,10 +143,10 @@ var nearJSON =
     {
       "type": "Feature",
       "properties": {
-        "name": "SCI OCCITANIENNE \t",
+        "name": "SCI OCCITANIENNE",
+        "category": "Management",
         "addresse": "52 bis rue du Général Leclerc",
-        "marker-color": "#7e7e7e",
-        "marker-size": "medium"
+   
       },
       "geometry": {
         "coordinates": [
@@ -170,10 +159,10 @@ var nearJSON =
     {
       "type": "Feature",
       "properties": {
-        "name": "CABINET MEDICAL ROLAND GARROS",
+        "name": "CABINET medical ROLAND GARROS",
+        "category": "Health",
         "addresse": "16 Place Jean-Jaurès",
-        "marker-color": "#7e7e7e",
-        "marker-size": "medium"
+
       },
       "geometry": {
         "coordinates": [
@@ -187,9 +176,8 @@ var nearJSON =
       "type": "Feature",
       "properties": {
         "name": "Credit mutuel",
+        "category": "Finance",
         "addresse": "93, avenue de Fontainebleu",
-        "marker-color": "#7e7e7e",
-        "marker-size": "medium"
       },
       "geometry": {
         "coordinates": [
