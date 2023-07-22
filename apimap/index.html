@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>OpenStreetMap</title>
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin=""/>
+        <link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css" />
+   
+        <!-- CSS -->
+        <style>
+            body{
+                margin:0
+            }
+            #map{
+                height: 100vh;
+            }
+            
+/*Legend specific*/
+.legend {
+  padding: 6px 8px;
+  font: 14px Arial, Helvetica, sans-serif;
+  background: white;
+  background: rgba(255, 255, 255, 0.8);
+  /*box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);*/
+  /*border-radius: 5px;*/
+  line-height: 24px;
+  color: #555;
+}
+.legend h4 {
+  text-align: center;
+  font-size: 16px;
+  margin: 2px 12px 8px;
+  color: #777;
+}
+
+.legend span {
+  position: relative;
+  bottom: 3px;
+}
+
+.legend i {
+  width: 18px;
+  height: 18px;
+  float: left;
+  margin: 0 8px 0 0;
+  opacity: 0.7;
+}
+
+.legend i.icon {
+  background-size: 18px;
+  background-color: rgba(255, 255, 255, 1);
+}
+
+        </style>
+    </head>
+    <body>
+        <div id="map"></div>
+    </body>
+</html>
+
+ <!-- Fichiers Javascript -->
+<script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js" integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og==" crossorigin=""></script>
+<script src="./data/map.js"></script>
+<script src="./data/near.js"></script>
+<script src="./data/paris.js"></script>
+<script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>
+<script>
+
+// Create the map
+var map  = L.map('map').setView([48.852969, 2.349903], 13);
+
+var osm = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+});
+osm.addTo(map);
+
+
+
+
+
+var geojsonMarkerOptions0 = {
+    radius: 8,
+    fillColor: "blue",
+    color: "#000",
+    weight: 1,
+    opacity: 1,
+    fillOpacity: 0.8
+};
+
+var mapdata= L.geoJSON(mapJSON, {
+    pointToLayer: function (feature, latlng) {
+        return L.circleMarker(latlng, geojsonMarkerOptions0);
+    },
+    onEachFeature: function(feature,layer){
+    layer.bindPopup('<b>This is a </b>' + feature.properties.name)
+    }
+
+}).addTo(map);
+
+
+var geojsonMarkerOptions1 = {
+    radius: 8,
+    fillColor: "purple",
+    color: "#000",
+    weight: 1,
+    opacity: 1,
+    fillOpacity: 0.8
+};
+
+var neardata= L.geoJSON(nearJSON, {
+    pointToLayer: function (feature, latlng) {
+        return L.circleMarker(latlng, geojsonMarkerOptions1);
+    },
+    onEachFeature: function(feature,layer){
+    layer.bindPopup('<b>This is a </b>' + feature.properties.name)
+    }
+
+}).addTo(map);
+
+
+var geojsonMarkerOptions = {
+    radius: 8,
+    fillColor: "#ff7800",
+    color: "#000",
+    weight: 1,
+    opacity: 1,
+    fillOpacity: 0.8
+};
+
+var parisdata= L.geoJSON(parisJSON, {
+    pointToLayer: function (feature, latlng) {
+        return L.circleMarker(latlng, geojsonMarkerOptions);
+    },
+    onEachFeature: function(feature,layer){
+    layer.bindPopup('<b>This is a </b>' + feature.properties.name)
+    }
+
+}).addTo(map);
+
+
+
+
+//Layer group views     
+var baseLayers = {
+    "OpenStreetMap": osm,
+};
+
+//Layer Group
+var overlays = {
+    "Entreprise":mapdata,
+    "Proche de l'entreprise":neardata,
+    "Paris(75)":parisdata,
+    "Hauts-de-Seine(92)": city92data,
+    "Seine-Saint-Denis(93)": city93data,
+    "Val-de-Marne(94)": city94data
+};
+L.control.layers(baseLayers, overlays).addTo(map);
+
+
+
+
+
+</script>
+
