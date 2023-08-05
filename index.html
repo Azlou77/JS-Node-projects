@@ -1,29 +1,33 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset='utf-8'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Page CHartJS</title>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
-    <script src='main.js'></script>
-
-    <!-- ChartJS script -->
-    <script
-    src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js">
-    </script> 
-
-    <!-- Canvas -->
-    <canvas id="myChart" style="width:100%;max-width:700px"></canvas> 
-</head>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
 <body>
 
-    <!-- Initialisation chartJS -->
-    const myChart = new Chart("myChart", {
-        type: "bar",
-        data: {},
-        options: {}
-      });
-    
+<canvas id="myChart" style="width:100%;max-width:600px"></canvas>
+
+<script>
+const xValues = ["Italy", "France", "Spain", "USA", "Argentina"];
+const yValues = [55, 49, 44, 24, 15];
+const barColors = ["red", "green","blue","orange","brown"];
+
+new Chart("myChart", {
+  type: "bar",
+  data: {
+    labels: xValues,
+    datasets: [{
+      backgroundColor: barColors,
+      data: yValues
+    }]
+  },
+  options: {
+    legend: {display: false},
+    title: {
+      display: true,
+      text: "World Wine Production 2018"
+    }
+  }
+});
+</script>
+
 </body>
 </html>
