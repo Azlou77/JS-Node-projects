@@ -1,33 +1,16 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset='utf-8'>
-  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-  <title>Page Title</title>
-  <meta name='viewport' content='width=device-width, initial-scale=1'>
-  <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
-  <script src='main.js'></script>
-</head>
 <body>
-  <script>
-    var ctx = document.getElementById('myChart').getContext('2d');
-var myChart = new Chart(ctx, {
-  type: 'line',
-  data: {
-    labels: ['M', 'T', 'W', 'T', 'F', 'S', 'S'],
-    datasets: [{
-      label: 'apples',
-      data: [12, 19, 3, 17, 6, 3, 7],
-      backgroundColor: "rgba(153,255,51,0.4)"
-    }, {
-      label: 'oranges',
-      data: [2, 29, 5, 5, 2, 3, 10],
-      backgroundColor: "rgba(255,153,0,0.4)"
-    }]
-  }
-});
-  </script>
-  <canvas id="myChart" width="400" height="400"></canvas>
-  
+
+<!-- event handler it is when you define a function in the html tag -->
+<h1 onclick="changeText(this)">Click on this text!</h1>
+
+<script>
+function changeText(id) {
+    id.innerHTML = "Hola!";
+}
+</script>
+
+
 </body>
-</html>
+</html> 
