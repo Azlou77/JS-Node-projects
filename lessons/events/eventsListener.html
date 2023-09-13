@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <!-- new way to add events with event listener-->
+    <h1 id="myHeader">Click on this text!</h1>
+
+    <script>
+        document.getElementById("myHeader").addEventListener("click", displayDate);
+
+        function displayDate() {
+            document.getElementById("myHeader").innerHTML = Date();
+        }
+    </script>
+</body>
+</html>
+

@@ -3,11 +3,16 @@
 <body>
 
 <!-- event handler it is when you define a function in the html tag -->
-<h1 onclick="changeText(this)">Click on this text!</h1>
+<!-- <h1 onclick="changeText(this)">Click on this text!</h1> -->
+<button id="myBtn">Try it</button>
+
+<p id="demo"></p>
 
 <script>
-function changeText(id) {
-    id.innerHTML = "Hola!";
+document.getElementById("myBtn").onclick = displayDate;
+
+function displayDate() {
+  document.getElementById("demo").innerHTML = Date();
 }
 </script>
 
