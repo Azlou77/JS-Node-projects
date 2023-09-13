@@ -1,19 +1,25 @@
 <!DOCTYPE html>
 <html>
-<body>
+    <meta charset="utf-8">
+    <head>
+        <title>JavaScript Math</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <div class="container">
+        <p class="title">JavaScript Math</p>
+        <!-- Ordinates list-->
+        <ul>
+            <li>Sword</li>
+            <li>Shield</li>
+            <li>Helmet</li>
+    </div>
 
-<h1>JavaScript Math</h1>
-<h2>The Math.random</h2>
-<p>Math.floor() rounds a number DOWN to the nearest integer:</p>
+    <!-- input-->
+    <input type="text" id="sword" placeholder="Sword">
+    <input type="text" id="spear" placeholder="Spear">
+    <input type="text" id="shield" placeholder="Shield">
+    
 
-<p id="demo"></p>
 
-<script>
-// Math.random() returns a random number between 0 (inclusive),  and 1 (exclusive):
-// generate a random number between 1 and 100
-document.getElementById("demo").innerHTML = Math.floor(Math.random() * 100) + 1;
-</script>
-
-</body>
+    <input type="button" id="button" value="Submit">
 </html>
-
