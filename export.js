@@ -16,3 +16,8 @@ class Character {
 function fullName(firstName, lastName) {
     return `${firstName} ${lastName}`;
 }
+
+
+
+// export a function, const, let, class
+export { name, weapons, Character, fullName };
