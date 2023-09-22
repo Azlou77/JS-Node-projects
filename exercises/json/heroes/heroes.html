@@ -7,6 +7,7 @@
 
     <link href="https://fonts.googleapis.com/css?family=Faster+One" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
   </head>
 
   <body>
@@ -20,8 +21,23 @@
       </section>
 
       <script>
-        var header = document.querySelector("header");
-        var section = document.querySelector("section");
+        var requestURL =
+        "https://mdn.github.io/learning-area/javascript/oojs/json/superheroes.json";
+
+        var request = new XMLHttpRequest();
+        request.open("GET", requestURL);
+
+        request.responseType = "json";
+        request.send();
+
+        request.onload = function () {
+        var superHeroes = request.response;
+        populateHeader(superHeroes);
+        showHeroes(superHeroes);
+      };
+
+
+
 
       </script>
   </body>
