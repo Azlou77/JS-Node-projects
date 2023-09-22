@@ -21,19 +21,23 @@
       </section>
 
       <script>
-
+      
+      // variables
       var header = document.querySelector("header");
       var section = document.querySelector("section");
-        
+      
+      // URL for the request
       var requestURL =
         "https://mdn.github.io/learning-area/javascript/oojs/json/superheroes.json";
 
+        // Create a request object
         var request = new XMLHttpRequest();
         request.open("GET", requestURL);
 
         request.responseType = "json";
         request.send();
 
+        // Wait for the request to be returned
         request.onload = function () {
         var superHeroes = request.response;
         populateHeader(superHeroes);
@@ -43,17 +47,30 @@
 
       // Function to populate the header
       function populateHeader(jsonObj) {
-      var myH1 = document.createElement("h1");
-      myH1.textContent = jsonObj["squadName"];
-      header.appendChild(myH1);
+        // Create a <h1> element
+        var myH1 = document.createElement("h1");
+        myH1.textContent = jsonObj["squadName"];
+        header.appendChild(myH1);
+        
+        // Create a <p> element
+        var myPara = document.createElement("p");
+        myPara.textContent = "Hometown: " + jsonObj["homeTown"] + jsonObj["formed"];
+        header.appendChild(myPara);
 
-      var myPara = document.createElement("p");
-      myPara.textContent = "Hometown: " + jsonObj["homeTown"] + jsonObj["formed"];
-      header.appendChild(myPara);
+
+        // Function to show heroes
+        // First member
+        function showHeroes(jsonObj) {
+          // Create a <h2> element
+          var myH2 = document.createElement("h2");
+          myH1.textContent = jsonObj["members"][0]["name"];
+          section.appendChild(myH2);
+        
+      }
+
+
 }
-
-
-       
+   
       </script>
   </body>
 </html>
