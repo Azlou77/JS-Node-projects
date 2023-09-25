@@ -17,3 +17,26 @@
     object-fit: cover;
   
 }
+
+/* modal effects */
+/* z-index is for  to place element above or behind an block */
+.modal-overlay{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(73, 166, 233, 0.5);
+    display: grid;
+    place-items: center;
+    transition: all 0.3s linear;
+    visibility: hidden;
+    z-index: -10;
+  
+}
+
+.open-modal{
+    visibility: visible;
+    z-index: 10;
+}
+
