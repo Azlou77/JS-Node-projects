@@ -11,24 +11,23 @@
   </head>
 
   <body>
+    <header>
 
-      <header>
+    </header>
 
-      </header>
+    <section>
 
-      <section>
+    </section>
 
-      </section>
-
-      <script>
+    <script>
       
-      // variables
-      var header = document.querySelector("header");
-      var section = document.querySelector("section");
-      
-      // URL for the request
-      var requestURL =
-        "https://mdn.github.io/learning-area/javascript/oojs/json/superheroes.json";
+        // variables
+        var header = document.querySelector("header");
+        var section = document.querySelector("section");
+        
+        // URL for the request
+        var requestURL =
+          "https://mdn.github.io/learning-area/javascript/oojs/json/superheroes.json";
 
         // Create a request object
         var request = new XMLHttpRequest();
@@ -43,42 +42,64 @@
         populateHeader(superHeroes);
         showHeroes(superHeroes);
    
-      };
+        };
 
-      // Function to populate the header
-      function populateHeader(jsonObj) {
-        // Create a <h1> element
-        var myH1 = document.createElement("h1");
-        myH1.textContent = jsonObj["squadName"];
-        header.appendChild(myH1);
-        
-        // Create a <p> element
-        var myPara = document.createElement("p");
-        myPara.textContent = "Hometown: " + jsonObj["homeTown"] + jsonObj["formed"];
-        header.appendChild(myPara);
-      }
+        // Function to populate the header
+        function populateHeader(jsonObj) {
+          // Create a <h1> element
+          var myH1 = document.createElement("h1");
+          myH1.textContent = jsonObj["squadName"];
+          header.appendChild(myH1);
+          
+          // Create a <p> element
+          var myPara = document.createElement("p");
+          myPara.textContent = "Hometown: " + jsonObj["homeTown"] + jsonObj["formed"];
+          header.appendChild(myPara);
+        }
 
 
-        // Function to show heroes
-        function showHeroes(jsonObj) {
-        var heroes = jsonObj["members"];
-        
-        // Loop through the heroes, i for index
-        for (var i = 0; i < heroes.length; i++) {
-          // Create elements html
-          var myArticle = document.createElement("article");
-          var myH2 = document.createElement("h2");
-          var myPara1 = document.createElement("p");
-          var myPara2 = document.createElement("p");
-          var myPara3 = document.createElement("p");
-          var myList = document.createElement("ul");
+          // Function to show heroes
+          function showHeroes(jsonObj) {
+          var heroes = jsonObj["members"];
+          
+          // Loop through the heroes, i for index
+          for (var i = 0; i < heroes.length; i++) {
+            // Create elements html
+            var myArticle = document.createElement("article");
+            var myH2 = document.createElement("h2");
+            var myPara1 = document.createElement("p");
+            var myPara2 = document.createElement("p");
+            var myPara3 = document.createElement("p");
+            var myList = document.createElement("ul");
 
-          // Add text content
-          myH2.textContent = heroes[i].name;
-          myPara1.textContent = "Secret identity: " + heroes[i].secretIdentity;
-          myPara2.textContent = "Age: " + heroes[i].age;
-          myPara3.textContent = "Superpowers:";
-    
-      </script>
+            // Add text content
+            myH2.textContent = heroes[i].name;
+            myPara1.textContent = "Secret identity: " + heroes[i].secretIdentity;
+            myPara2.textContent = "Age: " + heroes[i].age;
+            myPara3.textContent = "Superpowers:";
+
+            // Add superpowers
+            var superPowers = heroes[i].powers;
+            // Loop through superpowers
+            for (var j = 0; j < superPowers.length; j++) {
+              // Create li elements
+              var listItem = document.createElement("li");
+              listItem.textContent = superPowers[j];
+              // Put li elements inside ul
+              myList.appendChild(listItem);
+            
+            // Put elements inside article
+            myArticle.appendChild(myH2);
+            myArticle.appendChild(myPara1);
+            myArticle.appendChild(myPara2);
+            myArticle.appendChild(myPara3);
+            myArticle.appendChild(myList);
+
+            // Put article inside section
+            section.appendChild(myArticle);
+            }
+          }
+        }
+    </script>
   </body>
 </html>
