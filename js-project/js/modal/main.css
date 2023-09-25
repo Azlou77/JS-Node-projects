@@ -4,6 +4,7 @@
     display: grid;
     place-items: center;
     color : #fff;
+    text-align: center;
 }
 .btn-primary{
   margin-left: 45%;
@@ -26,7 +27,6 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(73, 166, 233, 0.5);
     display: grid;
     place-items: center;
     transition: all 0.3s linear;
@@ -40,3 +40,23 @@
     z-index: 10;
 }
 
+/* modal button */
+.modal-btn{
+  margin-top: 2rem;
+  background-color: black;
+  color: white;
+  font-size: 20px;
+  border-radius: 20px;
+}
+
+/* modal close button */
+.close-btn{
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 2rem;
+  background: transparent;
+  border-color: transparent;
+  color: var(--clr-red-dark);
+  cursor: pointer;
+}
