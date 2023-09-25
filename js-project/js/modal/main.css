@@ -1,6 +1,19 @@
 .hero{
     min-height: 100vh;
-    background: url("./peaky-blinders.jpg") center/cover no-repeat;
+    background: url("img/peaky-blinders.jpg") center/cover no-repeat;
     display: grid;
     place-items: center;
+    color : #fff;
+}
+.btn-primary{
+  margin-left: 45%;
+}
+
+.card-group{
+    margin-left: 20px;
+}
+.card-img-top{
+    height: 300px;
+    object-fit: cover;
+  
 }
