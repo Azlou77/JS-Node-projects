@@ -1,0 +1,2 @@
+/* what is a modal a modal is
+   an element that is displayed on top of the page an pop up */
