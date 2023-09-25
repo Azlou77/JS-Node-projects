@@ -60,160 +60,25 @@
 
 
         // Function to show heroes
-        // First member
         function showHeroes(jsonObj) {
-          // Create a <h2> element
+        var heroes = jsonObj["members"];
+        
+        // Loop through the heroes, i for index
+        for (var i = 0; i < heroes.length; i++) {
+          // Create elements html
+          var myArticle = document.createElement("article");
           var myH2 = document.createElement("h2");
-          myH2.textContent = jsonObj["members"][0]["name"];
-          section.appendChild(myH2);
-
-          // Create a <p> element for secret identity
+          var myPara1 = document.createElement("p");
           var myPara2 = document.createElement("p");
-          myPara2.textContent = `Secret identity: ${jsonObj["members"][0]["secretIdentity"]}`;
-          section.appendChild(myPara2);
-
-          // Create a <p> element for age
           var myPara3 = document.createElement("p");
-          myPara3.textContent = `Age: ${jsonObj["members"][0]["age"]}`;
-          section.appendChild(myPara3);
+          var myList = document.createElement("ul");
 
-          // Create p element for superpowers
-          var myPara4 = document.createElement("p");
-          myPara4.textContent = `Superpowers:`;
-          section.appendChild(myPara4);
-          
-       
-
-          // Create li element for superpowers
-          var MyLi = document.createElement("li");
-          MyLi.textContent = `
-          ${jsonObj["members"][0]["powers"][0]
-          }`;
-          section.appendChild(MyLi);
-
-          // Create li element for superpowers
-          var MyLi = document.createElement("li");
-          MyLi.textContent = `
-          ${jsonObj["members"][0]["powers"][1]
-            }`;
-          section.appendChild(MyLi);
-
-          // Create li element for superpowers
-          var MyLi = document.createElement("li");
-          MyLi.textContent = `
-          ${jsonObj["members"][0]["powers"][2]
-            }`;
-          section.appendChild(MyLi);
-
-
-          // Second member
-          // Create a <h2> element
-          var myH2 = document.createElement("h2");
-          myH2.textContent = jsonObj["members"][1]["name"];
-          section.appendChild(myH2);
-
-          // Create a <p> element for secret identity
-          var myPara2 = document.createElement("p");
-          myPara2.textContent = `Secret identity: ${jsonObj["members"][1]["secretIdentity"]}`;
-          section.appendChild(myPara2);
-
-          // Create a <p> element for age
-          var myPara3 = document.createElement("p");
-          myPara3.textContent = `Age: ${jsonObj["members"][1]["age"]}`;
-          section.appendChild(myPara3);
-
-          // Create p element for superpowers
-          var myPara4 = document.createElement("p");
-          myPara4.textContent = `Superpowers:`;
-          section.appendChild(myPara4);
-
-
-
-          // Create li element for superpowers
-          var MyLi = document.createElement("li");
-          MyLi.textContent = `
-          ${jsonObj["members"][1]["powers"][0]
-            }`;
-          section.appendChild(MyLi);
-
-          // Create li element for superpowers
-          var MyLi = document.createElement("li");
-          MyLi.textContent = `
-          ${jsonObj["members"][1]["powers"][1]
-            }`;
-          section.appendChild(MyLi);
-
-          // Create li element for superpowers
-          var MyLi = document.createElement("li");
-          MyLi.textContent = `
-          ${jsonObj["members"][1]["powers"][2]
-            }`;
-          section.appendChild(MyLi);
-
-          // Third member
-          // Create a <h2> element
-          var myH2 = document.createElement("h2");
-          myH2.textContent = jsonObj["members"][2]["name"];
-          section.appendChild(myH2);
-
-          // Create a <p> element for secret identity
-          var myPara2 = document.createElement("p");
-          myPara2.textContent = `Secret identity: ${jsonObj["members"][2]["secretIdentity"]}`;
-          section.appendChild(myPara2);
-
-          // Create a <p> element for age
-          var myPara3 = document.createElement("p");
-          myPara3.textContent = `Age: ${jsonObj["members"][2]["age"]}`;
-          section.appendChild(myPara3);
-
-          // Create p element for superpowers
-          var myPara4 = document.createElement("p");
-          myPara4.textContent = `Superpowers:`;
-          section.appendChild(myPara4);
-          
-       
-
-          // Create li element for superpowers
-          var MyLi = document.createElement("li");
-          MyLi.textContent = `
-          ${jsonObj["members"][2]["powers"][0]
-          }`;
-          section.appendChild(MyLi);
-
-          // Create li element for superpowers
-          var MyLi = document.createElement("li");
-          MyLi.textContent = `
-          ${jsonObj["members"][2]["powers"][1]
-            }`;
-          section.appendChild(MyLi);
-
-          // Create li element for superpowers
-          var MyLi = document.createElement("li");
-          MyLi.textContent = `
-          ${jsonObj["members"][2]["powers"][2]
-            }`;
-          section.appendChild(MyLi);
-
-          // Create li element for superpowers
-          var MyLi = document.createElement("li");
-          MyLi.textContent = `
-          ${jsonObj["members"][2]["powers"][3]
-            }`;
-          section.appendChild(MyLi);
-
-
-          // Create li element for superpowers
-          var MyLi = document.createElement("li");
-          MyLi.textContent = `
-          ${jsonObj["members"][2]["powers"][4]
-            }`;
-          section.appendChild(MyLi);
-
-
-
-
-        }
-   
+          // Add text content
+          myH2.textContent = heroes[i].name;
+          myPara1.textContent = "Secret identity: " + heroes[i].secretIdentity;
+          myPara2.textContent = "Age: " + heroes[i].age;
+          myPara3.textContent = "Superpowers:";
+    
       </script>
   </body>
 </html>
