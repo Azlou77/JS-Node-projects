@@ -1,0 +1,6 @@
+.hero{
+    min-height: 100vh;
+    background: url("./peaky-blinders.jpg") center/cover no-repeat;
+    display: grid;
+    place-items: center;
+}
