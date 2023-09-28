@@ -5,7 +5,7 @@
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <title>Numbers first </title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <script src='async3.js'></script>
+   
 </head>
 <body>
     <!--Inputs-->
@@ -13,10 +13,13 @@
     <input type="text" id="quota" name="quota" value="1000000" />
 
     <!--Buttons-->
-    <button id="generer">Générer des nombres premiers</button>
+    <button id="xhr">Cliquez pour envoyer une requête</button>
     <button id="recharger">Recharger</button>
-
-    <div id="output"></div>
+    
+    <pre readonly class="event-log"></pre>
+    
+    <!--Scripts-->
+    <script src='js/xhr.js'></script>
 
     
 </body>
