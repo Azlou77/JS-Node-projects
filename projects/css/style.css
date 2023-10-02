@@ -1,0 +1,8 @@
+/*navbar */
+.nav a, .nav a:hover, .nav a:active, .nav a:focus {
+  color: white;
+}
+
+img{
+    border: 1px solid white
+}
