@@ -1,8 +1,19 @@
-/*navbar */
+/* general */
+h1.text-center{
+    margin-top: 12.5%;
+}
+
+/* navbar */
 .nav a, .nav a:hover, .nav a:active, .nav a:focus {
   color: white;
 }
 
 img{
     border: 1px solid white
+}
+/* banner */
+.hero{
+    min-height: 50vh;
+    background: url("../img/background\ knights.jpg") center/cover no-repeat fixed;
+    color: white;
 }
