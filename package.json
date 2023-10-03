@@ -1,8 +1,10 @@
 {
     "scripts": {
-        "build": "node build.js"
+        "build": "node build.js",
+        "fetch": "node "
     },
     "dependencies": {
+        "airtable": "^0.12.2",
         "dotenv": "^16.3.1"
     }
 }
