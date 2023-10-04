@@ -2,6 +2,12 @@
 import 'dotenv/config'
 import Airtable from 'airtable';
 
+function getValue() {
+    // Selecting the input element and get its value
+    title = document.getElementById("title").value;
+    description = document.getElementById("description").value;
+}
+
 var base = new Airtable({token: process.env.AIRTABLE_API_KEY}).base(process.env.AIRTABLE_BASE_ID);
 
 base('Weapons').select({
