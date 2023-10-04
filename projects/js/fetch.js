@@ -1,46 +1,40 @@
 // Import dotenv
-import 'dotenv/config'
-import Airtable from 'airtable';
+import 'dotenv/config' ;
 
-function getValue() {
-    // Selecting the input element and get its value
-    title = document.getElementById("title").value;
-    description = document.getElementById("description").value;
-}
+let base = process.env.AIRTABLE_BASE;
+let apiKey = process.env.AIRTABLE_API_KEY;
+let table = process.env.AIRTABLE_TABLE;
 
-let data = {
-    "records": [
-        {
-            "fields": {
-                "Title": title,
-                "Description": description
-            }
-        }
-    ]
-}
+const myHeaders = new Headers();
 
-var base = new Airtable({token: process.env.AIRTABLE_API_KEY}).base(process.env.AIRTABLE_BASE_ID);
+myHeaders.append('Content-Type', 'application/json');
+myHeaders.append('Authorization', 'Bearer ' + apiKey);
 
-base('Weapons').select({
-    // Selecting the first 3 records in Grid view:
-    maxRecords: 3,
-    view: "Grid view"
-}).eachPage(function page(records, fetchNextPage) {
-    // This function (`page`) will get called for each page of records.
+const myInit = {
+    method: 'GET',
+    headers: myHeaders,
+    mode: 'cors',
+    cache: 'default'
+    };
 
-    records.forEach(function(record) {
-        // Display stringified record
-        console.log(JSON.stringify(record.fields));
-        
+fetch ('https://api.airtable.com/v0/' + base + '/' + table, myInit)
+    .then((response) => {
+    if (response.ok) {
+        return response.json();
+    } else {
+        throw new Error("NETWORK RESPONSE ERROR");
+    }
+    })
+    .then(data => {
+    console.log(data);
+    ListRecords(data)
+    })
+    .catch((error) => console.error("FETCH ERROR:", error));
+
+    function ListRecords(data) {
+        const name = data.records.map(record => record.fields.Name);
+        const divName = document.getElementById('title');
+        divName.innerHTML = name;
 
 
-    // To fetch the next page of records, call `fetchNextPage`.
-    // If there are more records, `page` will get called again.
-    // If there are no more records, `done` will get called.
-    fetchNextPage();
-    
-        });
-
-}, function done(err) {
-    if (err) { console.error(err); return; }
-});
+      }   
