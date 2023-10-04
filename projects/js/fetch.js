@@ -1,21 +1,25 @@
 // Import dotenv
 require('dotenv').config()
 
-const bearer_token = process.env.BEARER_TOKEN;
-const base_id = process.env.BASE_ID;
-const table_name = process.env.TABLE_NAME;
+var Airtable = require('airtable');
+var base = new Airtable({token: process.env.AIRTABLE_API_KEY}).base(process.env.AIRTABLE_BASE_ID);
 
-var myHeaders = new Headers();
-myHeaders.append("Authorization", "Bearer " + bearer_token);
+base('Weapons').select({
+    // Selecting the first 3 records in Grid view:
+    maxRecords: 3,
+    view: "Grid view"
+}).eachPage(function page(records, fetchNextPage) {
+    // This function (`page`) will get called for each page of records.
 
+    records.forEach(function(record) {
+        console.log('Retrieved', record.get('Name'));
+    });
 
-var requestOptions = {
-  method: 'GET',
-  headers: myHeaders,
-};
+    // To fetch the next page of records, call `fetchNextPage`.
+    // If there are more records, `page` will get called again.
+    // If there are no more records, `done` will get called.
+    fetchNextPage();
 
-fetch("https://api.airtable.com/v0/" + base_id + "/" + table_name , requestOptions)
-  .then(response => response.text())
-  .then(result => console.log(result))
-  .catch(error => console.log('error', error));
-  
+}, function done(err) {
+    if (err) { console.error(err); return; }
+});
