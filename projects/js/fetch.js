@@ -8,6 +8,17 @@ function getValue() {
     description = document.getElementById("description").value;
 }
 
+let data = {
+    "records": [
+        {
+            "fields": {
+                "Title": title,
+                "Description": description
+            }
+        }
+    ]
+}
+
 var base = new Airtable({token: process.env.AIRTABLE_API_KEY}).base(process.env.AIRTABLE_BASE_ID);
 
 base('Weapons').select({
