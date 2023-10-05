@@ -23,7 +23,13 @@ fetch (url, {
         col.className = 'col-lg-3';
         let div = document.createElement('article');
         div.className = 'card';
+        let div1 = document.createElement('div');
+        div1.className = 'card-header';
+        div1.innerHTML = titles[i].fields.Category;
         let div2 = document.createElement('div');
+        let img = document.createElement('img');
+        img.className = 'card-img-top';
+        img.src = titles[i].fields.Pictures[0].url;
         div2.className = 'card-body';
         let h3 = document.createElement('h3');
         h3.className = 'card-title';
@@ -31,11 +37,19 @@ fetch (url, {
         let p = document.createElement('p');
         p.className = 'card-text';
         p.innerHTML = titles[i].fields.Description;
+        let div3 = document.createElement('div');
+        div3.className = 'card-footer';
+        div3.innerHTML = titles[i].fields.Prices + '€';
+
         div2.appendChild(h3);
+        div.appendChild(img);
         div2.appendChild(p);
+        div.appendChild(div1);
         div.appendChild(div2);
+        div.appendChild(div3);
         col.appendChild(div);
         row.appendChild(col);
+
     }
     document.body.appendChild(row);
 })
