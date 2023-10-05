@@ -1,25 +1,40 @@
-// Import dotenv
-require('dotenv').config()
+import {key, base, table} from './config.js';
+// Functions for Fetch API
+function createNode(element) {
+    return document.createElement(element);
+}
 
-var Airtable = require('airtable');
-var base = new Airtable({token: process.env.AIRTABLE_API_KEY}).base(process.env.AIRTABLE_BASE_ID);
+function append(parent, el) {
+  return parent.appendChild(el);
+}
 
-base('Weapons').select({
-    // Selecting the first 3 records in Grid view:
-    maxRecords: 3,
-    view: "Grid view"
-}).eachPage(function page(records, fetchNextPage) {
-    // This function (`page`) will get called for each page of records.
+const url = `https://api.airtable.com/v0/${base}/${table}`;
+const ul = document.getElementById('titles');
 
-    records.forEach(function(record) {
-        console.log('Retrieved', record.get('Name'));
-    });
+fetch (url, {
+    method: 'GET',
+    mode: 'cors',
+    headers: {
+        'Authorization': `Bearer ${key}`,
+        'Content-Type': 'application/json'
+    
+    }
+})
+    .then(function(data) {
+        return data.json();
+    }
+)
+.then(function(json) {
+    let titles = json.records;
+    return titles.map(function(title) {
+        let li = createNode('li'),
+            span = createNode('span');
+        span.innerHTML = `${title.fields.Name}`;
+        append(li, span);
+        append(ul, li);
+  })
+})
 
-    // To fetch the next page of records, call `fetchNextPage`.
-    // If there are more records, `page` will get called again.
-    // If there are no more records, `done` will get called.
-    fetchNextPage();
-
-}, function done(err) {
-    if (err) { console.error(err); return; }
+.catch(function(error) {
+  console.log(error);
 });
