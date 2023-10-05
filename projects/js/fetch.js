@@ -1,15 +1,6 @@
 import {key, base, table} from './config.js';
-// Functions for Fetch API
-function createNode(element) {
-    return document.createElement(element);
-}
-
-function append(parent, el) {
-  return parent.appendChild(el);
-}
 
 const url = `https://api.airtable.com/v0/${base}/${table}`;
-const ul = document.getElementById('titles');
 
 fetch (url, {
     method: 'GET',
@@ -20,21 +11,34 @@ fetch (url, {
     
     }
 })
-    .then(function(data) {
-        return data.json();
-    }
-)
+.then(function(data) {
+    return data.json();
+})
 .then(function(json) {
     let titles = json.records;
-    return titles.map(function(title) {
-        let li = createNode('li'),
-            span = createNode('span');
-        span.innerHTML = `${title.fields.Name}`;
-        append(li, span);
-        append(ul, li);
-  })
+    let row = document.createElement('section');
+    row.className = 'row';
+    for (let i = 0; i < 3; i++) {
+        let col = document.createElement('div');
+        col.className = 'col-lg-3';
+        let div = document.createElement('article');
+        div.className = 'card';
+        let div2 = document.createElement('div');
+        div2.className = 'card-body';
+        let h3 = document.createElement('h3');
+        h3.className = 'card-title';
+        h3.innerHTML = titles[i].fields.Name;
+        let p = document.createElement('p');
+        p.className = 'card-text';
+        p.innerHTML = titles[i].fields.Description;
+        div2.appendChild(h3);
+        div2.appendChild(p);
+        div.appendChild(div2);
+        col.appendChild(div);
+        row.appendChild(col);
+    }
+    document.body.appendChild(row);
 })
-
 .catch(function(error) {
   console.log(error);
 });
