@@ -1,8 +1,8 @@
 {
-    "type" : "module",
+
     "scripts": {
-        "build": "node build.js",
-        "fetch": "node projects/js/fetch.js"
+        "build": "node build.js"
+        
     },
     "dependencies": {
         "airtable": "^0.12.2",

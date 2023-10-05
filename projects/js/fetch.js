@@ -1,40 +1,40 @@
-// Import dotenv
-import 'dotenv/config' ;
+import {key, base, table} from './config.js';
+// Functions for Fetch API
+function createNode(element) {
+    return document.createElement(element);
+}
 
-let base = process.env.AIRTABLE_BASE;
-let apiKey = process.env.AIRTABLE_API_KEY;
-let table = process.env.AIRTABLE_TABLE;
+function append(parent, el) {
+  return parent.appendChild(el);
+}
 
-const myHeaders = new Headers();
+const url = `https://api.airtable.com/v0/${base}/${table}`;
+const ul = document.getElementById('titles');
 
-myHeaders.append('Content-Type', 'application/json');
-myHeaders.append('Authorization', 'Bearer ' + apiKey);
-
-const myInit = {
+fetch (url, {
     method: 'GET',
-    headers: myHeaders,
     mode: 'cors',
-    cache: 'default'
-    };
-
-fetch ('https://api.airtable.com/v0/' + base + '/' + table, myInit)
-    .then((response) => {
-    if (response.ok) {
-        return response.json();
-    } else {
-        throw new Error("NETWORK RESPONSE ERROR");
+    headers: {
+        'Authorization': `Bearer ${key}`,
+        'Content-Type': 'application/json'
+    
     }
-    })
-    .then(data => {
-    console.log(data);
-    ListRecords(data)
-    })
-    .catch((error) => console.error("FETCH ERROR:", error));
+})
+    .then(function(data) {
+        return data.json();
+    }
+)
+.then(function(json) {
+    let titles = json.records;
+    return titles.map(function(title) {
+        let li = createNode('li'),
+            span = createNode('span');
+        span.innerHTML = `${title.fields.Name}`;
+        append(li, span);
+        append(ul, li);
+  })
+})
 
-    function ListRecords(data) {
-        const name = data.records.map(record => record.fields.Name);
-        const divName = document.getElementById('title');
-        divName.innerHTML = name;
-
-
-      }   
+.catch(function(error) {
+  console.log(error);
+});
