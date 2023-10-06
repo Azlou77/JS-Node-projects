@@ -18,9 +18,9 @@ fetch (url, {
     let titles = json.records;
     let row = document.createElement('section');
     row.className = 'row';
-    for (let i = 0; i < 3; i++) {
+    for (let i = 0; i < 4; i++) {
         let col = document.createElement('div');
-        col.className = 'col-lg-3';
+        col.className = 'col-lg-2';
         let div = document.createElement('article');
         div.className = 'card';
         let div1 = document.createElement('div');

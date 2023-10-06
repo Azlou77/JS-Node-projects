@@ -1,34 +1,53 @@
 /* navbar */
 .nav a, .nav a:hover, .nav a:active, .nav a:focus {
-  color: white;
-}
-
-img{
-    border: 1px solid white
-}
-/* banner */
-.hero{
-    min-height: 50vh;
-    background: url("../img/background\ knights.jpg") center/cover no-repeat fixed;
     color: white;
-}
-h1.header{
-    margin-top: 12.5%;
-}
-
-/* main content */
-h1.main-title{
-    margin-top: 5%;
-    margin-bottom: 5%;
-}
-
-section{
-    display: flex;
-    justify-content: center;
-}
-.card-img-top{
-    width: 100%;
-    height: 15vw;
-    object-fit: cover;
-    
-}
+  }
+  
+  img{
+      border: 1px solid white
+  }
+  /* banner */
+  .hero{
+      min-height: 50vh;
+      background: url("../img/background\ knights.jpg") center/cover no-repeat fixed;
+      color: white;
+      object-position: 100% 0;
+     
+  }
+  h1.header{
+      margin-top: 12.5%;
+  }
+  
+  /* main content */
+  h1.main-title{
+      margin-top: 5%;
+      margin-bottom: 5%;
+  }
+  
+  /* section cards */
+  section{
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+  }
+  .card-img-top{
+      width: 100%;
+      height: 15vw;
+      object-fit: fill;
+  }
+  .card-header {
+      background-color: var(--bs-blue) !important;
+      color: var(--bs-white) !important;
+      text-align: center;
+  }
+  .card-body{
+      text-align: center;
+  }
+  .card-body .card-title{
+      text-transform: capitalize;
+  }
+  .card-footer{
+      background-color: var(--bs-danger) !important;
+      color: var(--bs-white) !important;
+      text-align: center;
+  }
