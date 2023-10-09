@@ -1,0 +1,50 @@
+/* General */
+h1 {
+    text-align: center;
+  }
+  
+  /* form */
+  form {
+    margin-left: 26%;
+    background-color: black;
+    color: white;
+    width: 50%;
+    border-radius: 20px;
+  }
+  
+  input {
+    margin: 1% 0 20px 5%;
+  }
+  input[type="text"],
+  input[type="email"],
+  input[type="password"] {
+    width: 75%;
+    height: 25px;
+  }
+  label {
+    padding: 0 0 0 5%;
+    font-size: 17px;
+  }
+  button {
+    margin: 20px 0 20px 33%;
+    background-color: orange;
+    color: white;
+    font-size: medium;
+    letter-spacing: 2px;
+    border-radius: 20px;
+    width: 35%;
+    border: none;
+    font-size: 17px;
+  }
+  
+  /* icon social */
+  .icons-social {
+    display: flex;
+    justify-content: center;
+    border-radius: 20px;
+  }
+  .icons-social svg {
+    padding-left: 15px;
+    fill: orange;
+  }
+  
