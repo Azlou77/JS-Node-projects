@@ -8,5 +8,20 @@ function getValues() {
     const category = document.getElementById('category').value;
     const price = document.getElementById('price').value;
 
+// Data array
+let data = {
+    "records": [
+        {
+            "id": "rec1",
+            "fields": {
+                "Name": name,
+                "Description": description,
+                "Category": category,
+                "Prices": price
+            }
+        }
+    ]
+};
+
 
 }
