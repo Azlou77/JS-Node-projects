@@ -1,8 +1,12 @@
-document.getElementsByTagName('button').addEventListener('click', addWeapons);
+// get values from form
+document.getElementsByTagName('button').addEventListener('click', getValues);
 
-function addWeapons() {
-    let weapons = document.getElementById('weapons');
-    let weapon = document.createElement('li');
-    weapon.innerHTML = 'Weapon';
-    weapons.appendChild(weapon);
+// Function to get form values
+function getValues() {
+    const name = document.getElementById('name').value;
+    const description = document.getElementById('description').value;
+    const category = document.getElementById('category').value;
+    const price = document.getElementById('price').value;
+
+
 }
