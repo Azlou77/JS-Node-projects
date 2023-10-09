@@ -1,6 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap');
+
 /* navbar */
-.nav a, .nav a:hover, .nav a:active, .nav a:focus {
+.nav a, .nav a:hover, .nav a:active, .nav a:focus,ul {
     color: white;
+    background-color: black !important;
+    font-size: 1.15em;
   }
   
   img{
@@ -9,19 +13,24 @@
   /* banner */
   .hero{
       min-height: 50vh;
-      background: url("../img/background\ knights.jpg") center/cover no-repeat fixed;
+      background: url("../img/background\ knights.jpg") center top/cover no-repeat fixed;
       color: white;
       object-position: 100% 0;
+      height: 500px;
      
   }
   h1.header{
       margin-top: 12.5%;
+      font-size: 3em;
+      text-transform: capitalize;
+      font-family: 'MedievalSharp', cursive;
   }
   
   /* main content */
-  h1.main-title{
+  h1.text-center{
       margin-top: 5%;
       margin-bottom: 5%;
+      font-family: 'MedievalSharp', cursive;
   }
   
   /* section cards */
