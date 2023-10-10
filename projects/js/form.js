@@ -1,5 +1,5 @@
 // Import config.js file
-import {key, base, table} from './projects/js/config.js';
+import {key, base, table} from './config.js';
 
 const url = `https://api.airtable.com/v0/${base}/${table}`;
 

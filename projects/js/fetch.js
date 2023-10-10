@@ -1,5 +1,5 @@
 // Import config.js file
-import {key, base, table} from './projects/js/config.js';
+import {key, base, table} from './config.js';
 
 const url = `https://api.airtable.com/v0/${base}/${table}`;
 
@@ -39,6 +39,7 @@ fetch (url, {
         div1.className = 'card-header';
         div1.innerHTML = 'Category:' +' ' + titles[i].fields.Category;
 
+
         // Create a card body
         let div2 = document.createElement('div');
         div2.className = 'card-body';
@@ -64,6 +65,7 @@ fetch (url, {
         div.appendChild(div3);
         col.appendChild(div);
         row.appendChild(col);
+
 
     }
     document.body.appendChild(row);
