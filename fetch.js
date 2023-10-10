@@ -1,5 +1,5 @@
 // Import config.js file
-import {key, base, table} from './config.js';
+import {key, base, table} from './projects/js/config.js';
 
 const url = `https://api.airtable.com/v0/${base}/${table}`;
 
@@ -14,6 +14,7 @@ fetch (url, {
     }
 })
 .then(function(data) {
+    // Convert to JSON
     return data.json();
 })
 .then(function(json) {
@@ -40,10 +41,6 @@ fetch (url, {
 
         // Create a card body
         let div2 = document.createElement('div');
-        // Create an image
-        let img = document.createElement('img');
-        img.className = 'card-img-top';
-        img.src = titles[i].fields.Pictures[0].url;
         div2.className = 'card-body';
 
         // Create a card title and text
@@ -61,7 +58,6 @@ fetch (url, {
 
         // Append elements to the DOM
         div2.appendChild(h3);
-        div.appendChild(img);
         div2.appendChild(p);
         div.appendChild(div1);
         div.appendChild(div2);
@@ -72,7 +68,10 @@ fetch (url, {
     }
     document.body.appendChild(row);
 })
-
+// Displays results in console
+.then(function(json) {
+  console.log(json);
+})
 // Catch errors
 .catch(function(error) {
   console.log(error);
