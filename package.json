@@ -3,8 +3,8 @@
 
     "scripts": {
         "build": "node build.js",
-        "fetch": "node fetch.js",
-        "form": "node form.js"
+        "fetch": "node projects/js/fetch.js",
+        "form": "node projects/js/form.js"
         
     },
     "dependencies": {

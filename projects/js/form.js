@@ -1,7 +1,7 @@
 // Import config.js file
-import {key, base, table} from './config.js';
+import {key} from './config.js';
 
-const url = `https://api.airtable.com/v0/${base}/${table}`;
+const url = `https://api.airtable.com/v0/app708JRaOzw9xfPE/Weapons?view=GridW&api_key=${key}`;
 
 let data = {
     name: 'trident',
@@ -23,6 +23,9 @@ fetch (url, {
 .then(function(data) {
     return data.json();
 })
+// Success and error functions
 .then(function(json) {
     console.log(json);
 })
+
+

@@ -13,7 +13,7 @@
   /* banner */
   .hero{
       min-height: 50vh;
-      background: url("../img/background\ knights.jpg") center top/cover no-repeat fixed;
+      background: url("../img/background_knights.jpg") center top/cover no-repeat fixed;
       color: white;
       object-position: 100% 0;
       height: 500px;

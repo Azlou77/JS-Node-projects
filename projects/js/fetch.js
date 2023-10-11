@@ -1,7 +1,8 @@
 // Import config.js file
 import {key, base, table} from './config.js';
 
-const url = `https://api.airtable.com/v0/${base}/${table}`;
+const url = `https://api.airtable.com/v0/${base}/${table}/
+`;
 
 // Fetch data from Airtable API
 fetch (url, {
@@ -9,7 +10,7 @@ fetch (url, {
     mode: 'cors',
     headers: {
         'Authorization': `Bearer ${key}`,
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
     
     }
 })
@@ -20,12 +21,11 @@ fetch (url, {
 .then(function(json) {
     // Loop through the data
     let titles = json.records;
-
+   
     // Create a row
     let row = document.createElement('section');
     row.className = 'row';
-    for (let i = 0; i < 4; i++) {
-
+    for (let i = 0; i < 5; i++) {
         // Create a column
         let col = document.createElement('div');
         col.className = 'col-lg-2';
@@ -34,12 +34,28 @@ fetch (url, {
         let div = document.createElement('article');
         div.className = 'card';
 
+
         // Create a card header
         let div1 = document.createElement('div');
         div1.className = 'card-header';
         div1.innerHTML = 'Category:' +' ' + titles[i].fields.Category;
 
+        // Create an img element
+        let img = document.createElement('img');
+        img.className = 'card-img-top';
+        // Get all images from Airtable API
+        img.src = titles[0].fields.Image[0].url;
 
+
+        
+    
+        
+      
+
+
+
+      
+          
         // Create a card body
         let div2 = document.createElement('div');
         div2.className = 'card-body';
@@ -58,7 +74,9 @@ fetch (url, {
         div3.innerHTML = 'Prices:' + ' ' + titles[i].fields.Prices + '€';
 
         // Append elements to the DOM
+
         div2.appendChild(h3);
+        div2.appendChild(img);
         div2.appendChild(p);
         div.appendChild(div1);
         div.appendChild(div2);
@@ -70,11 +88,9 @@ fetch (url, {
     }
     document.body.appendChild(row);
 })
-// Displays results in console
-.then(function(json) {
-  console.log(json);
-})
-// Catch errors
-.catch(function(error) {
-  console.log(error);
-});
+
+
+
+
+
+
