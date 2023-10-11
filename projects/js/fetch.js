@@ -4,6 +4,7 @@ import {key, base, table} from './config.js';
 const url = `https://api.airtable.com/v0/${base}/${table}/
 `;
 
+
 // Fetch data from Airtable API
 fetch (url, {
     method: 'GET',
@@ -19,7 +20,7 @@ fetch (url, {
     return data.json();
 })
 .then(function(json) {
-    // Loop through the data
+    // Loop through the data array
     let titles = json.records;
    
     // Create a row
@@ -40,22 +41,21 @@ fetch (url, {
         div1.className = 'card-header';
         div1.innerHTML = 'Category:' +' ' + titles[i].fields.Category;
 
-        // Create an img element
+        // Create an array of images
+        let images = [];
+        json.records.forEach(record => {
+            images.push(record.fields['Image']);
+
+        });
+        console.log(images);
+        // Append images
         let img = document.createElement('img');
         img.className = 'card-img-top';
-        // Get all images from Airtable API
-        img.src = titles[0].fields.Image[0].url;
-
-
-        
-    
-        
-      
+        img.src = images[i];
+        div1.appendChild(img);
 
 
 
-      
-          
         // Create a card body
         let div2 = document.createElement('div');
         div2.className = 'card-body';
@@ -76,7 +76,6 @@ fetch (url, {
         // Append elements to the DOM
 
         div2.appendChild(h3);
-        div2.appendChild(img);
         div2.appendChild(p);
         div.appendChild(div1);
         div.appendChild(div2);
