@@ -26,7 +26,7 @@ fetch (url, {
     // Create a row
     let row = document.createElement('section');
     row.className = 'row';
-    for (let i = 0; i < 5; i++) {
+    for (let i = 0; i < 4; i++) {
         // Create a column
         let col = document.createElement('div');
         col.className = 'col-lg-2';
@@ -41,19 +41,12 @@ fetch (url, {
         div1.className = 'card-header';
         div1.innerHTML = 'Category:' +' ' + titles[i].fields.Category;
 
-        // Create an array of images
-        let images = [];
-        json.records.forEach(record => {
-            images.push(record.fields['Image']);
-
-        });
-        console.log(images);
-        // Append images
+       // Create a card image
         let img = document.createElement('img');
         img.className = 'card-img-top';
-        img.src = images[i];
-        div1.appendChild(img);
+        img.src = titles[i].fields.Link;
 
+      
 
 
         // Create a card body
@@ -76,6 +69,7 @@ fetch (url, {
         // Append elements to the DOM
 
         div2.appendChild(h3);
+        div2.appendChild(img);
         div2.appendChild(p);
         div.appendChild(div1);
         div.appendChild(div2);

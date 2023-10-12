@@ -12,15 +12,14 @@
   }
   /* banner */
   .hero{
-      min-height: 50vh;
       background: url("../img/background_knights.jpg") center top/cover no-repeat fixed;
       color: white;
       object-position: 100% 0;
       height: 500px;
      
   }
-  h1.header{
-      margin-top: 12.5%;
+  h1.header.text-center{
+      margin-top: 16%;
       font-size: 3em;
       text-transform: capitalize;
       font-family: 'MedievalSharp', cursive;
