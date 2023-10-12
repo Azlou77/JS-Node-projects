@@ -1,7 +1,7 @@
 // Import config.js file
-import {key} from './config.js';
+import {key, table, base} from './config.js';
 
-const url = `https://api.airtable.com/v0/app708JRaOzw9xfPE/Weapons`;
+const url = `https://api.airtable.com/v0/${base}/${table}/`;
 
 let data = {
     "fields": {

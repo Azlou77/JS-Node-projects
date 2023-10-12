@@ -7,13 +7,14 @@ h1 {
   
   /* form */
   form {
-    margin-left: 36.5%;
+    margin-left: 33%;
     background-color: white;
     color: black;
     width: 470px;
-    height: 410px;
+    height: 265px;
     border-radius: 20px;
     border: 0.5px solid black;
+    padding-left:10%;
 
   }
   a,  a:hover,  a:active,  a:focus,ul {
@@ -26,7 +27,7 @@ h1 {
   
   
   input {
-    margin: 1% 0 20px 20%;
+    margin: 1% 0 20px 20% ;
     width: 60%;
     height: 25px;
   }
@@ -36,12 +37,12 @@ h1 {
     font-size: 17px;
   }
   button {
-    margin: 20px 0 20px 33%;
+    margin: 20px 0 20px 35px !important;
     background-color: black;
     color: white;
     font-size: medium;
     letter-spacing: 2px;
-    border-radius: 20px;
+    border-radius: 20px !important;
     width: 35%;
     border: none;
     font-size: 17px;
