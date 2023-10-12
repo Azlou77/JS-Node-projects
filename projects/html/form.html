@@ -1,63 +1,46 @@
 <!DOCTYPE html>
-<html>
-<head>
-    <meta charset='utf-8'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Page Title</title>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
-     <!-- Boostrap assets-->
-     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-</head>
-<body>
-    <div class="container">
-        <div class="row">
-            <div class="col">  
-                <div class="form-group">
-              <label>Ajouter un Nom :   </label><br>
-              <input type="text" placeholder="Nom" id="in1"><br>
-            </div></div>
-            <div class="col">  <div class="form-group">
-            <label>Ajouter un Taille : </label><br>
-              <input type="text" placeholder="Taille" id="in2"><br>
-            </div></div>
-            <div class="col">
-            <div class="form-group">
-            <label>Ajouter un Prix : </label><br>
-              <input type="number" placeholder="Prix" id="in3"><br>
-            </div></div>
-            <div class="col">
-            <div class="form-group">
-            <label>Ajouter un Quantite : </label>
-              <input type="number" placeholder="Quantite" id="in4"><br>
-            </div></div>
-          </div>
-          <br>
-          <div class="row">
-            <div class="col-4">  <label>Ajouter un Description : </label><br>  
-              <input type="text" placeholder="Description" id="in5"><br>  
-          </div>
-            <div class="col-8">  
-              <div class="form-group">
-              <div class="form-group">
-              <label for="exampleFormControlSelect2">Selectionner une Marque : </label>
-              <select class="form-control" id="in6">
-                <option>Nike</option>
-                <option>Adidas</option>
-                <option>Puma</option>
-                <option>Vans</option>
-              </select>
-          </div>
-          </div>
-          </div>
-          
-              </div>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Static Template</title>
+  
+  </head>
+  <body>
+    <h1>
+      Form add products
+    </h1>
+    <form class="form-register" action="">
+      <!--Name-->
+      <label>Name</label>
+      <br />
+      <input type="text" name="name" id="name" />
+      <br />
 
-    </div>
+      <!--Description -->
+      <label>Description</label>
+      <br />
+      <input type="text" name="description" id="description"/>
+      <br />
+
+      <!--Category-->
+      <label>Category</label>
+      <br />
+      <input type="text" name="category" id="category"/>
+
+      <br />
+      <!--Price-->
+      <label>Prices</label>
+      <br />
+      <input type="number" name="price" id="price" />
+
+      <br />
+      <!--Button submit-->
+      <button class="form-button">Add
+      </button>
 
     
-
-    
-</body>
+    </form>
+  </body>
 </html>

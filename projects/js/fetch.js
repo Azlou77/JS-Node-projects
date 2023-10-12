@@ -1,7 +1,9 @@
 // Import config.js file
 import {key, base, table} from './config.js';
 
-const url = `https://api.airtable.com/v0/${base}/${table}`;
+const url = `https://api.airtable.com/v0/${base}/${table}/
+`;
+
 
 // Fetch data from Airtable API
 fetch (url, {
@@ -9,22 +11,22 @@ fetch (url, {
     mode: 'cors',
     headers: {
         'Authorization': `Bearer ${key}`,
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
     
     }
 })
 .then(function(data) {
+    // Convert to JSON
     return data.json();
 })
 .then(function(json) {
-    // Loop through the data
+    // Loop through the data array
     let titles = json.records;
-
+   
     // Create a row
     let row = document.createElement('section');
     row.className = 'row';
     for (let i = 0; i < 4; i++) {
-
         // Create a column
         let col = document.createElement('div');
         col.className = 'col-lg-2';
@@ -33,17 +35,22 @@ fetch (url, {
         let div = document.createElement('article');
         div.className = 'card';
 
+
         // Create a card header
         let div1 = document.createElement('div');
         div1.className = 'card-header';
         div1.innerHTML = 'Category:' +' ' + titles[i].fields.Category;
 
-        // Create a card body
-        let div2 = document.createElement('div');
-        // Create an image
+       // Create a card image
         let img = document.createElement('img');
         img.className = 'card-img-top';
-        img.src = titles[i].fields.Pictures[0].url;
+        img.src = titles[i].fields.Link;
+
+      
+
+
+        // Create a card body
+        let div2 = document.createElement('div');
         div2.className = 'card-body';
 
         // Create a card title and text
@@ -60,8 +67,9 @@ fetch (url, {
         div3.innerHTML = 'Prices:' + ' ' + titles[i].fields.Prices + '€';
 
         // Append elements to the DOM
+
         div2.appendChild(h3);
-        div.appendChild(img);
+        div2.appendChild(img);
         div2.appendChild(p);
         div.appendChild(div1);
         div.appendChild(div2);
@@ -69,11 +77,13 @@ fetch (url, {
         col.appendChild(div);
         row.appendChild(col);
 
+
     }
     document.body.appendChild(row);
 })
 
-// Catch errors
-.catch(function(error) {
-  console.log(error);
-});
+
+
+
+
+
