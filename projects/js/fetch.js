@@ -39,13 +39,13 @@ fetch (url, {
         // Create a card header
         let div1 = document.createElement('div');
         div1.className = 'card-header';
-        div1.innerHTML = 'Category:' +' ' + titles[i].fields.Category;
+        div1.innerHTML = 'Category:' +' ' + titles[i].fields.category;
 
        // Create a card image
         let img = document.createElement('img');
         img.className = 'card-img-top';
-        img.src = titles[i].fields.Link;
-        
+        img.src = titles[i].fields.picture;
+
         // Create a card body
         let div2 = document.createElement('div');
         div2.className = 'card-body';
@@ -53,15 +53,15 @@ fetch (url, {
         // Create a card title and text
         let h3 = document.createElement('h3');
         h3.className = 'card-title';
-        h3.innerHTML = titles[i].fields.Name;
+        h3.innerHTML = titles[i].fields.name;
         let p = document.createElement('p');
         p.className = 'card-text';
-        p.innerHTML = titles[i].fields.Description;
+        p.innerHTML = titles[i].fields.description;
 
         // Create a card footer
         let div3 = document.createElement('div');
         div3.className = 'card-footer';
-        div3.innerHTML = 'Prices:' + ' ' + titles[i].fields.Prices + '€';
+        div3.innerHTML = 'Value:' + ' ' + titles[i].fields.value;
 
         // Append elements to the DOM
 

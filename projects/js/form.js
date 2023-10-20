@@ -8,18 +8,16 @@ const url = `https://api.airtable.com/v0/app708JRaOzw9xfPE/Weapons`;
 document.getElementById("submit").addEventListener("click", getValue);
 function getValue() {
     // Sélectionner l'élément input et récupérer sa valeur
-    let name = document.getElementById("name").value;
-    let picture = document.getElementById("picture").value;
-    let description = document.getElementById("description").value;
-
-};
+    let inputName = document.getElementById("name").value;
+    let inputPicture = document.getElementById("picture").value;
+    let inputDescription = document.getElementById("description").value;
 
 // Create a data object
 let data = {
     "fields" : {
-       "name": "name",
-       "picture": "picture",
-       "description": "description",
+       "name": inputName,
+       "picture": inputPicture,
+       "description": inputDescription,
     }
 };
 // Fetch data from Airtable API
@@ -43,5 +41,7 @@ fetch (url, {
 }).catch((error) => {
     console.log(`Erreur: ${error.message}`);
 })
+}
+
 
 
