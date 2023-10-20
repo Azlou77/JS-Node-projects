@@ -45,10 +45,7 @@ fetch (url, {
         let img = document.createElement('img');
         img.className = 'card-img-top';
         img.src = titles[i].fields.Link;
-
-      
-
-
+        
         // Create a card body
         let div2 = document.createElement('div');
         div2.className = 'card-body';

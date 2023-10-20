@@ -3,14 +3,23 @@ import {key} from './config.js';
 
 const url = `https://api.airtable.com/v0/app708JRaOzw9xfPE/Weapons`;
 
-let data = {
-    "fields": {
-        "Link": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Warhammer_14th_century.jpg/800px-Warhammer_14th_century.jpg",
-        "Category": "close combat",
-        "Description": "A warhammer is a late medieval weapon of war intended for close combat action, whose design resembles the hammer.",
-        "Prices": 100,
-        "Name": "Warhammer"
 
+// Add event on click button
+document.getElementById("submit").addEventListener("click", getValue);
+function getValue() {
+    // Sélectionner l'élément input et récupérer sa valeur
+    let name = document.getElementById("name").value;
+    let picture = document.getElementById("picture").value;
+    let description = document.getElementById("description").value;
+
+};
+
+// Create a data object
+let data = {
+    "fields" : {
+       "name": "name",
+       "picture": "picture",
+       "description": "description",
     }
 };
 // Fetch data from Airtable API
