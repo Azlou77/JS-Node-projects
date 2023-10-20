@@ -1,0 +1,56 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id       String    @id @unique @default(uuid())
+  username String    @unique @db.VarChar(64)
+  password String
+  //Relation one to many with post/comment, one user can have many posts/comments
+  posts     Post[]
+  comment  Comment[]
+  createdAt DateTime @default(now())
+
+  //Role default give to user
+  role      Role     @default(USER)
+}
+
+model Post {
+  id      String    @id @unique @default(uuid())
+  //Relation one to one with comment, one post can have one comment
+  Comment Comment?
+  createdAt DateTime @default(now()) @db.Timestamptz(3)
+  updatedAt DateTime @updatedAt @db.Timestamptz(3)
+  published Boolean  @default(false)
+  title     String   @db.VarChar(255)
+  content   String?
+  //Relation with user, the author of the post is a user
+  author    User     @relation(fields: [authorId], references: [id])
+  authorId  String
+}
+
+model Comment {
+  id     String @id @unique @default(uuid())
+  createdAt DateTime @default(now()) @db.Timestamptz(3)
+  updatedAt DateTime @updatedAt @db.Timestamptz(3)
+  //Relation with post, the comment is linked to a post
+  posts   Post   @relation(fields: [postId], references: [id])
+  postId String @unique
+  //Relation with user, the author of the comment is a user
+  author   User   @relation(fields: [authorId], references: [id])
+  authorId String
+  content  String
+
+}
+enum Role {
+  USER
+  ADMIN
+}
